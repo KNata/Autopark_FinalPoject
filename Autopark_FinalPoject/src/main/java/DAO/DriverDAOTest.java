@@ -19,7 +19,7 @@ public class DriverDAOTest {
 
     @Test
     public void addRecord() throws SQLException {
-        Driver theDriver = Driver.newBuilder().setDriverID("ДЛ6735").setDriverName("Наталія Кіселик").build();
+        Driver theDriver = Driver.newBuilder().setDriverID("ДЛ6739").setDriverName("Наталія Кіселикt").build();
         assertTrue(driverDao.addRecord(theDriver));
     }
 

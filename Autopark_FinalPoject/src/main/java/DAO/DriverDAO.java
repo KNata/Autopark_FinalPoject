@@ -24,7 +24,7 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
         if (anEntity == null) {
             wasAdded = false;
         } else if (findByID(anEntity.getDriverID()) != null) {
-            wasAdded = true;
+            System.out.println("This route is already in a system");
         } else {
             Connection conn = null;
             PreparedStatement preparedStatement = null;
@@ -60,7 +60,7 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
     @Override
     public boolean deleteRecord(String anID) throws SQLException {
         boolean wasDeleted = false;
-        String deleteSQL = "delete from `mydb`.`Driver` where `driverID` = ?";
+        String deleteSQL = "delete from `mydb`.`Driver` where driverID = ?";
         if (anID == null) {
             wasDeleted = false;
         } else {
@@ -108,8 +108,8 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
             preparedStatement = conn.prepareStatement(selectAllSQL);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String driverID = resultSet.getString("`driverID`");
-                String driverName = resultSet.getString("`driverName`");
+                String driverID = resultSet.getString("driverID");
+                String driverName = resultSet.getString("driverName");
                 Driver theDriver = Driver.newBuilder().setDriverID(driverID).setDriverName(driverName).build();
                 driverList.add(theDriver);
                 savePoint = conn.setSavepoint();
@@ -135,7 +135,7 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
 
     @Override
     public Driver findByID(String anID) throws SQLException {
-        String selectAllSQL = "select * from `mydb`.`Driver` where `driverID` = ?";
+        String selectAllSQL = "select * from `mydb`.`Driver` where driverID = ?";
         Driver theDriver = null;
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -175,7 +175,7 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
 
     @Override
     public Driver findByName(String aName) throws SQLException {
-        String selectAllSQL = "select * from `mydb`.`Driver` where `driverName` = ?";
+        String selectAllSQL = "select * from `mydb`.`Driver` where driverName = ?";
         Driver theDriver = null;
         Connection conn = null;
         PreparedStatement preparedStatement = null;

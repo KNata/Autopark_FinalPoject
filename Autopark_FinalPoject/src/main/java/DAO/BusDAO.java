@@ -24,7 +24,7 @@ public class BusDAO implements AbstractDAO<String, Bus> {
         if (anEntity == null) {
             wasAdded = false;
         } else if (findByID(anEntity.getBusID()) != null) {
-            wasAdded = true;
+            System.out.println("This route is already in a system");
         } else {
             Connection conn = null;
             PreparedStatement preparedStatement = null;
@@ -35,9 +35,9 @@ public class BusDAO implements AbstractDAO<String, Bus> {
                 preparedStatement = conn.prepareStatement(insertSQL);
                 preparedStatement.setString(1, anEntity.getBusID());
                 preparedStatement.setString(2, anEntity.getBusModel());
-                preparedStatement.setInt(3, anEntity.getMaxCountOfPassagers());
-                preparedStatement.setInt(4, anEntity.getMiles());
-                preparedStatement.setBoolean(5, anEntity.isPassedService());
+                preparedStatement.setBoolean(3, anEntity.isPassedService());
+                preparedStatement.setInt(4, anEntity.getMaxCountOfPassagers());
+                preparedStatement.setInt(5, anEntity.getMiles());
                 preparedStatement.executeUpdate();
                 wasAdded = true;
                 savePoint = conn.setSavepoint();
@@ -48,6 +48,7 @@ public class BusDAO implements AbstractDAO<String, Bus> {
                 } else {
                     conn.rollback(savePoint);
                 }
+                System.err.println(e.getMessage());
                 theLogger.error(e.getMessage());
             } finally {
                 if (preparedStatement != null) {
@@ -64,7 +65,7 @@ public class BusDAO implements AbstractDAO<String, Bus> {
     @Override
     public boolean deleteRecord(String anID) throws SQLException {
         boolean wasDeleted = false;
-        String deleteSQL = "delete from `mydb`.`Bus` where `busID` = ?";
+        String deleteSQL = "delete from `mydb`.`Bus` where busID = ?";
         if (anID == null) {
             wasDeleted = false;
         } else {
@@ -144,7 +145,7 @@ public class BusDAO implements AbstractDAO<String, Bus> {
 
     @Override
     public Bus findByID(String anID) throws SQLException {
-        String selectAllSQL = "select * from `mydb`.`Bus` where `busID` = ?";
+        String selectAllSQL = "select * from `mydb`.`Bus` where busID = ?";
         Bus theBus = null;
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -188,7 +189,7 @@ public class BusDAO implements AbstractDAO<String, Bus> {
 
     @Override
     public Bus findByName(String aName) throws SQLException {
-        String selectAllSQL = "select * from `mydb`.`Bus` where `busModel` = ?";
+        String selectAllSQL = "select * from `mydb`.`Bus` where busModel = ?";
         Bus theBus = null;
         Connection conn = null;
         PreparedStatement preparedStatement = null;

@@ -20,15 +20,18 @@ public class VisitorDAOTest {
 
     @Test
     public void addRecord() throws SQLException {
-        Driver theDriver = Driver.newBuilder().setDriverID("HFJ3i6554").setDriverName("Stepan Ivanenko").build();
-        Visitor theVisitor = Visitor.newBuilder().setVisitorID(5).setVisitorName("Stepan Ivanenko")
-                .setVisitorLogin("bodia").setVisitorPassword("1234").setVisitorRole("Driver").setDriver(theDriver)
+        Driver theDriver = Driver.newBuilder().setDriverID("677777").setDriverName("Ivan Ivan").build();
+        DriverDAO driverDAO = new DriverDAO();
+        driverDAO.addRecord(theDriver);
+        Visitor theVisitor = Visitor.newBuilder().setVisitorID(9).setVisitorName("Ivan Ivan")
+                .setVisitorLogin("ivann").setVisitorPassword("8888").setVisitorRole("Driver").setDriver(theDriver)
                 .build();
         assertTrue(visitorDAO.addRecord(theVisitor));
     }
 
     @Test
-    public void deleteRecord() {
+    public void deleteRecord()  throws SQLException{
+        assertTrue(visitorDAO.deleteRecord("9"));
     }
 
     @Test
@@ -42,6 +45,7 @@ public class VisitorDAOTest {
     }
 
     @Test
-    public void findByName() {
+    public void findByName() throws SQLException {
+        //assertNotNull(visitorDAO.findByName("Bogdan Zatorsky"));
     }
 }

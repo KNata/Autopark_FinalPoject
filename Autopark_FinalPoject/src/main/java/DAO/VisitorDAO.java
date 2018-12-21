@@ -15,39 +15,28 @@ public class VisitorDAO  {
         theLogger = Logger.getLogger(DriverDAO.class);
     }
 
-    // to think why it fails
     public boolean addRecord(Visitor anEntity) throws SQLException {
         String insertSQL = "insert into `mydb`.`Visitor` values(?, ?, ?, ?, ?, ?)";
         boolean wasAdded = false;
         if (anEntity == null) {
             wasAdded = false;
         } else if (findByLogin(anEntity.getVisitorLogin()) != null) {
-            System.out.println("findByLogin(anEntity.getVisitorLogin()) != null");
+            System.out.println("This visitor is already in out database");
         } else {
             Connection conn = null;
             PreparedStatement preparedStatement = null;
             Savepoint savePoint = null;
             try {
-                System.out.println("1");
                 conn = ConnectionPool.getConnection();
                 conn.setAutoCommit(false);
-                System.out.println("2");
                 preparedStatement = conn.prepareStatement(insertSQL);
-                System.out.println("3");
                 preparedStatement.setInt(1, anEntity.getVisitorID());
-                System.out.println("4");
                 preparedStatement.setString(2, anEntity.getVisitorLogin());
-                System.out.println("5");
                 preparedStatement.setString(3, anEntity.getVisitorPassword());
-                System.out.println("6");
                 preparedStatement.setString(4, anEntity.getVisitorRole());
-                System.out.println("7");
                 preparedStatement.setString(5, anEntity.getVisitorName());
-                System.out.println("8");
                 preparedStatement.setString(6, anEntity.getTheDriver().getDriverID());
-                System.out.println("9");
                 preparedStatement.executeUpdate();
-                System.out.println("10");
                 wasAdded = true;
                 savePoint = conn.setSavepoint();
                 conn.commit();
@@ -57,12 +46,13 @@ public class VisitorDAO  {
                 } else {
                     conn.rollback(savePoint);
                 }
+                System.err.println(e.getMessage());
             } finally {
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }
                 if (conn != null) {
-                    conn.commit();
+                    conn.close();
                 }
             }
         }
@@ -72,7 +62,7 @@ public class VisitorDAO  {
     public boolean deleteRecord(String anID) throws SQLException {
         int visitorID = Integer.valueOf(anID);
         boolean wasDeleted = false;
-        String deleteSQL = "delete from `mydb`.`Visitor` where `visitorID` = ?";
+        String deleteSQL = "delete from `mydb`.`Visitor` where visitorID = ?";
         if (anID == null) {
             wasDeleted = false;
         } else {
@@ -151,9 +141,8 @@ public class VisitorDAO  {
         return visitorList;
     }
 
-    // actually find by login
     public Visitor findByLogin(String anID) throws SQLException {
-        String selectAllSQL = "select * from `mydb`.`Visitor` where `login` = ?";
+        String selectAllSQL = "select * from `mydb`.`Visitor` where login = ?";
         Visitor theVisitor = null;
         Connection conn = null;
         PreparedStatement preparedStatement = null;

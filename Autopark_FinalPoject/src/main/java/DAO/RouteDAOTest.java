@@ -18,6 +18,9 @@ public class RouteDAOTest {
 
     @Test
     public void addRecord() {
+        BusDAO busDAO = new BusDAO();
+        DriverDAO driverDAO = new DriverDAO();
+       // Route theRoute = Route
     }
 
     @Test

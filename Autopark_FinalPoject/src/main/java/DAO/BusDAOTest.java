@@ -21,8 +21,8 @@ public class BusDAOTest {
 
     @Test
     public void addRecord() throws SQLException {
-        Bus theBus = Bus.newBuilder().setBusID("NM4673").setBusModel("Scania").setmaxCountOfPassagers(100)
-                .setMiles(3222).setPassedService(true).build();
+        Bus theBus = Bus.newBuilder().setBusID("MK8988").setBusModel("Scania").setmaxCountOfPassagers(150)
+                .setMiles(3222).setPassedService(false).build();
         assertTrue(busDao.addRecord(theBus));
     }
 

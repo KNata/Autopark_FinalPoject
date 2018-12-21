@@ -41,7 +41,7 @@
     <br>
     <br>
     <div class="alert alert-info" role="alert">
-        To see all avaliable information, please <a href="loginPage.html" class="alert-link">LogIn</a> or <a href="registerPage.html" class="alert-link">SignIn</a>
+        To see all avaliable information, please <a href="views/loginPage.jsp" class="alert-link">LogIn</a>
     </div>
 </div>
 
