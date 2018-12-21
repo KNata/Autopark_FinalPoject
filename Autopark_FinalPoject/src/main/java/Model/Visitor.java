@@ -10,6 +10,7 @@ public class Visitor {
     private String visitorPassword;
     private String visitorRole;
     private boolean isAdmin;
+    private ROLE role;
 
     private Driver theDriver;
 
@@ -43,6 +44,10 @@ public class Visitor {
 
     public Driver getTheDriver() {
         return theDriver;
+    }
+
+    public ROLE getRole() {
+        return role;
     }
 
     @Override
@@ -117,8 +122,17 @@ public class Visitor {
             return this;
         }
 
+        public Builder setRole(ROLE aRole) {
+            role = aRole;
+            return this;
+        }
+
         public Visitor build() {
             return Visitor.this;
         }
+    }
+
+    public enum ROLE {
+      ADMIN, DRIVER, UNKNOWN;
     }
 }

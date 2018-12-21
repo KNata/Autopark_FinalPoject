@@ -141,7 +141,7 @@ public class VisitorDAO  {
         return visitorList;
     }
 
-    public Visitor findByLogin(String anID) throws SQLException {
+    public Visitor findByLogin(String anID)  {
         String selectAllSQL = "select * from `mydb`.`Visitor` where login = ?";
         Visitor theVisitor = null;
         Connection conn = null;
@@ -170,18 +170,22 @@ public class VisitorDAO  {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
+
             theLogger.error(e.getMessage());
         } finally {
             if (preparedStatement != null) {
-                preparedStatement.close();
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
             }
             if (conn != null) {
-                conn.commit();
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
             }
         }
         return theVisitor;
@@ -195,5 +199,9 @@ public class VisitorDAO  {
 
     public boolean update() {
         return false;
+    }
+
+    public Visitor.ROLE getRoleByLoginAndPassword(String login, String password) {
+        return null;
     }
 }
