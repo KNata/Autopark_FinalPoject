@@ -5,54 +5,88 @@
   Time: 2:12 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <title>Hello, world!</title>
+    <title>Books Store Application</title>
 </head>
 <body>
-<div class="container-fluid">
+<center>
+    <h1>Bus Management</h1>
+    <h2>
+        <a href="/new">Add New Bus</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="/list">List All Buses</a>
 
-    <h3>Add a new bus to Autopark</h3>
-    <h7><i>Please properly fill all text boxes</i></h7>
-
-    <form>
-        <div class="form-group">
-            <label for="inputAddress">Bus ID:</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="FK3455">
-        </div>
-        <div class="form-group col-md-6">
-            <%--@declare id="32"--%><label for="32">Model of a Bus:</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Scania">
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">Max passangers count:</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="100">
-        </div>
-        <div class="form-group">
-            <label for="inputAddress">How much miles does the bus went: </label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1000">
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">Was on service:</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="true / false">
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button> <button type="button" class="btn btn-secondary">Cancel</button>
-    </form>
+    </h2>
+</center>
+<div align="center">
+    <c:if test="${bus != null}">
+    <form action="update" method="post">
+        </c:if>
+        <c:if test="${bus == null}">
+        <form action="insert" method="post">
+            </c:if>
+            <table border="1" cellpadding="5">
+                <caption>
+                    <h2>
+                        <c:if test="${bus != null}">
+                            Edit Bus
+                        </c:if>
+                        <c:if test="${bus == null}">
+                            Add New Bus
+                        </c:if>
+                    </h2>
+                </caption>
+                <tr>
+                    <th>Bus ID: </th>
+                    <td>
+                        <input type="text" name="busID" size="45"
+                               value="<c:out value='${bus.busID}' />"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Bus model: </th>
+                    <td>
+                        <input type="text" name="busModel" size="45"
+                               value="<c:out value='${bus.busTitle}' />"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Max count passagers in bus: </th>
+                    <td>
+                        <input type="text" name="maxPassegers" size="45"
+                               value="<c:out value='${bus.maxCountOfPassagers}' />"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Miles: </th>
+                    <td>
+                        <input type="text" name="miles" size="45"
+                               value="<c:out value='${bus.miles}' />"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Was on service? </th>
+                    <td>
+                        <input type="text" name="maintance" size="45"
+                               value="<c:out value='${bus.passedService}' />"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Save" />
+                    </td>
+                </tr>
+            </table>
+        </form>
 </div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
 </body>
 </html>

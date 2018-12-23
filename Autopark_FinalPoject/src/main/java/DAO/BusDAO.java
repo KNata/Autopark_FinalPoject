@@ -18,7 +18,7 @@ public class BusDAO implements AbstractDAO<String, Bus> {
     }
 
     @Override
-    public boolean addRecord(Bus anEntity) throws SQLException {
+    public boolean addRecord(Bus anEntity) {
         boolean wasAdded = false;
         String insertSQL = "insert into `mydb`.`Bus` values(?, ?, ?, ?, ?)";
         if (anEntity == null) {
@@ -43,27 +43,31 @@ public class BusDAO implements AbstractDAO<String, Bus> {
                 savePoint = conn.setSavepoint();
                 conn.commit();
             } catch (SQLException e) {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
+                try {
+                    if (savePoint == null) {
+                        conn.rollback();
+                    } else {
+                        conn.rollback(savePoint);
+                    }
+                } catch (SQLException ee) {}
                 System.err.println(e.getMessage());
                 theLogger.error(e.getMessage());
             } finally {
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (conn != null) {
-                    conn.commit();
-                }
+                try {
+                    if (preparedStatement != null) {
+                        preparedStatement.close();
+                    }
+                    if (conn != null) {
+                        conn.commit();
+                    }
+                } catch (SQLException e) {}
             }
         }
         return wasAdded;
     }
 
     @Override
-    public boolean deleteRecord(String anID) throws SQLException {
+    public boolean deleteRecord(String anID) {
         boolean wasDeleted = false;
         String deleteSQL = "delete from `mydb`.`Bus` where busID = ?";
         if (anID == null) {
@@ -82,26 +86,31 @@ public class BusDAO implements AbstractDAO<String, Bus> {
                 savePoint = conn.setSavepoint();
                 conn.commit();
             } catch (SQLException e) {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
+                try {
+                    if (savePoint == null) {
+                        conn.rollback();
+                    } else {
+                        conn.rollback(savePoint);
+                    }
+                } catch (SQLException ee) {}
+                System.err.println(e.getMessage());
                 theLogger.error(e.getMessage());
             } finally {
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (conn != null) {
-                    conn.commit();
-                }
+                try {
+                    if (preparedStatement != null) {
+                        preparedStatement.close();
+                    }
+                    if (conn != null) {
+                        conn.commit();
+                    }
+                } catch (SQLException e) {}
             }
         }
         return wasDeleted;
     }
 
     @Override
-    public ArrayList<Bus> findAll() throws SQLException {
+    public ArrayList<Bus> findAll() {
         String selectAllSQL = "select * from `mydb`.`Bus`";
         ArrayList<Bus> busList = new ArrayList<Bus>();
         Connection conn = null;
@@ -125,26 +134,29 @@ public class BusDAO implements AbstractDAO<String, Bus> {
             }
             conn.commit();
         } catch (SQLException e) {
-//            if (savePoint == null) {
-//                conn.rollback();
-//            } else {
-//                conn.rollback(savePoint);
-//            }
-//            theLogger.error(e.getMessage());
-            System.err.println(e.getMessage());
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return busList;
     }
 
     @Override
-    public Bus findByID(String anID) throws SQLException {
+    public Bus findByID(String anID) {
         String selectAllSQL = "select * from `mydb`.`Bus` where busID = ?";
         Bus theBus = null;
         Connection conn = null;
@@ -170,19 +182,23 @@ public class BusDAO implements AbstractDAO<String, Bus> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return theBus;
     }

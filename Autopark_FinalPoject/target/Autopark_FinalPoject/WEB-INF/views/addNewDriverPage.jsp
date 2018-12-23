@@ -5,9 +5,10 @@
   Time: 2:13 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><html>
 <html>
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,27 +21,82 @@
 </head>
 <body>
 <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">About Autopark</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <h3>Add a new driver to Autopark</h3>
-    <h7><i>Please properly fill all text boxes</i></h7>
-
-    <form>
-        <div class="form-group">
-            <label for="inputAddress">Driver ID:</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="FK3455">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Routes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Buses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Drivers</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-        <div class="form-group col-md-6">
-            <label for="inputPassword4">Driver name:</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Oleksii Oleksienko">
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button> <button type="button" class="btn btn-secondary">Cancel</button>
-    </form>
-</div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </nav>
 
+    <center>
+        <h1>Driver Management</h1>
+        <h2>
+            <a href="/addNewDriverPage">Add a new driver to Autopark</a>
+            <h7><i>Please properly fill all text boxes</i></h7>
+            &nbsp;&nbsp;&nbsp;
+            <a href="/list">List All Books</a>
+
+        </h2>
+    </center>
+    <div align="center">
+        <c:if test="${driver != null}">
+        <form action="update" method="post">
+            </c:if>
+            <c:if test="${driver == null}">
+            <form action="insert" method="post">
+                </c:if>
+                <table border="1" cellpadding="5">
+                    <caption>
+                        <h2>
+                            <c:if test="${driver != null}">
+                                Edit Driver
+                            </c:if>
+                            <c:if test="${driver == null}">
+                                Add New Driver
+                            </c:if>
+                        </h2>
+                    </caption>
+                    <c:if test="${driver != null}">
+                    <th>Driver ID: </th>
+                    <td>
+                        <input type="hidden" name="driverID" value="<c:out value='${driver.driverID}' />" />
+                    </td>
+                    </c:if>
+                    <tr>
+                        <th>Driver Name: </th>
+                        <td>
+                            <input type="text" name="driverName" size="45"
+                                   value="<c:out value='${driver.driverName}' />"
+                            />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+    </div>
+</div>>
 </body>
 </html>

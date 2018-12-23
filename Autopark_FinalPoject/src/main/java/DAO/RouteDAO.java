@@ -18,7 +18,7 @@ public class RouteDAO implements AbstractDAO<String, Route> {
 
 
     @Override
-    public boolean addRecord(Route anEntity) throws SQLException {
+    public boolean addRecord(Route anEntity) {
         boolean wasAdded = false;
         String insertSQL = "insert into `mydb`.`Route` values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
         if (anEntity == null) {
@@ -47,28 +47,34 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                 savePoint = conn.setSavepoint();
                 conn.commit();
             } catch (SQLException e) {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
+                try {
+                    if (savePoint == null) {
+                        conn.rollback();
+                    } else {
+                        conn.rollback(savePoint);
+                    }
+                } catch (SQLException ee) {}
+                System.err.println(e.getMessage());
+                theLogger.error(e.getMessage());
             } finally {
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (conn != null) {
-                    conn.commit();
-                }
+                try {
+                    if (preparedStatement != null) {
+                        preparedStatement.close();
+                    }
+                    if (conn != null) {
+                        conn.commit();
+                    }
+                } catch (SQLException e) {}
             }
         }
         return wasAdded;
     }
 
     @Override
-    public boolean deleteRecord(String anID) throws SQLException {
+    public boolean deleteRecord(String anID) {
         boolean wasDeleted = false;
         int convertedIDValue = Integer.valueOf(anID);
-        String deleteSQL = "delete from `mydb`.`Route` where `routeID` = ?";
+        String deleteSQL = "delete from `mydb`.`Route` where routeID = ?";
         if (anID == null) {
             wasDeleted = false;
         } else {
@@ -85,26 +91,31 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                 savePoint = conn.setSavepoint();
                 conn.commit();
             } catch (SQLException e) {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
+                try {
+                    if (savePoint == null) {
+                        conn.rollback();
+                    } else {
+                        conn.rollback(savePoint);
+                    }
+                } catch (SQLException ee) {}
+                System.err.println(e.getMessage());
                 theLogger.error(e.getMessage());
             } finally {
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (conn != null) {
-                    conn.commit();
-                }
+                try {
+                    if (preparedStatement != null) {
+                        preparedStatement.close();
+                    }
+                    if (conn != null) {
+                        conn.commit();
+                    }
+                } catch (SQLException e) {}
             }
         }
         return wasDeleted;
     }
 
     @Override
-    public ArrayList<Route> findAll() throws SQLException {
+    public ArrayList<Route> findAll() {
         String selectAllSQL = "select * from `mydb`.`Route`";
         ArrayList<Route> routeList = new ArrayList<Route>();
         Connection conn = null;
@@ -136,25 +147,30 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             }
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return routeList;
     }
 
     @Override
-    public Route findByID(String anID) throws SQLException {
+    public Route findByID(String anID) {
         String selectAllSQL = "select * from `mydb`.`Route` where `routeID` = ?";
         BusDAO busDAO = new BusDAO();
         DriverDAO driverDAO = new DriverDAO();
@@ -188,19 +204,24 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return theRoute;
     }

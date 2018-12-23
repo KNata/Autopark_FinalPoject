@@ -16,7 +16,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
-    <title>Hello, world!</title>
+    <title>Add a bus</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -26,24 +26,24 @@
 
     <form>
         <div class="form-group">
-            <label for="inputAddress">Bus ID:</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="FK3455">
+            <%--@declare id="1"--%><label for="1">Bus ID:</label>
+            <input type="text" class="form-control" id="busID" placeholder="FK3455">
         </div>
         <div class="form-group col-md-6">
             <%--@declare id="32"--%><label for="32">Model of a Bus:</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Scania">
+            <input type="text" class="form-control" id="busModel" placeholder="Scania">
         </div>
         <div class="form-group">
-            <label for="inputAddress2">Max passangers count:</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="100">
+            <%--@declare id="inputaddress3"--%><label for="inputAddress3">Max passangers count:</label>
+            <input type="text" class="form-control" id="maxPassegers" placeholder="100">
         </div>
         <div class="form-group">
-            <label for="inputAddress">How much miles does the bus went: </label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1000">
+            <%--@declare id="6"--%><label for="6">How much miles does the bus went: </label>
+            <input type="text" class="form-control" id="miles" placeholder="1000">
         </div>
         <div class="form-group">
-            <label for="inputAddress2">Was on service:</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="true / false">
+            <%--@declare id="5"--%><label for="5">Was on service:</label>
+            <input type="text" class="form-control" id="maintance" placeholder="true / false">
         </div>
         <button type="submit" class="btn btn-primary">Register</button> <button type="button" class="btn btn-secondary">Cancel</button>
     </form>

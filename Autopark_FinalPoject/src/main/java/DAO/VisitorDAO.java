@@ -167,8 +167,54 @@ public class VisitorDAO  {
                                     .findByID(driverID)).setVisitorName(visitorName).build();
                 }
             }
-            savePoint = conn.setSavepoint();
-            conn.commit();
+        } catch (SQLException e) {
+            theLogger.error(e.getMessage());
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+        }
+        return theVisitor;
+    }
+
+    public Visitor findByLoginAndPassword(String aLogin, String aPasswod)  {
+        String selectAllSQL = "select * from `mydb`.`Visitor` where login = ? and password = ?";
+        Visitor theVisitor = null;
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        Savepoint savePoint = null;
+        try {
+            conn = ConnectionPool.getConnection();
+            conn.setAutoCommit(false);
+            preparedStatement = conn.prepareStatement(selectAllSQL);
+            preparedStatement.setString(1, aLogin);
+            preparedStatement.setString(2, aPasswod);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String visitorLogin = resultSet.getString("login");
+                String visitorPassword = resultSet.getString("password");
+                if (visitorLogin.equals(aLogin) && visitorPassword.equals(aPasswod)) {
+                    int vositorID = resultSet.getInt("visitorID");
+                    String visitorRole = resultSet.getString("visitorRole");
+                    String visitorName = resultSet.getString("visitorName");
+                    String driverID = resultSet.getString("Driver_driverID");
+                    DriverDAO driverDAO = new DriverDAO();
+                    theVisitor = Visitor.newBuilder().setVisitorID(vositorID).setVisitorLogin(visitorLogin)
+                            .setVisitorPassword(visitorPassword).setVisitorRole(visitorRole).setDriver(driverDAO
+                                    .findByID(driverID)).setVisitorName(visitorName).build();
+                }
+            }
         } catch (SQLException e) {
 
             theLogger.error(e.getMessage());
@@ -202,6 +248,17 @@ public class VisitorDAO  {
     }
 
     public Visitor.ROLE getRoleByLoginAndPassword(String login, String password) {
-        return null;
+        Visitor.ROLE neededRole = null;
+        try {
+            ArrayList<Visitor> visitorList = findAll();
+            for(int i = 0; i < visitorList.size(); i++) {
+                if (visitorList.get(i).getVisitorLogin().equals(login) && visitorList.get(i).getVisitorPassword().equals(password)) {
+                    neededRole = visitorList.get(i).getRole();
+                }
+            }
+        } catch (SQLException e) {
+            theLogger.error(e.getMessage());
+        }
+        return neededRole;
     }
 }

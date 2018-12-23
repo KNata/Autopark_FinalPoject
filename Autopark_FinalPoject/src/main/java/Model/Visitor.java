@@ -11,7 +11,6 @@ public class Visitor {
     private String visitorRole;
     private boolean isAdmin;
     private ROLE role;
-
     private Driver theDriver;
 
     public static Builder newBuilder() {

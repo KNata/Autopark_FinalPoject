@@ -18,7 +18,7 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
     }
 
     @Override
-    public boolean addRecord(Driver anEntity) throws SQLException {
+    public boolean addRecord(Driver anEntity) {
         boolean wasAdded = false;
         String insertSQL = "insert into `mydb`.`Driver` values(?, ?)";
         if (anEntity == null) {
@@ -40,25 +40,31 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
                 savePoint = conn.setSavepoint();
                 conn.commit();
             } catch (SQLException e) {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
+                try {
+                    if (savePoint == null) {
+                        conn.rollback();
+                    } else {
+                        conn.rollback(savePoint);
+                    }
+                } catch (SQLException ee) {}
+                System.err.println(e.getMessage());
+                theLogger.error(e.getMessage());
             } finally {
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (conn != null) {
-                    conn.commit();
-                }
+                try {
+                    if (preparedStatement != null) {
+                        preparedStatement.close();
+                    }
+                    if (conn != null) {
+                        conn.commit();
+                    }
+                } catch (SQLException e) {}
             }
         }
         return wasAdded;
     }
 
     @Override
-    public boolean deleteRecord(String anID) throws SQLException {
+    public boolean deleteRecord(String anID) {
         boolean wasDeleted = false;
         String deleteSQL = "delete from `mydb`.`Driver` where driverID = ?";
         if (anID == null) {
@@ -77,26 +83,31 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
                 savePoint = conn.setSavepoint();
                 conn.commit();
             } catch (SQLException e) {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
+                try {
+                    if (savePoint == null) {
+                        conn.rollback();
+                    } else {
+                        conn.rollback(savePoint);
+                    }
+                } catch (SQLException ee) {}
+                System.err.println(e.getMessage());
                 theLogger.error(e.getMessage());
             } finally {
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (conn != null) {
-                    conn.commit();
-                }
+                try {
+                    if (preparedStatement != null) {
+                        preparedStatement.close();
+                    }
+                    if (conn != null) {
+                        conn.commit();
+                    }
+                } catch (SQLException e) {}
             }
         }
         return wasDeleted;
     }
 
     @Override
-    public ArrayList<Driver> findAll() throws SQLException {
+    public ArrayList<Driver> findAll()  {
         String selectAllSQL = "select * from `mydb`.`Driver`";
         ArrayList<Driver> driverList = new ArrayList<Driver>();
         Connection conn = null;
@@ -116,25 +127,30 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
             }
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return driverList;
     }
 
     @Override
-    public Driver findByID(String anID) throws SQLException {
+    public Driver findByID(String anID) {
         String selectAllSQL = "select * from `mydb`.`Driver` where driverID = ?";
         Driver theDriver = null;
         Connection conn = null;
@@ -156,19 +172,24 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return theDriver;
     }
