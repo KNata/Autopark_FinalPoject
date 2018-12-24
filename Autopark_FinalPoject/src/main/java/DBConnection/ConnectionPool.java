@@ -1,6 +1,7 @@
 package DBConnection;
 
 import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,9 +14,12 @@ public class ConnectionPool {
 
     private static BasicDataSource ds = new BasicDataSource();
     private static Properties property = new Properties();
+    private static Logger theLogger;
 
 
     static {
+        theLogger = Logger.getLogger(ConnectionPool.class);
+
         FileInputStream fis = null;
         try {
             ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -32,7 +36,7 @@ public class ConnectionPool {
                 try {
                     fis.close();
                 } catch (IOException e) {
-                    System.err.println(e.getMessage());
+                    theLogger.error(e.getMessage());
                 }
             }
         }

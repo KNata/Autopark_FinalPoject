@@ -3,19 +3,10 @@ package DAO;
 import DBConnection.ConnectionPool;
 import Model.Bus;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
 
-import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.when;
 
 public class BusDAO implements AbstractDAO<String, Bus> {
 

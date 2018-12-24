@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class DriverDAO implements AbstractDAO<String, Driver> {
