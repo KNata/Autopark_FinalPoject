@@ -45,4 +45,9 @@ public class BusDAOTest {
     public void findByName() throws SQLException {
         assertNotNull(busDao.findByName("Bogdan"));
     }
+
+    @Test
+    public void update() throws SQLException {
+        assertTrue(busDao.update("KI677", 9999, false));
+    }
 }

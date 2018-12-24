@@ -248,13 +248,58 @@ public class BusDAO implements AbstractDAO<String, Bus> {
         return theBus;
     }
 
-    @Override
-    public boolean update() {
-        return false;
-    }
+    public boolean update(String busID, int milesToChange, boolean passedServiceToChange) {
+        String updateSQL = "update `mydb`.`Bus` set  maintance = ?, miles = ? where busID = ?";
+        boolean wasUpdated = false;
+        if (milesToChange == this.findByID(busID).getMiles() || passedServiceToChange == this.findByID(busID).isPassedService() && milesToChange >= this.findByID(busID).getMiles()) {
+            return wasUpdated = false;
+        }
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        Savepoint savePoint = null;
+        try {
+            connection = ConnectionPool.getConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(updateSQL);
+            preparedStatement.setBoolean(1, passedServiceToChange);
+            preparedStatement.setInt(2, milesToChange);
+            preparedStatement.setString(3, busID);
+            preparedStatement.executeUpdate();
+            wasUpdated = true;
+            savePoint = connection.setSavepoint();
+            connection.commit();
+        } catch (SQLException e) {
+            if (savePoint == null) {
+                try {
+                    connection.rollback();
+                }catch (SQLException ee) {
+                    theLogger.error(e.getMessage());
+                }
+            } else {
+                try {
+                    connection.rollback(savePoint);
+                }catch (SQLException ee) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+            theLogger.error(e.getMessage());
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
 
-    @Override
-    public boolean updateForAdmin() {
-        return false;
+        }
+        return wasUpdated;
     }
 }

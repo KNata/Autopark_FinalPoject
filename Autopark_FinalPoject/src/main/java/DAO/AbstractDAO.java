@@ -23,9 +23,4 @@ public interface AbstractDAO<K, T> {
 
     T findByName(K aName) throws SQLException;
 
-    boolean update();
-
-    boolean updateForAdmin();
-
-
     }

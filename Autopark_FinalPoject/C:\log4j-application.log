@@ -6,3 +6,5 @@
 2018-12-24 18:30:37 ERROR DriverDAO:172 - Table 'mydb.visitor' doesn't exist
 2018-12-24 18:30:37 ERROR DriverDAO:280 - Table 'mydb.visitor' doesn't exist
 2018-12-24 18:33:34 ERROR DriverDAO:172 - Cannot create PoolableConnectionFactory (Unknown database 'autopark')
+2018-12-24 19:37:24 ERROR BusDAO:285 - Data truncation: Out of range value for column 'maintance' at row 1
+2018-12-24 19:38:49 ERROR BusDAO:285 - Data truncation: Out of range value for column 'maintance' at row 1

@@ -234,9 +234,5 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
         return theDriver;
     }
 
-    @Override
-    public boolean update() {
-        String updateSQL = "";
-        throw new UnsupportedOperationException();
-    }
+
 }
