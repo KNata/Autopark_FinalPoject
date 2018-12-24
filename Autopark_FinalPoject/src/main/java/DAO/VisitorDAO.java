@@ -4,6 +4,7 @@ import DBConnection.ConnectionPool;
 import Model.Visitor;
 import org.apache.log4j.Logger;
 
+import javax.servlet.jsp.jstl.sql.SQLExecutionTag;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -243,8 +244,113 @@ public class VisitorDAO  {
     }
 
 
-    public boolean update() {
-        return false;
+    public boolean update(String visitorLogin, String passwordToChange) {
+        String updateSQL = "update `mydb`.`Visitor` set  password = ? where login = ?";
+        boolean wasUpdated = false;
+        if (passwordToChange.equals(this.findByLogin(visitorLogin))) {
+            return wasUpdated = false;
+        }
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        Savepoint savePoint = null;
+        try {
+            connection = ConnectionPool.getConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(updateSQL);
+            preparedStatement.setString(1, passwordToChange);
+            preparedStatement.setString(2, visitorLogin);
+            preparedStatement.executeUpdate();
+            wasUpdated = true;
+            savePoint = connection.setSavepoint();
+            connection.commit();
+        } catch (SQLException e) {
+            if (savePoint == null) {
+                try {
+                    connection.rollback();
+                }catch (SQLException ee) {
+                    theLogger.error(e.getMessage());
+                }
+            } else {
+                try {
+                    connection.rollback(savePoint);
+                }catch (SQLException ee) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+            theLogger.error(e.getMessage());
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+
+        }
+        return wasUpdated;
+    }
+
+    public boolean updateForAdmin(String visitorLogin, String passwordToChange, String roleToChange) {
+        String updateSQL = "update `mydb`.`Visitor` set  password = ?, visitorRole = ? where login = ?";
+        boolean wasUpdated = false;
+        if (passwordToChange.equals(this.findByLogin(visitorLogin))) {
+            return wasUpdated = false;
+        }
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        Savepoint savePoint = null;
+        try {
+            connection = ConnectionPool.getConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(updateSQL);
+            preparedStatement.setString(1, passwordToChange);
+            preparedStatement.setString(2, roleToChange);
+            preparedStatement.setString(3, visitorLogin);
+            preparedStatement.executeUpdate();
+            wasUpdated = true;
+            savePoint = connection.setSavepoint();
+            connection.commit();
+        } catch (SQLException e) {
+            if (savePoint == null) {
+                try {
+                    connection.rollback();
+                }catch (SQLException ee) {
+                    theLogger.error(e.getMessage());
+                }
+            } else {
+                try {
+                    connection.rollback(savePoint);
+                }catch (SQLException ee) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+            theLogger.error(e.getMessage());
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+
+        }
+        return wasUpdated;
     }
 
     public Visitor.ROLE getRoleByLoginAndPassword(String login, String password) {

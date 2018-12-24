@@ -4,6 +4,7 @@ import org.apache.commons.dbcp.BasicDataSource;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
@@ -17,8 +18,9 @@ public class ConnectionPool {
     static {
         FileInputStream fis = null;
         try {
-            fis = new FileInputStream("/Users/nataliakiselyk/Documents/GitHub/JavaExternal/Autopark_FinalPoject/src/main/resources/databaseProperties.properties");
-            property.load(fis);
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            InputStream input = classLoader.getResourceAsStream("databaseProperties.properties");
+            property.load(input);
             ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
             ds.setUrl(property.getProperty("url"));
             ds.setUsername(property.getProperty("user"));
@@ -41,6 +43,4 @@ public class ConnectionPool {
         Connection connection = ds.getConnection();
         return connection;
     }
-
-
 }

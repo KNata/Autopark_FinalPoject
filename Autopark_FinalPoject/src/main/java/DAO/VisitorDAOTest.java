@@ -14,7 +14,7 @@ public class VisitorDAOTest {
     private VisitorDAO visitorDAO;
 
     @Before
-    public void setUP(){
+    public void setUP() {
         visitorDAO = new VisitorDAO();
     }
 
@@ -30,22 +30,32 @@ public class VisitorDAOTest {
     }
 
     @Test
-    public void deleteRecord()  throws SQLException{
+    public void deleteRecord() throws SQLException {
         assertTrue(visitorDAO.deleteRecord("9"));
     }
 
     @Test
-    public void findAll() throws SQLException{
+    public void findAll() throws SQLException {
         assertNotNull(visitorDAO.findAll());
     }
 
     @Test
-    public void findByID() throws SQLException{
+    public void findByID() throws SQLException {
         assertNotNull(visitorDAO.findByLogin("bodia"));
     }
 
     @Test
     public void findByName() throws SQLException {
         //assertNotNull(visitorDAO.findByName("Bogdan Zatorsky"));
+    }
+
+    @Test
+    public void update() {
+        assertTrue(visitorDAO.update("bodia", "1234"));
+    }
+
+    @Test
+    public void updateForAdmin() {
+        assertTrue(visitorDAO.updateForAdmin("bodia", "0987", "admin"));
     }
 }

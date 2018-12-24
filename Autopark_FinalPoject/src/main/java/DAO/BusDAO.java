@@ -252,4 +252,9 @@ public class BusDAO implements AbstractDAO<String, Bus> {
     public boolean update() {
         return false;
     }
+
+    @Override
+    public boolean updateForAdmin() {
+        return false;
+    }
 }

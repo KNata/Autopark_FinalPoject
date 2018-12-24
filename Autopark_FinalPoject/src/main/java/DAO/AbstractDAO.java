@@ -25,4 +25,7 @@ public interface AbstractDAO<K, T> {
 
     boolean update();
 
-}
+    boolean updateForAdmin();
+
+
+    }

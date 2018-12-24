@@ -282,4 +282,9 @@ public class RouteDAO implements AbstractDAO<String, Route> {
     public boolean update() {
         return false;
     }
+
+    @Override
+    public boolean updateForAdmin() {
+        return false;
+    }
 }

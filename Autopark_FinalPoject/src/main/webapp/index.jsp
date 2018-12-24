@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
-    <title>Hello, world!</title>
+    <title>Autopark</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -39,9 +39,18 @@
         <h3> Welcome to our autopark. Here you can find all needed information about drivers, buses and bus routes. </h3>
     </div>
     <br>
-    <br>
-    <div class="alert alert-info" role="alert">
-        To see all avaliable information, please <a href="/WEB-INF/views/loginPage.jsp" class="alert-link">LogIn</a>
+    <div class="alert alert-info" role="alert" align="centre">
+        <form action="login" method="POST">
+            <div class="form-group">
+                <label>Login:</label>
+                <input type="email" class="form-control" name ="login" placeholder="Enter your login" width="60px">
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" name="password" placeholder="Password" width="60px">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button> <button type="button" class="btn btn-secondary">Cancel</button>
+        </form>
     </div>
 </div>
 
