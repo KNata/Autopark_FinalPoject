@@ -4,7 +4,11 @@ import DBConnection.ConnectionPool;
 import Model.Driver;
 import Model.Route;
 import org.apache.log4j.Logger;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -15,7 +19,6 @@ public class RouteDAO implements AbstractDAO<String, Route> {
     static {
         theLogger = Logger.getLogger(DriverDAO.class);
     }
-
 
     @Override
     public boolean addRecord(Route anEntity) {
@@ -278,4 +281,66 @@ public class RouteDAO implements AbstractDAO<String, Route> {
         return theRoute;
     }
 
+    public boolean update(int routeID, String driverID, String busID, Date departureTime, Date arrivalTime) {
+        boolean wasUpdated = false;
+        String updateSQL = "update `mydb`.`Route` set  driverID = ?, busID = ?, departureTime = ?, arrivalTime = ? where routeID = ?";
+        BusDAO busDAO = new BusDAO();
+        DriverDAO driverDAO = new DriverDAO();
+        if (routeID == 0 && driverID == null && busID == null && departureTime == null && arrivalTime == null) {
+            wasUpdated = false;
+        }
+        if (busDAO.findByID(busID) == null && driverDAO.findByID(driverID) == null) {
+            wasUpdated = false;
+        }
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        Savepoint savePoint = null;
+        try {
+            connection = ConnectionPool.getConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(updateSQL);
+            preparedStatement.setString(1, driverID);
+            preparedStatement.setString(2, busID);
+            preparedStatement.setDate(3, departureTime);
+            preparedStatement.setDate(4, arrivalTime);
+            preparedStatement.setInt(5, routeID);
+            preparedStatement.executeUpdate();
+            wasUpdated = true;
+            savePoint = connection.setSavepoint();
+            connection.commit();
+        } catch (SQLException e) {
+            if (savePoint == null) {
+                try {
+                    connection.rollback();
+                }catch (SQLException ee) {
+                    theLogger.error(e.getMessage());
+                }
+            } else {
+                try {
+                    connection.rollback(savePoint);
+                }catch (SQLException ee) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+            theLogger.error(e.getMessage());
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    theLogger.error(e.getMessage());
+                }
+            }
+
+        }
+
+        return wasUpdated;
+    }
 }

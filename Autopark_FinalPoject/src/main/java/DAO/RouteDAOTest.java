@@ -42,4 +42,5 @@ public class RouteDAOTest {
     public void findByName() throws SQLException {
         assertNotNull(routeDAO.findByName("Kyiv-Lviv"));
     }
+
 }
