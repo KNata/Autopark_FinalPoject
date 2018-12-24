@@ -7,15 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c834de6-3abc-4259-adfb-2c0e2dd0744d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/BusDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/BusDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/BusDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/BusDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DriverDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DriverDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/RouteDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/RouteDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/BusDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/BusDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/RouteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/RouteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/VisitorDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/VisitorDAOTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,7 +68,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="93" />
+          <entry key="JAVA" value="94" />
           <entry key="JSP" value="30" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="5" />
@@ -84,7 +76,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7250" />
+          <entry key="JAVA" value="7358" />
           <entry key="JSP" value="1197" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="249" />
@@ -127,11 +119,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DriverDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
+            <state relative-caret-position="431">
+              <caret line="47" column="61" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="47" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/VisitorDAOTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
+              <folding>
+                <element signature="e#1393#1394#0" expanded="true" />
+                <element signature="e#1455#1456#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -219,7 +224,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/databaseProperties.properties" />
         <option value="$PROJECT_DIR$/src/main/java/DBConnection/ConnectionPool.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/VisitorDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/VisitorDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/AbstractDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/DriverDAO.java" />
@@ -229,6 +233,7 @@
         <option value="$PROJECT_DIR$/src/main/java/DAO/BusDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/BusDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/DriverDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/VisitorDAOTest.java" />
       </list>
     </option>
   </component>
@@ -383,21 +388,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DriverDAOTest">
-    <configuration name="BusDAO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Autopark_FinalPoject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DAO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.BusDAO" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.VisitorDAOTest.updateForAdmin">
     <configuration name="BusDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Autopark_FinalPoject" />
       <extension name="coverage">
@@ -428,22 +419,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BusDAOTest.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Autopark_FinalPoject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DAO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.BusDAOTest" />
-      <option name="METHOD_NAME" value="findAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DriverDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Autopark_FinalPoject" />
       <extension name="coverage">
@@ -454,6 +429,36 @@
       </extension>
       <option name="PACKAGE_NAME" value="DAO" />
       <option name="MAIN_CLASS_NAME" value="DAO.DriverDAOTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VisitorDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Autopark_FinalPoject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DAO" />
+      <option name="MAIN_CLASS_NAME" value="DAO.VisitorDAOTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VisitorDAOTest.updateForAdmin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Autopark_FinalPoject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DAO" />
+      <option name="MAIN_CLASS_NAME" value="DAO.VisitorDAOTest" />
+      <option name="METHOD_NAME" value="updateForAdmin" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -555,19 +560,19 @@
     <list>
       <item itemvalue="Maven.Unnamed" />
       <item itemvalue="Tomcat Server.Tomcat" />
-      <item itemvalue="JUnit.BusDAO" />
       <item itemvalue="JUnit.BusDAOTest" />
-      <item itemvalue="JUnit.BusDAOTest.findAll" />
       <item itemvalue="JUnit.BusDAOTest.addRecord" />
       <item itemvalue="JUnit.DriverDAOTest" />
+      <item itemvalue="JUnit.VisitorDAOTest" />
+      <item itemvalue="JUnit.VisitorDAOTest.updateForAdmin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VisitorDAOTest.updateForAdmin" />
+        <item itemvalue="JUnit.VisitorDAOTest" />
         <item itemvalue="JUnit.DriverDAOTest" />
         <item itemvalue="JUnit.BusDAOTest.addRecord" />
         <item itemvalue="JUnit.BusDAOTest" />
-        <item itemvalue="JUnit.BusDAOTest.findAll" />
-        <item itemvalue="JUnit.BusDAO" />
       </list>
     </recent_temporary>
   </component>
@@ -600,14 +605,11 @@
       <workItem from="1545408536758" duration="2000" />
       <workItem from="1545408641500" duration="6563000" />
       <workItem from="1545483996648" duration="29691000" />
-      <workItem from="1545667324072" duration="6613000" />
+      <workItem from="1545667324072" duration="7348000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="VisitorDAOTest_updateForAdmin - 2018.12.24 at 18h 37m 35s.xml">
-      <configuration name="VisitorDAOTest.updateForAdmin" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BusDAOTest_update - 2018.12.24 at 19h 37m 25s.xml">
       <configuration name="BusDAOTest.update" configurationId="JUnit" />
     </history-entry>
@@ -635,9 +637,12 @@
     <history-entry file="BusDAOTest_addRecord - 2018.12.24 at 21h 11m 12s.xml">
       <configuration name="BusDAOTest.addRecord" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DriverDAOTest - 2018.12.24 at 21h 16m 01s.xml">
+      <configuration name="DriverDAOTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101687000" />
+    <option name="totallyTimeSpent" value="102422000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -899,19 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/VisitorDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="57" column="25" selection-start-line="57" selection-end-line="58" selection-end-column="8" />
-          <folding>
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/VisitorDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -962,8 +954,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DriverDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
+        <state relative-caret-position="431">
+          <caret line="47" column="61" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="47" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/VisitorDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
+          <folding>
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1455#1456#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
