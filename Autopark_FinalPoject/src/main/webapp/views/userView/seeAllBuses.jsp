@@ -10,44 +10,84 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Books Store Application</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<center>
-    <h1>Bus Management</h1>
-    <h2>
-        <a href="/new">Add New Bus</a>
-        &nbsp;&nbsp;&nbsp;
-        <a href="/list">Full list of Buses</a>
+<div class="container">
+    <h2>Buses</h2>
+    <!--Search Form -->
+    <form action="/BusServlet" method="get" id="seachBusForm" role="form">
+        <input type="hidden" id="searchAction" name="searchAction" value="searchByName">
+        <div class="form-group col-xs-5">
+            <input type="text" name="busName" id="busName" class="form-control" required="true" placeholder="Type the Name of the bus"/>
+        </div>
+        <button type="submit" class="btn btn-info">
+            <span class="glyphicon glyphicon-search"></span> Search
+        </button>
+    </form>
 
-    </h2>
-</center>
-<div align="center">
-    <table border="1" cellpadding="5">
-        <caption><h2>List of Buses</h2></caption>
-        <tr>
-            <th>Bus ID</th>
-            <th>Bus's model</th>
-            <th>Max passagers</th>
-            <th>Miles</th>
-            <th>Passed Service</th>
+    <!-- List-->
+    <c:if test="${not empty message}">
+        <div class="alert alert-success">
+                ${message}
+        </div>
+    </c:if>
+    <form action="/BusServlet" method="post" id="busForm" role="form" >
+        <input type="hidden" id="idBus" name="idBus">
+        <input type="hidden" id="action" name="action">
+        <c:choose>
+            <c:when test="${not empty busList}">
+                <table  class="table table-striped">
+                    <thead>
+                    <tr>
+                        <td>Bus ID: </td>
+                        <td>Bus Model: </td>
+                        <td>Max Count Of Passangers: </td>
+                        <td>Miles: </td>
+                        <td>Passed Servise? </td>
+                    </tr>
+                    </thead>
+                    <c:forEach var="bus" items="${busList}">
+                        <c:set var="classSucess" value=""/>
+                        <c:if test ="${idBus == bus.busID}">
+                            <c:set var="classSucess" value="info"/>
+                        </c:if>
+                        <tr class="${classSucess}">
+                            <td>
+                                <a href="/BusServlet?idBus=${bus.busID}&searchAction=searchById">${bus.busID}</a>
+                            </td>
+                            <td>${bus.busID}</td>
+                            <td>${bus.busModel}</td>
+                            <td>${bus.maxCountOfPassangers}</td>
+                            <td>${bus.miles}</td>
+                            <td>${bus.passedService}</td>
 
-        </tr>
-        <c:forEach var="bus" items="${busList}">
-            <tr>
-                <td><c:out value="${bus.busID}" /></td>
-                <td><c:out value="${bus.busModel}" /></td>
-                <td><c:out value="${bus.maxPassegers}" /></td>
-                <td><c:out value="${bus.miles}" /></td>
-                <td><c:out value="${bus.maintance}" /></td>
-                <td>
-                    <a href="/edit?id=<c:out value='${bus.busID}' />">Edit</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/delete?id=<c:out value='${bus.busID}' />">Delete</a>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
+                            <td><a href="#" id="remove"
+                                   onclick="document.getElementById('action').value = 'remove';document.getElementById('idBus').value = '${bus.busID}';
+
+                                           document.getElementById('busForm').submit();">
+                                <span class="glyphicon glyphicon-trash"/>
+                            </a>
+
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </c:when>
+            <c:otherwise>
+                <br>
+                <div class="alert alert-info">
+                    No bus found matching your search criteria
+                </div>
+            </c:otherwise>
+        </c:choose>
+    </form>
+    <form action ="jsp/addNewBus.jsp">
+
+        <button type="submit" class="btn btn-primary  btn-md">New Bus</button>
+    </form>
 </div>
 </body>
 </html>

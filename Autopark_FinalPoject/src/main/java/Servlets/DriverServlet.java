@@ -53,7 +53,7 @@ public class DriverServlet extends HttpServlet {
     private void forwardListDrivers(HttpServletRequest request, HttpServletResponse response, ArrayList<Driver> driverList) throws IOException, ServletException {
         String nextJSP = "/views/adminView/seeAllDriversPage.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        request.setAttribute("drivers", driverList);
+        request.setAttribute("driverList", driverList);
         dispatcher.forward(request, response);
     }
 

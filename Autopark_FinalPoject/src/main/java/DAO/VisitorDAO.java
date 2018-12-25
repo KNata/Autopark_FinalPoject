@@ -16,7 +16,7 @@ public class VisitorDAO  {
         theLogger = Logger.getLogger(DriverDAO.class);
     }
 
-    public boolean addRecord(Visitor anEntity) throws SQLException {
+    public boolean addRecord(Visitor anEntity) {
         String insertSQL = "insert into `mydb`.`Visitor` values(?, ?, ?, ?, ?, ?)";
         boolean wasAdded = false;
         if (anEntity == null) {
@@ -42,25 +42,32 @@ public class VisitorDAO  {
                 savePoint = conn.setSavepoint();
                 conn.commit();
             } catch (SQLException e) {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
+                try {
+                    if (savePoint == null) {
+                        conn.rollback();
+                    } else {
+                        conn.rollback(savePoint);
+                    }
+                } catch (SQLException ee) {
                 }
                 System.err.println(e.getMessage());
+                theLogger.error(e.getMessage());
             } finally {
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (conn != null) {
-                    conn.close();
+                try {
+                    if (preparedStatement != null) {
+                        preparedStatement.close();
+                    }
+                    if (conn != null) {
+                        conn.commit();
+                    }
+                } catch (SQLException e) {
                 }
             }
         }
         return wasAdded;
     }
 
-    public boolean deleteRecord(String anID) throws SQLException {
+    public boolean deleteRecord(String anID)  {
         int visitorID = Integer.valueOf(anID);
         boolean wasDeleted = false;
         String deleteSQL = "delete from `mydb`.`Visitor` where visitorID = ?";
@@ -80,25 +87,32 @@ public class VisitorDAO  {
                 savePoint = conn.setSavepoint();
                 conn.commit();
             } catch (SQLException e) {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
+                try {
+                    if (savePoint == null) {
+                        conn.rollback();
+                    } else {
+                        conn.rollback(savePoint);
+                    }
+                } catch (SQLException ee) {
                 }
+                System.err.println(e.getMessage());
                 theLogger.error(e.getMessage());
             } finally {
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (conn != null) {
-                    conn.commit();
+                try {
+                    if (preparedStatement != null) {
+                        preparedStatement.close();
+                    }
+                    if (conn != null) {
+                        conn.commit();
+                    }
+                } catch (SQLException e) {
                 }
             }
         }
         return wasDeleted;
     }
 
-    public ArrayList<Visitor> findAll() throws SQLException {
+    public ArrayList<Visitor> findAll() {
         String selectAllSQL = "select * from `mydb`.`Visitor`";
         ArrayList<Visitor> visitorList = new ArrayList<Visitor>();
         Connection conn = null;
@@ -125,19 +139,24 @@ public class VisitorDAO  {
             }
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return visitorList;
     }
@@ -169,22 +188,24 @@ public class VisitorDAO  {
                 }
             }
         } catch (SQLException e) {
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                try {
+            try {
+                if (preparedStatement != null) {
                     preparedStatement.close();
-                } catch (SQLException e) {
-                    theLogger.error(e.getMessage());
                 }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    theLogger.error(e.getMessage());
+                if (conn != null) {
+                    conn.commit();
                 }
-            }
+            } catch (SQLException e) {}
         }
         return theVisitor;
     }
@@ -217,23 +238,24 @@ public class VisitorDAO  {
                 }
             }
         } catch (SQLException e) {
-
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                try {
+            try {
+                if (preparedStatement != null) {
                     preparedStatement.close();
-                } catch (SQLException e) {
-                    theLogger.error(e.getMessage());
                 }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    theLogger.error(e.getMessage());
+                if (conn != null) {
+                    conn.commit();
                 }
-            }
+            } catch (SQLException e) {}
         }
         return theVisitor;
     }
@@ -355,16 +377,12 @@ public class VisitorDAO  {
 
     public Visitor.ROLE getRoleByLoginAndPassword(String login, String password) {
         Visitor.ROLE neededRole = null;
-        try {
             ArrayList<Visitor> visitorList = findAll();
             for(int i = 0; i < visitorList.size(); i++) {
                 if (visitorList.get(i).getVisitorLogin().equals(login) && visitorList.get(i).getVisitorPassword().equals(password)) {
                     neededRole = visitorList.get(i).getRole();
                 }
             }
-        } catch (SQLException e) {
-            theLogger.error(e.getMessage());
-        }
         return neededRole;
     }
 }

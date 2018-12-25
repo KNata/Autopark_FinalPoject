@@ -206,7 +206,7 @@ public class BusDAO implements AbstractDAO<String, Bus> {
     }
 
     @Override
-    public Bus findByName(String aName) throws SQLException {
+    public Bus findByName(String aName) {
         String selectAllSQL = "select * from `mydb`.`Bus` where busModel = ?";
         Bus theBus = null;
         Connection conn = null;
@@ -232,20 +232,23 @@ public class BusDAO implements AbstractDAO<String, Bus> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
-            System.err.println(e.getMessage());
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return theBus;
     }

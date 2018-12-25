@@ -50,6 +50,9 @@ public class RouteServlet extends HttpServlet {
             case "remove":
                 deleteDriver(request, response);
                 break;
+            case "edit":
+                editRoute(request, response);
+                break;
         }
 
     }
@@ -57,14 +60,14 @@ public class RouteServlet extends HttpServlet {
     private void forwardListRoute(HttpServletRequest request, HttpServletResponse response, ArrayList<Route> routeList) throws IOException, ServletException {
         String nextJSP = "/views/adminView/seeAllDriversPage.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        request.setAttribute("route", routeList);
+        request.setAttribute("routeList", routeList);
         dispatcher.forward(request, response);
     }
 
     private void searchDriverByID (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String routeID = request.getParameter("idRoute");
         Route theRoute = routeDAO.findByID(routeID);
-        request.setAttribute("driver", theRoute);
+        request.setAttribute("route", theRoute);
         request.setAttribute("action", "edit");
         String nextJSP = "/adminView/addNewRoutePage.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
@@ -95,8 +98,8 @@ public class RouteServlet extends HttpServlet {
 
         BusDAO busDAO = new BusDAO();
         DriverDAO driverDAO = new DriverDAO();
-        Route theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle).setBus(busDAO.findByID(busID))
-                .setDriver(driverDAO.findByID(driverID)).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
+        Route theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle).setBus(busDAO.findByID(busID).getBusID())
+                .setDriver(driverDAO.findByID(driverID).getDriverID()).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
                 .setRouteDuration(routeDuration).setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
         boolean wasAdded = routeDAO.addRecord(theRoute);
         ArrayList<Route> routeList = routeDAO.findAll();

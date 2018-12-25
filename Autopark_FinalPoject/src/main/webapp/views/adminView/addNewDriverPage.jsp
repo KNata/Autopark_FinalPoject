@@ -20,11 +20,11 @@
             <c:set var="action" value="add"/>
         </c:if>
         <input type="hidden" id="action" name="action" value="${action}">
-        <input type="hidden" id="idDriver" name="idDriver" value="${driver.driverID}">
+        <input type="hidden" id="idDriverr" name="idDriverr" value="${driver.driverID}">
         <h2>Driver</h2>
         <div class="form-group col-xs-4">
-            <label for="driverID" class="control-label col-xs-4">Driver ID:</label>
-            <input type="text" name="driverID" id="driverID" class="form-control" value="${driver.driverID}" required="true"/>
+            <label for="idDriver" class="control-label col-xs-4">Driver ID:</label>
+            <input type="text" name="idDriver" id="idDriver" class="form-control" value="${driver.driverID}" required="true"/>
 
             <label for="driverName" class="control-label col-xs-4">Driver name:</label>
             <input type="text" name="driverName" id="driverName" class="form-control" value="${driver.driverName}" required="true"/>

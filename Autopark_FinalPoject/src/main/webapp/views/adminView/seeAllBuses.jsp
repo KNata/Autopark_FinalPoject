@@ -16,17 +16,16 @@
 
 <body>
 <div class="container">
-    <h2>Employees</h2>
+    <h2>Buses</h2>
     <!--Search Form -->
-    <form action="/DriverServlet" method="get" id="seachDriverForm" role="form">
+    <form action="/BusServlet" method="get" id="seachBusForm" role="form">
         <input type="hidden" id="searchAction" name="searchAction" value="searchByName">
         <div class="form-group col-xs-5">
-            <input type="text" name="DriverName" id="driverName" class="form-control" required="true" placeholder="Type the Name of the driver"/>
+            <input type="text" name="busName" id="busName" class="form-control" required="true" placeholder="Type the Name of the bus"/>
         </div>
         <button type="submit" class="btn btn-info">
             <span class="glyphicon glyphicon-search"></span> Search
         </button>
-
     </form>
 
     <!--Employees List-->
@@ -35,35 +34,40 @@
                 ${message}
         </div>
     </c:if>
-    <form action="/DriverServlet" method="post" id="driverForm" role="form" >
-        <input type="hidden" id="idDriver" name="idDriver">
+    <form action="/BusServlet" method="post" id="busForm" role="form" >
+        <input type="hidden" id="idBus" name="idBus">
         <input type="hidden" id="action" name="action">
         <c:choose>
-            <c:when test="${not empty driverList}">
+            <c:when test="${not empty busList}">
                 <table  class="table table-striped">
                     <thead>
                     <tr>
-                        <td>Driver ID</td>
-                        <td>Driver name</td>
-
+                        <td>Bus ID: </td>
+                        <td>Bus Model: </td>
+                        <td>Max Count Of Passangers: </td>
+                        <td>Miles: </td>
+                        <td>Passed Servise? </td>
                     </tr>
                     </thead>
-                    <c:forEach var="driver" items="${driverList}">
+                    <c:forEach var="bus" items="${busList}">
                         <c:set var="classSucess" value=""/>
-                        <c:if test ="${idDriver == driver.id}">
+                        <c:if test ="${idBus == bus.busID}">
                             <c:set var="classSucess" value="info"/>
                         </c:if>
                         <tr class="${classSucess}">
                             <td>
-                                <a href="/DriverServlet?idDriver=${driver.id}&searchAction=searchById">${driver.id}</a>
+                                <a href="/BusServlet?idBus=${bus.busID}&searchAction=searchById">${bus.busID}</a>
                             </td>
-                            <td>${driver.driverID}</td>
-                            <td>${driver.driverName}</td>
+                            <td>${bus.busID}</td>
+                            <td>${bus.busModel}</td>
+                            <td>${bus.maxCountOfPassangers}</td>
+                            <td>${bus.miles}</td>
+                            <td>${bus.passedService}</td>
 
                             <td><a href="#" id="remove"
-                                   onclick="document.getElementById('action').value = 'remove';document.getElementById('idDriver').value = '${driver.driverID}';
+                                   onclick="document.getElementById('action').value = 'remove';document.getElementById('idBus').value = '${bus.busID}';
 
-                                           document.getElementById('driverForm').submit();">
+                                           document.getElementById('busForm').submit();">
                                 <span class="glyphicon glyphicon-trash"/>
                             </a>
 
@@ -75,14 +79,14 @@
             <c:otherwise>
                 <br>
                 <div class="alert alert-info">
-                    No people found matching your search criteria
+                    No bus found matching your search criteria
                 </div>
             </c:otherwise>
         </c:choose>
     </form>
-    <form action ="jsp/addNewDriver.jsp">
+    <form action ="jsp/addNewBus.jsp">
 
-        <button type="submit" class="btn btn-primary  btn-md">New Driver</button>
+        <button type="submit" class="btn btn-primary  btn-md">New Bus</button>
     </form>
 </div>
 </body>
