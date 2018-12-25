@@ -42,6 +42,10 @@
 cd /Users/nataliakiselyk/Documents/GitHub/Autopark_FinalPoject
 2) За допомогою Apache Maven виконати наступні команди для збирання нашого проекту:
           mvn clean
-(команда спочатку очистить папку target проекта, після чого вже проведе компіляцію та перемістить проект у папку target, а також до вас у локальну директорію)
+(команда спочатку очистить папку target проекта, після чого вже проведе компіляцію та перемістить проект у папку target, а також до вас у локальну директорію) 
+      cd /apache-tomcat-9.0.13/bin.   
+      ./catalina.sh start (Start server) 
+3) Перейдіть за посиланням: http://localhost:8080
+  ./catalina.sh start (Stop server) 
 
 
