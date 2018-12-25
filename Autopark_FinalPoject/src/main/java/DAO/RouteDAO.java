@@ -18,10 +18,11 @@ public class RouteDAO implements AbstractDAO<String, Route> {
     @Override
     public boolean addRecord(Route anEntity) {
         boolean wasAdded = false;
+        String convertedRouteID = String.valueOf(anEntity.getRouteID());
         String insertSQL = "insert into `mydb`.`Route` values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
         if (anEntity == null) {
             wasAdded = false;
-        } else if (findByID(anEntity.getRouteID()) != null) {
+        } else if (findByID(convertedRouteID) != null) {
             System.out.println("This route is already in a system");
         } else {
             Connection conn = null;
@@ -31,10 +32,10 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                 conn = ConnectionPool.getConnection();
                 conn.setAutoCommit(false);
                 preparedStatement = conn.prepareStatement(insertSQL);
-                preparedStatement.setString(1, anEntity.getRouteID());
+                preparedStatement.setInt(1, anEntity.getRouteID());
                 preparedStatement.setString(2, anEntity.getRouteTitle());
-                preparedStatement.setString(3, anEntity.getTheDriver().getDriverID());
-                preparedStatement.setString(4, anEntity.getTheBus().getBusID());
+                preparedStatement.setString(3, anEntity.getDriverID());
+                preparedStatement.setString(4, anEntity.getBusID());
                 preparedStatement.setString(5, anEntity.getRouteBegin());
                 preparedStatement.setString(6, anEntity.getRouteEnd());
                 preparedStatement.setInt(7, anEntity.getRouteDuration());
@@ -127,7 +128,7 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             preparedStatement = conn.prepareStatement(selectAllSQL);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String routeID = resultSet.getString("routeID");
+                int routeID = resultSet.getInt("routeID");
                 String routeTitle = resultSet.getString("routeName");
                 String driverID = resultSet.getString("driverID");
                 String busID = resultSet.getString("busID");
@@ -136,8 +137,9 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                 int routeDuration = resultSet.getInt("routeDuration");
                 Date departureTime = resultSet.getDate("departureTime");
                 Date arrivalTime = resultSet.getDate("arrivalTime");
+
                 Route theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle)
-                        .setDriver(driverDAO.findByID(driverID)).setBus(busDAO.findByID(busID)).setRouteBegin(cityOfDeparture)
+                        .setDriver(driverDAO.findByID(driverID).getDriverID()).setBus(busDAO.findByID(busID).getBusID()).setRouteBegin(cityOfDeparture)
                         .setRouteEnd(cityOfArrival).setRouteDuration(routeDuration)
                         .setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
                 routeList.add(theRoute);
@@ -169,6 +171,7 @@ public class RouteDAO implements AbstractDAO<String, Route> {
 
     @Override
     public Route findByID(String anID) {
+        int convertedRouteID = Integer.valueOf(anID);
         String selectAllSQL = "select * from `mydb`.`Route` where `routeID` = ?";
         BusDAO busDAO = new BusDAO();
         DriverDAO driverDAO = new DriverDAO();
@@ -180,11 +183,11 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             conn = ConnectionPool.getConnection();
             conn.setAutoCommit(false);
             preparedStatement = conn.prepareStatement(selectAllSQL);
-            preparedStatement.setString(1, anID);
+            preparedStatement.setInt(1, convertedRouteID);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String routeID = resultSet.getString("routeID");
-                if (routeID.equals(anID)) {
+                int routeID = resultSet.getInt("routeID");
+                if (routeID == convertedRouteID) {
                     String routeTitle = resultSet.getString("routeName");
                     String driverID = resultSet.getString("driverID");
                     String busID = resultSet.getString("busID");
@@ -194,7 +197,7 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                     Date departureTime = resultSet.getDate("departureTime");
                     Date arrivalTime = resultSet.getDate("arrivalTime");
                     theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle)
-                            .setDriver(driverDAO.findByID(driverID)).setBus(busDAO.findByID(busID)).setRouteBegin(cityOfDeparture)
+                            .setDriver(driverDAO.findByID(driverID).getDriverID()).setBus(busDAO.findByID(busID).getBusID()).setRouteBegin(cityOfDeparture)
                             .setRouteEnd(cityOfArrival).setRouteDuration(routeDuration)
                             .setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
                 }
@@ -225,7 +228,7 @@ public class RouteDAO implements AbstractDAO<String, Route> {
     }
 
     @Override
-    public Route findByName(String aName) throws SQLException {
+    public Route findByName(String aName) {
         String selectAllSQL = "select * from `mydb`.`Route` where `routeName` = ?";
         BusDAO busDAO = new BusDAO();
         DriverDAO driverDAO = new DriverDAO();
@@ -242,7 +245,7 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             while (resultSet.next()) {
                 String routeTitle = resultSet.getString("routeName");
                 if (routeTitle.equals(aName)) {
-                    String routeID = resultSet.getString("routeID");
+                    int routeID = resultSet.getInt("routeID");
                     String driverID = resultSet.getString("driverID");
                     String busID = resultSet.getString("busID");
                     String cityOfDeparture = resultSet.getString("cityOfDeparture");
@@ -251,7 +254,7 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                     Date departureTime = resultSet.getDate("departureTime");
                     Date arrivalTime = resultSet.getDate("arrivalTime");
                     theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle)
-                            .setDriver(driverDAO.findByID(driverID)).setBus(busDAO.findByID(busID)).setRouteBegin(cityOfDeparture)
+                            .setDriver(driverDAO.findByID(driverID).getDriverID()).setBus(busDAO.findByID(busID).getBusID()).setRouteBegin(cityOfDeparture)
                             .setRouteEnd(cityOfArrival).setRouteDuration(routeDuration)
                             .setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
                 }
@@ -259,19 +262,24 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return theRoute;
     }

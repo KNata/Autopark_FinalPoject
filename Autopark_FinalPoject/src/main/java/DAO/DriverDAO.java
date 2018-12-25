@@ -194,7 +194,7 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
     }
 
     @Override
-    public Driver findByName(String aName) throws SQLException {
+    public Driver findByName(String aName) {
         String selectAllSQL = "select * from `mydb`.`Driver` where driverName = ?";
         Driver theDriver = null;
         Connection conn = null;
@@ -216,19 +216,24 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                conn.rollback();
-            } else {
-                conn.rollback(savePoint);
-            }
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (conn != null) {
-                conn.commit();
-            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
         }
         return theDriver;
     }

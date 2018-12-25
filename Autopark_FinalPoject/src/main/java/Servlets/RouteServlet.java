@@ -3,7 +3,6 @@ package Servlets;
 import DAO.BusDAO;
 import DAO.DriverDAO;
 import DAO.RouteDAO;
-import Model.Bus;
 import Model.Driver;
 import Model.Route;
 
@@ -16,29 +15,76 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
-/*
 
-@WebServlet(name = "routeServlet", urlPatterns = "/RouteServlet")
+@WebServlet(name = "RouteServlet", urlPatterns = "/RouteServlet")
 public class RouteServlet extends HttpServlet {
+
+    private RouteDAO routeDAO = new RouteDAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String action = request.getParameter("searchAction");
+        if (action != null) {
+            switch (action) {
+                case "searchById":
+                    searchDriverByID(request, response);
+                    break;
+                case "searchByName":
+                    searchRouteByName(request, response);
+                    break;
+            }
+        }else{
+            ArrayList<Route> resultList = routeDAO.findAll();
+            forwardListRoute(request, response, resultList);
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        String action = request.getParameter("action");
+        switch (action) {
+            case "add":
+                addNewRoute(request, response);
+                break;
+            case "remove":
+                deleteDriver(request, response);
+                break;
+        }
+
     }
 
-    private void addBusForm(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("AddNewRoutePage.jsp");
+    private void forwardListRoute(HttpServletRequest request, HttpServletResponse response, ArrayList<Route> routeList) throws IOException, ServletException {
+        String nextJSP = "/views/adminView/seeAllDriversPage.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+        request.setAttribute("route", routeList);
+        dispatcher.forward(request, response);
+    }
+
+    private void searchDriverByID (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String routeID = request.getParameter("idRoute");
+        Route theRoute = routeDAO.findByID(routeID);
+        request.setAttribute("driver", theRoute);
+        request.setAttribute("action", "edit");
+        String nextJSP = "/adminView/addNewRoutePage.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+        dispatcher.forward(request, response);
+    }
+
+    private void searchRouteByName(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String routeName = request.getParameter("driverName");
+        Route theRoute = routeDAO.findByName(routeName);
+        request.setAttribute("route", theRoute);
+        request.setAttribute("action", "edit");
+        String nextJSP = "/adminView/addNewRoutePage.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
         dispatcher.forward(request, response);
     }
 
     private void addNewRoute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String routeID = request.getParameter("routeID");
-        String routeName = request.getParameter("routeName");
+        int routeID = Integer.valueOf(request.getParameter("routeID"));
+        String routeTitle = request.getParameter("routeTitle");
         String busID = request.getParameter("busID");
         String driverID = request.getParameter("driverID");
         String cityOfDeparture = request.getParameter("cityOfDeparture");
@@ -47,59 +93,53 @@ public class RouteServlet extends HttpServlet {
         Date departureTime = Date.valueOf(request.getParameter("departureTime"));
         Date arrivalTime = Date.valueOf(request.getParameter("arrivalTime"));
 
-        RouteDAO routeDAO = new RouteDAO();
         BusDAO busDAO = new BusDAO();
         DriverDAO driverDAO = new DriverDAO();
-
-        Route theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeName).setDriver(driverDAO.findByID(driverID))
-                .setBus(busDAO.findByID(busID)).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival).setRouteDuration(routeDuration)
-                .setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
-
-        if (theRoute != null) {
-            routeDAO.addRecord(theRoute);
-            response.sendRedirect("list");
-        } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("errorPage.jsp");
-            dispatcher.forward(request, response);
+        Route theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle).setBus(busDAO.findByID(busID))
+                .setDriver(driverDAO.findByID(driverID)).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
+                .setRouteDuration(routeDuration).setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
+        boolean wasAdded = routeDAO.addRecord(theRoute);
+        ArrayList<Route> routeList = routeDAO.findAll();
+        request.setAttribute("route", theRoute);
+        if (wasAdded) {
+            String message = "The new route has been successfully created";
+            request.setAttribute("message", message);
+            forwardListRoute(request, response, routeList);
         }
     }
-// to think more about it
-    private void listAllRoutes(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        RouteDAO routeDAO = new RouteDAO();
-        ArrayList<Route> routeList = routeDAO.findAll();
-        request.setAttribute("routeList", routeList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("seeARoutesPage.jsp");
-        dispatcher.forward(request, response);
-    }
 
-    private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        BusDAO busDAO = new BusDAO();
-        DriverDAO driverDAO = new DriverDAO();
-        RouteDAO routeDAO = new RouteDAO();
-        String routeID = request.getParameter("routeID");
-        Route neededRoute = routeDAO.findByID(routeID);
-        Bus neededBus = busDAO.findByID(neededRoute.getTheBus().getBusID());
-        Driver neededDriver = driverDAO.findByID(neededRoute.getTheDriver().getDriverID());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("AddNewBusPage.jsp");
-        request.setAttribute("bus", neededBus);
-        request.setAttribute("driver", neededDriver);
-        request.setAttribute("route", neededBus);
-        dispatcher.forward(request, response);
-    }
 
-    private void editBus(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String busModel = request.getParameter("busModel");
-        BusDAO busDAO = new BusDAO();
-        //Driver theDriver = driverDAO.update();
-    }
-
-    private void deleteBus(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        RouteDAO routeDAO = new RouteDAO();
+    private void deleteDriver(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String routeID = request.getParameter("routeID");
         boolean wasDeleted = routeDAO.deleteRecord(routeID);
-        response.sendRedirect("list");
+        if (wasDeleted) {
+            String message = "The route was successfully removed";
+            request.setAttribute("message", message);
+            ArrayList<Route> routeList = routeDAO.findAll();
+            forwardListRoute(request, response, routeList);
+        }
     }
 
+    private void editRoute(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int routeID = Integer.valueOf(request.getParameter("routeID"));
+        String routeTitle = request.getParameter("routeTitle");
+        String busID = request.getParameter("busID");
+        String driverID = request.getParameter("driverID");
+        Date departureTime = Date.valueOf(request.getParameter("departureTime"));
+        Date arrivalTime = Date.valueOf(request.getParameter("arrivalTime"));
 
+        BusDAO busDAO = new BusDAO();
+        DriverDAO driverDAO = new DriverDAO();
+
+        boolean wasUpdated = routeDAO.update(routeID, driverID, busID, departureTime, arrivalTime);
+        String message = null;
+        if (wasUpdated) {
+             message = "The route has been  updated successfully";
+        }
+        ArrayList<Route> employeeList = routeDAO.findAll();
+        request.setAttribute("idRoute", routeID);
+        request.setAttribute("message", message);
+        forwardListRoute(request, response, employeeList);
+    }
 }
-*/

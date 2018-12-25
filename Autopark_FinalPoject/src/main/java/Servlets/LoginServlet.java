@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
             Cookie userName = new Cookie("user", login);
             userName.setMaxAge(30*60);
             System.out.println("Hi 7");
-            response.sendRedirect("/views/userView/seeAllDrivers.jsp");
+            response.sendRedirect("/views/adminView/seeAllDrivers.jsp");
             System.out.println(theVisitor.getVisitorRole());
             response.addCookie(userName);
             if (theVisitor.getRole() == Visitor.ROLE.ADMIN) {

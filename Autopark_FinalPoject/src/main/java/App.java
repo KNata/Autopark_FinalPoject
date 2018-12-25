@@ -1,4 +1,5 @@
 import DAO.BusDAO;
+import DAO.DriverDAO;
 import DAO.VisitorDAO;
 import Model.Bus;
 import Model.Driver;
@@ -21,5 +22,11 @@ public class App {
 //                .setVisitorLogin("Stepan").setVisitorPassword("1234").setVisitorRole("Driver").setDriver(theDriver)
 //                .build();
         // VisitorDAO visitorDAO = new VisitorDAO();
+
+        DriverDAO diverDAO = new DriverDAO();
+        ArrayList<Driver> drivers = diverDAO.findAll();
+        for (int i = 0; i < drivers.size(); i++) {
+            System.out.println(drivers.get(i).toString());
+        }
     }
 }

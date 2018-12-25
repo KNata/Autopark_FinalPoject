@@ -10,117 +10,49 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Books Store Application</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
-<center>
-    <h1>Route Management</h1>
-    <h2>
-        <a href="/new">Add New Route</a>
-        &nbsp;&nbsp;&nbsp;
-        <a href="/list">List All Route</a>
-
-    </h2>
-</center>
-<div align="center">
-    <c:if test="${route != null}">
-    <form action="update" method="post">
+<div class="container">
+    <form action="/RouteServlet" method="post" role="form" data-toggle="validator" >
+        <c:if test ="${empty action}">
+            <c:set var="action" value="add"/>
         </c:if>
-        <c:if test="${route == null}">
-        <form action="insert" method="post">
-            </c:if>
-            <table border="1" cellpadding="5">
-                <caption>
-                    <h2>
-                        <c:if test="${route != null}">
-                            Edit Route
-                        </c:if>
-                        <c:if test="${route == null}">
-                            Add New Route
-                        </c:if>
-                    </h2>
-                </caption>
-                <tr>
-                    <th>Route ID: </th>
-                    <td>
-                        <input type="text" name="routeID" size="45"
-                               value="<c:out value='${route.routeID}' />"
-                        />
-                    </td>
-                </tr>
-                <tr>
-                    <th>Route name: </th>
-                    <td>
-                        <input type="text" name="routeName" size="45"
-                               value="<c:out value='${route.routeName}' />"
-                        />
-                    </td>
-                </tr>
-                <tr>
-                    <th>Driver ID: </th>
-                    <td>
-                        <input type="text" name="driverID" size="45"
-                               value="<c:out value='${route.driverID}' />"
-                        />
-                    </td>
-                </tr>
-                <tr>
-                    <th>Bus ID: </th>
-                    <td>
-                        <input type="text" name="busID" size="45"
-                               value="<c:out value='${route.busID}' />"
-                        />
-                    </td>
-                </tr>
-                <tr>
-                    <th>City of departure </th>
-                    <td>
-                        <input type="text" name="cityOfDeparture" size="45"
-                               value="<c:out value='${route.cityOfDeparture}' />"
-                        />
-                    </td>
-                </tr>
-                <tr>
-                    <th>City of arrival </th>
-                    <td>
-                        <input type="text" name="cityOfArrival" size="45"
-                               value="<c:out value='${route.cityOfArrival}' />"
-                        />
-                    </td>
-                </tr>
-                <tr>
-                <tr>
-                    <th>Route duration </th>
-                    <td>
-                        <input type="text" name="routeDuration" size="45"
-                               value="<c:out value='${route.routeDuration}' />"
-                        />
-                    </td>
-                </tr>
-                <tr>
-                    <th>Time of departure </th>
-                    <td>
-                        <input type="text" name="timeOfDeparture" size="45"
-                               value="<c:out value='${route.timeOfDeparture}' />"
-                        />
-                    </td>
-                </tr>
-                <tr>
-                <tr>
-                    <th>Time of arrival </th>
-                    <td>
-                        <input type="text" name="timeOfArrival" size="45"
-                               value="<c:out value='${route.timeOfArrival}' />"
-                        />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <input type="submit" value="Save" />
-                    </td>
-                </tr>
-            </table>
-        </form>
+        <input type="hidden" id="action" name="action" value="${action}">
+        <input type="hidden" id="idRoute" name="idDriver" value="${route.routeID}">
+        <h2>Route</h2>
+        <div class="form-group col-xs-4">
+            <label for="routeID" class="control-label col-xs-4">Driver ID:</label>
+            <input type="text" name="driverID" id="routeID" class="form-control" value="${route.routeID}" required="true"/>
+
+            <label for="routeName" class="control-label col-xs-4">Route name:</label>
+            <input type="text" name="driverName" id="routeName" class="form-control" value="${route.driverName}" required="true"/>
+
+            <label for="driverID" class="control-label col-xs-4">Driver ID:</label>
+            <input type="text" name="driverID" id="driverID" class="form-control" value="${route.driverID}" required="true"/>
+
+            <label for="busID" class="control-label col-xs-4">Bus ID:</label>
+            <input type="text" name="driverName" id="busID" class="form-control" value="${route.busID}" required="true"/>
+
+            <label for="cityOfDeparture" class="control-label col-xs-4">City of Departure:</label>
+            <input type="text" name="driverID" id="cityOfDeparture" class="form-control" value="${route.cityOfDeparture}" required="true"/>
+
+            <label for="cityOfArrival" class="control-label col-xs-4">City of Arrival:</label>
+            <input type="text" name="driverName" id="cityOfArrival" class="form-control" value="${route.cityOfArrival}" required="true"/>
+
+            <label for="routeDuration" class="control-label col-xs-4">Route Duration:</label>
+            <input type="text" name="driverID" id="routeDuration" class="form-control" value="${route.routeDuration}" required="true"/>
+
+            <label for="departureTime" class="control-label col-xs-4">Departure Time:</label>
+            <input type="text" name="driverName" id="departureTime" class="form-control" value="${route.departureTime}" required="true"/>
+
+            <label for="arrivalTime" class="control-label col-xs-4">Arrival Time:</label>
+            <input type="text" name="driverName" id="arrivalTime" class="form-control" value="${route.arrivalTime}" required="true"/>
+
+            <button type="submit" class="btn btn-primary  btn-md">Accept</button>
+        </div>
+    </form>
 </div>
 </body>
 </html>

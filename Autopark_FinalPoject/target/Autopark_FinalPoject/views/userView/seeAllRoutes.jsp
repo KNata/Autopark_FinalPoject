@@ -13,12 +13,11 @@
     <title>Books Store Application</title>
 </head>
 <body>
+<form action="/DriverServlet" method="post">
 <center>
     <h1>Bus Management</h1>
     <h2>
-        <a href="/new">Add New Bus</a>
-        &nbsp;&nbsp;&nbsp;
-        <a href="/list">Full list of Buses</a>
+        <a href="/main/webapp/views/userView/seeAllBuses.jsp" name="fullListOfBusses">Full list of Buses</a>
 
     </h2>
 </center>
@@ -46,14 +45,11 @@
                 <td><c:out value="${route.routeDuration}" /></td>
                 <td><c:out value="${route.arrivalTime}" /></td>
                 <td><c:out value="${route.departureTime}" /></td>
-                <td>
-                    <a href="/edit?id=<c:out value='${route.routeID}' />">Edit</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/delete?id=<c:out value='${route.routeID}' />">Delete</a>
-                </td>
             </tr>
         </c:forEach>
     </table>
+    <input type="submit" value="Back">
 </div>
+</form>
 </body>
 </html>

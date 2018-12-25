@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Route {
 
-    private String routeID;
+    private int routeID;
     private String routeTitle;
     private String cityOfDeparture;
     private String cityOfArrival;
@@ -13,10 +13,10 @@ public class Route {
     private Date departureTime;
     private Date arrivalTime;
 
-    private Driver theDriver;
-    private Bus theBus;
+    private String driverID;
+    private String busID;
 
-    public String getRouteID() {
+    public int getRouteID() {
         return routeID;
     }
 
@@ -44,12 +44,12 @@ public class Route {
         return arrivalTime;
     }
 
-    public Driver getTheDriver() {
-        return theDriver;
+    public String getDriverID() {
+        return driverID;
     }
 
-    public Bus getTheBus() {
-        return theBus;
+    public String getBusID() {
+        return busID;
     }
 
     public static Route.Builder newBuilder() {
@@ -68,13 +68,13 @@ public class Route {
                 Objects.equals(cityOfArrival, route.cityOfArrival) &&
                 Objects.equals(departureTime, route.departureTime) &&
                 Objects.equals(arrivalTime, route.arrivalTime) &&
-                Objects.equals(theDriver, route.theDriver) &&
-                Objects.equals(theBus, route.theBus);
+                Objects.equals(driverID, route.driverID) &&
+                Objects.equals(busID, route.busID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(routeID, routeTitle, cityOfDeparture, cityOfArrival, routeDuration, departureTime, arrivalTime, theDriver, theBus);
+        return Objects.hash(routeID, routeTitle, cityOfDeparture, cityOfArrival, routeDuration, departureTime, arrivalTime, driverID, busID);
     }
 
     @Override
@@ -87,8 +87,8 @@ public class Route {
                 ", routeDuration = " + routeDuration +
                 ", departureTime = " + departureTime +
                 ", arrivalTime = " + arrivalTime +
-                ", theDriver = " + theDriver.toString() +
-                ", theBus = " + theBus.toString() +
+                ", driverID = " + driverID +
+                ", busID = " + busID +
                 ')';
     }
 
@@ -97,7 +97,7 @@ public class Route {
         private Builder() {
         }
 
-        public Builder setRouteID(String aRouteID) {
+        public Builder setRouteID(int aRouteID) {
             routeID = aRouteID;
             return this;
         }
@@ -132,13 +132,13 @@ public class Route {
             return this;
         }
 
-        public Builder setDriver(Driver aDriver) {
-            theDriver = aDriver;
+        public Builder setDriver(String aDriverID) {
+            driverID = aDriverID;
             return this;
         }
 
-        public Builder setBus(Bus aBus) {
-            theBus = aBus;
+        public Builder setBus(String aBusID) {
+            busID = aBusID;
             return this;
         }
 
