@@ -60,14 +60,6 @@
                             <td>${driver.driverID}</td>
                             <td>${driver.driverName}</td>
 
-                            <td><a href="#" id="remove"
-                                   onclick="document.getElementById('action').value = 'remove';document.getElementById('idDriver').value = '${driver.driverID}';
-
-                                           document.getElementById('driverForm').submit();">
-                                <span class="glyphicon glyphicon-trash"/>
-                            </a>
-
-                            </td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -79,10 +71,6 @@
                 </div>
             </c:otherwise>
         </c:choose>
-    </form>
-    <form action ="jsp/addNewDriver.jsp">
-
-        <button type="submit" class="btn btn-primary  btn-md">New Driver</button>
     </form>
 </div>
 </body>

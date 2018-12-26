@@ -73,15 +73,6 @@
                             <td>${route.routeDuration}</td>
                             <td>${route.departureTime}</td>
                             <td>${route.arrivalTime}</td>
-
-                            <td><a href="#" id="remove"
-                                   onclick="document.getElementById('action').value = 'remove';document.getElementById('idRoute').value = '${route.routeID}';
-
-                                           document.getElementById('routeForm').submit();">
-                                <span class="glyphicon glyphicon-trash"/>
-                            </a>
-
-                            </td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -93,10 +84,6 @@
                 </div>
             </c:otherwise>
         </c:choose>
-    </form>
-    <form action ="jsp/addNewRoute.jsp">
-
-        <button type="submit" class="btn btn-primary  btn-md">New Route</button>
     </form>
 </div>
 </body>

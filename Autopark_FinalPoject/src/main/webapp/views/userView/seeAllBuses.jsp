@@ -63,15 +63,6 @@
                             <td>${bus.maxCountOfPassangers}</td>
                             <td>${bus.miles}</td>
                             <td>${bus.passedService}</td>
-
-                            <td><a href="#" id="remove"
-                                   onclick="document.getElementById('action').value = 'remove';document.getElementById('idBus').value = '${bus.busID}';
-
-                                           document.getElementById('busForm').submit();">
-                                <span class="glyphicon glyphicon-trash"/>
-                            </a>
-
-                            </td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -83,10 +74,6 @@
                 </div>
             </c:otherwise>
         </c:choose>
-    </form>
-    <form action ="jsp/addNewBus.jsp">
-
-        <button type="submit" class="btn btn-primary  btn-md">New Bus</button>
     </form>
 </div>
 </body>
