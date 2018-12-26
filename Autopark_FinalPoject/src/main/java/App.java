@@ -21,12 +21,15 @@ public class App {
 //        Visitor theVisitor = Visitor.newBuilder().setVisitorID(5).setVisitorName("Stepan Ivanenko")
 //                .setVisitorLogin("Stepan").setVisitorPassword("1234").setVisitorRole("Driver").setDriver(theDriver)
 //                .build();
-        // VisitorDAO visitorDAO = new VisitorDAO();
+         VisitorDAO visitorDAO = new VisitorDAO();
+         Visitor theVisitor = visitorDAO.findByLoginAndPassword("bodia","4321");
+         System.out.println(theVisitor.toString());
 
-        DriverDAO diverDAO = new DriverDAO();
-        ArrayList<Driver> drivers = diverDAO.findAll();
-        for (int i = 0; i < drivers.size(); i++) {
-            System.out.println(drivers.get(i).toString());
-        }
+
+//        DriverDAO diverDAO = new DriverDAO();
+//        ArrayList<Driver> drivers = diverDAO.findAll();
+//        for (int i = 0; i < drivers.size(); i++) {
+//            System.out.println(drivers.get(i).toString());
+//        }
     }
 }

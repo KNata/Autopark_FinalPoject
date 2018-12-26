@@ -10,7 +10,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "BusServlet", urlPatterns = "/LoginServlet")
+@WebServlet(name = "LoginServlet", urlPatterns = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -27,17 +27,16 @@ public class LoginServlet extends HttpServlet {
         if(theVisitor != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", login);
-            //setting session to expiry in 30 mins
-            session.setMaxInactiveInterval(30*60);
 
-            //response.sendRedirect("/views/adminView/seeAllDrivers.jsp");
+         // response.sendRedirect("/views/adminView/adminMainPage.jsp");
             System.out.println(theVisitor.getVisitorRole());
-            if (theVisitor.getRole() == Visitor.ROLE.ADMIN) {
+            System.out.println(theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.ADMIN)));
+            if (theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.ADMIN))) {
                 Cookie userName = new Cookie("admin", login);
                 userName.setMaxAge(30*60);
                 response.addCookie(userName);
                 response.sendRedirect("/views/adminView/adminMainPage.jsp");
-            } else if (theVisitor.getRole() == Visitor.ROLE.DRIVER) {
+            } else if (theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.DRIVER))) {
                 Cookie userName = new Cookie("driver", login);
                 userName.setMaxAge(30*60);
                 response.addCookie(userName);

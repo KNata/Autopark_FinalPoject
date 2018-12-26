@@ -21,7 +21,7 @@ public class BusServlet extends HttpServlet {
 
     private BusDAO busDAO = new BusDAO();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("searchAction");
         if (action != null) {
@@ -39,7 +39,7 @@ public class BusServlet extends HttpServlet {
         }
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String action = request.getParameter("action");

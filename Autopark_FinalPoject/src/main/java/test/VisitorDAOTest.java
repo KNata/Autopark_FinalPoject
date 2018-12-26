@@ -87,7 +87,7 @@ public class VisitorDAOTest {
 
     @Test
     public void findByLoginAndPassword() throws SQLException {
-        assertNotNull(visitorDAO.findByLoginAndPassword("oleksii", "4567"));
+        assertNotNull(visitorDAO.findByLoginAndPassword("bodia", "4321"));
     }
 
     @Test

@@ -17,7 +17,7 @@ public class DriverServlet extends HttpServlet {
 
     private DriverDAO driverDAO = new DriverDAO();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("searchAction");
         if (action != null) {
@@ -35,7 +35,7 @@ public class DriverServlet extends HttpServlet {
         }
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String action = request.getParameter("action");
