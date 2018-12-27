@@ -15,11 +15,10 @@
 </head>
 <body>
 <div class="container">
-    ${pageContext.request.characterEncoding}
 
     <form action="/DriverServlet" method="post"  role="form" data-toggle="validator" >
         <c:if test ="${empty action}">
-            <c:set var="action" value="add"/>
+            <c:set var="action" value="addNewDriver"/>
         </c:if>
         <input type="hidden" id="action" name="action" value="${action}">
         <input type="hidden" id="idDriverr" name="idDriverr" value="${driver.driverID}">
@@ -27,11 +26,16 @@
         <div class="form-group col-xs-4">
             <label for="idDriver" class="control-label col-xs-4">Driver ID:</label>
             <input type="text" name="idDriver" id="idDriver" class="form-control" value="${driver.driverID}" required="true"/>
-
+            <br>
             <label for="driverName" class="control-label col-xs-4">Driver name:</label>
             <input type="text" name="driverName" id="driverName" class="form-control" value="${driver.driverName}" required="true"/>
-
+            <br>
             <button type="submit" class="btn btn-primary  btn-md">Accept</button>
+        </div>
+        <div class="container-fluid">
+            <div class="alert alert-success" role="alert">
+                ${successMessage}
+            </div>
         </div>
     </form><br>
         <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">

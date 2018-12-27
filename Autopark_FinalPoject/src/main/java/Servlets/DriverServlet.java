@@ -2,6 +2,7 @@ package Servlets;
 
 import DAO.DriverDAO;
 import Model.Driver;
+import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +16,13 @@ import java.util.ArrayList;
 @WebServlet(name = "DriverServlet", urlPatterns = "/DriverServlet")
 public class DriverServlet extends HttpServlet {
 
+    private static Logger theLogger;
+
     private DriverDAO driverDAO = new DriverDAO();
+
+    static {
+        theLogger = Logger.getLogger(DriverServlet.class);
+    }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -95,17 +102,21 @@ public class DriverServlet extends HttpServlet {
     }
 
     private void addNewDriver(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String driverID = request.getParameter("driverID");
+        String driverID = request.getParameter("idDriver");
         String driverName = request.getParameter("driverName");
-
         Driver theDriver = Driver.newBuilder().setDriverID(driverID).setDriverName(driverName).build();
         boolean wasAdded = driverDAO.addRecord(theDriver);
+        System.out.println(driverID);
+        System.out.println(driverName);
         ArrayList<Driver> driverList = driverDAO.findAll();
+        System.out.println(wasAdded);
         request.setAttribute("driver", theDriver);
         if (wasAdded) {
-            String message = "The new driver has been successfully created";
-            request.setAttribute("message", message);
-            forwardListDrivers(request, response, driverList);
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+            dispatcher.forward(request, response);
         }
     }
 
