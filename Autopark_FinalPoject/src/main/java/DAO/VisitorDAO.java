@@ -1,6 +1,7 @@
 package DAO;
 
 import DBConnection.ConnectionPool;
+import Model.Driver;
 import Model.Visitor;
 import org.apache.log4j.Logger;
 
@@ -17,12 +18,14 @@ public class VisitorDAO  {
     }
 
     public boolean addRecord(Visitor anEntity) {
+        DriverDAO driverDAO = new  DriverDAO();
         String insertSQL = "insert into `mydb`.`Visitor` values(?, ?, ?, ?, ?, ?)";
         boolean wasAdded = false;
         if (anEntity == null) {
             wasAdded = false;
         } else if (findByLogin(anEntity.getVisitorLogin()) != null) {
             System.out.println("This visitor is already in out database");
+            wasAdded = false;
         } else {
             Connection conn = null;
             PreparedStatement preparedStatement = null;

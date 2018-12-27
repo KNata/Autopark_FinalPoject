@@ -26,7 +26,7 @@
 
         <a href="#" class="btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Pending Requests <span class="badge badge-light">4</span></a>
 
-        <a href="seeAllBuses.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Drivers</a>
+        <a href="seeAllDrivers.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Drivers</a>
         <a href="seeAllRoutes.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Routes</a>
         <a href="seeAllBuses.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Buses</a>
         <a href="allVisitors.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Users</a>

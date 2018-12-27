@@ -193,6 +193,50 @@ public class DriverDAO implements AbstractDAO<String, Driver> {
         return theDriver;
     }
 
+    public boolean isDriverInSystem(String anID) {
+        String selectAllSQL = "select * from `mydb`.`Driver` where driverID = ?";
+        boolean wasFound = false;
+        Driver theDriver = null;
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        Savepoint savePoint = null;
+        try {
+            conn = ConnectionPool.getConnection();
+            conn.setAutoCommit(false);
+            preparedStatement = conn.prepareStatement(selectAllSQL);
+            preparedStatement.setString(1, anID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String driverID = resultSet.getString("driverID");
+                if (driverID.equals(anID)) {
+                    wasFound = true;
+                }
+            }
+            savePoint = conn.setSavepoint();
+            conn.commit();
+        } catch (SQLException e) {
+            try {
+                if (savePoint == null) {
+                    conn.rollback();
+                } else {
+                    conn.rollback(savePoint);
+                }
+            } catch (SQLException ee) {}
+            System.err.println(e.getMessage());
+            theLogger.error(e.getMessage());
+        } finally {
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
+        }
+        return wasFound;
+    }
+
     @Override
     public Driver findByName(String aName) {
         String selectAllSQL = "select * from `mydb`.`Driver` where driverName = ?";
