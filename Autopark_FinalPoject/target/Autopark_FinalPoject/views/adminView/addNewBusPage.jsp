@@ -14,39 +14,39 @@
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
-${pageContext.request.characterEncoding}
-
 <div class="container">
     <form action="/BusServlet" method="post" role="form" data-toggle="validator" >
         <c:if test ="${empty action}">
-            <c:set var="action" value="add"/>
+            <c:set var="action" value="addNewBus"/>
         </c:if>
         <input type="hidden" id="action" name="action" value="${action}">
         <input type="hidden" id="idBuss" name="idBuss" value="${bus.busID}">
-        <h2>Route</h2>
+        <h2>Add new Bus</h2>
         <div class="form-group col-xs-4">
             <label for="idBus" class="control-label col-xs-4">Bus ID:</label>
             <input type="text" name="idBus" id="idBus" class="form-control" value="${bus.busID}" required="true"/>
-
+            <br>
             <label for="busName" class="control-label col-xs-4">Bus model:</label>
             <input type="text" name="busName" id="busName" class="form-control" value="${bus.busModel}" required="true"/>
-
+            <br>
             <label for="maxPassegers" class="control-label col-xs-4">Max count of passegers:</label>
             <input type="text" name="maxPassegers" id="maxPassegers" class="form-control" value="${bus.maxCountOfPassagers}" required="true"/>
-
+            <br>
             <label for="miles" class="control-label col-xs-4">How much miles does the bus went:</label>
             <input type="text" name="miles" id="miles" class="form-control" value="${bus.miles}" required="true"/>
-
+            <br>
             <label for="maintance" class="control-label col-xs-4">Was on service:</label>
             <input type="text" name="maintance" id="maintance" class="form-control" value="${bus.passedService}" required="true"/>
-
+            <br>
             <button type="submit" class="btn btn-primary  btn-md">Accept</button>
         </div>
     </form>
+    <br>
+    <a href="adminMainPage.jsp"><input type="submit" value="Back to main page" /></a>
     <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
         <input type="submit" value="Logout" />
     </form>
 </div>
 </body>
-</html>>
+</html>

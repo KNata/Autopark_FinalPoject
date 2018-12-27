@@ -27,16 +27,14 @@
         <a href="#" class="btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Pending Requests <span class="badge badge-light">4</span></a>
 
         <a href="seeAllBuses.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Drivers</a>
-
         <a href="seeAllRoutes.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Routes</a>
-
         <a href="seeAllBuses.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Buses</a>
-
+        <a href="allVisitors.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Users</a>
         <a href="addNewDriverPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Driver</a>
-
         <a href="addNewRoute.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Route</a>
-    </form>
         <a href="addNewBusPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Bus</a>
+        <a href="registerPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new User</a>
+
     </div>
     <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
@@ -50,3 +48,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
     </html>
+

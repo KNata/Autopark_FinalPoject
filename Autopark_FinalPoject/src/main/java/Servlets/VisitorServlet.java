@@ -37,7 +37,7 @@ import java.util.ArrayList;
 
             String action = request.getParameter("action");
             switch (action) {
-                case "add":
+                case "addNewVisitor":
                     addNewVisitor(request, response);
                     break;
                 case "remove":
@@ -72,20 +72,21 @@ import java.util.ArrayList;
 
         private void addNewVisitor(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
             int visitorID = Integer.valueOf(request.getParameter("visitorID"));
-            String visitorLogin = request.getParameter("login");
-            String visitorPassword = request.getParameter("password");
+            String visitorLogin = request.getParameter("visitorLogin");
+            String visitorPassword = request.getParameter("visitorPassword");
             String visitorName = request.getParameter("visitorName");
             String visitorRole = request.getParameter("visitorRole");
-
-            Visitor theVisitor = Visitor.newBuilder().setVisitorID(visitorID).setVisitorLogin(visitorLogin).setVisitorPassword(visitorPassword)
-                    .setVisitorRole(visitorRole).setVisitorName(visitorName).build();
-            boolean wasAdded = visitorDAO.addRecord(theVisitor);
-            ArrayList<Visitor> vistorList = visitorDAO.findAll();
-            request.setAttribute("visitor", vistorList);
-            if (wasAdded) {
-                String message = "The new visitor has been successfully created";
-                request.setAttribute("message", message);
-                forwardListVisitors(request, response, vistorList);
+            if (visitorID != 0 && visitorLogin != null && visitorName != null && visitorPassword != null && visitorRole != null) {
+                Visitor theVisitor = Visitor.newBuilder().setVisitorID(visitorID).setVisitorLogin(visitorLogin).setVisitorPassword(visitorPassword)
+                        .setVisitorRole(visitorRole).setVisitorName(visitorName).build();
+                boolean wasAdded = visitorDAO.addRecord(theVisitor);
+                if (wasAdded) {
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+                    dispatcher.forward(request, response);
+                } else {
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+                    dispatcher.forward(request, response);
+                }
             }
         }
 

@@ -25,28 +25,41 @@ ${pageContext.request.characterEncoding}
     <h3>Welcome to our community</h3>
     <h3>Please properly fill all text boxes. This information will be confidential</h3>
 
-    <form>
+    <form action="/VisitorServlet" method="post"  role="form" data-toggle="validator" >
+        <c:if test ="${empty action}">
+            <c:set var="action" value="addNewVisitor"/>
+        </c:if>
         <div class="form-group">
-            <label for="inputAddress">Login:</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Super Driver">
-        </div>
-        <div class="form-group col-md-6">
-            <label for="inputPassword4">Password:</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Secret">
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">Driver ID:</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="RV 100432">
+            <label for="visitorId">Visitor Id:</label>
+            <input type="text" class="form-control" id="visitorId" placeholder="Super Driver">
         </div>
         <div class="form-group">
-            <label for="inputAddress">Full name:</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Ivan Ivanenko">
+            <label for="visitorLogin">Login:</label>
+            <input type="text" class="form-control" id="visitorLogin" placeholder="Super Driver">
         </div>
         <div class="form-group">
-            <label for="inputAddress2">Email:</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="my@email.com">
+            <label for="visitorPassword">Password:</label>
+            <input type="password" class="form-control" id="visitorPassword" placeholder="Secret">
         </div>
-        <button type="submit" class="btn btn-primary">Register</button> <button type="button" class="btn btn-secondary">Cancel</button>
+        <div class="form-group">
+            <label for="driverID">Driver ID:</label>
+            <input type="text" class="form-control" id="driverID" placeholder="RV 100432">
+        </div>
+        <div class="form-group">
+            <label for="visitorName">Full name:</label>
+            <input type="text" class="form-control" id="visitorName" placeholder="Ivan Ivanenko">
+        </div>
+        <div class="form-group">
+            <label for="visitorRole">Visitor role in system:</label>
+            <input type="text" class="form-control" id="visitorRole" placeholder="my@email.com">
+        </div>
+        <button type="submit" class="btn btn-primary  btn-md">Accept</button>
+    </form>
+    <br>
+    <a href="adminMainPage.jsp"><input type="submit" value="Back to main page" /></a>
+    <br>
+    <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
+        <input type="submit" value="Logout" />
     </form>
 
 </div>

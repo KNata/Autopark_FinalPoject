@@ -110,20 +110,42 @@ public class RouteServlet extends HttpServlet {
         int routeDuration = Integer.valueOf(request.getParameter("routeDuration"));
         Date departureTime = Date.valueOf(request.getParameter("departureTime"));
         Date arrivalTime = Date.valueOf(request.getParameter("arrivalTime"));
-
-        BusDAO busDAO = new BusDAO();
-        DriverDAO driverDAO = new DriverDAO();
-        Route theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle).setBus(busDAO.findByID(busID).getBusID())
-                .setDriver(driverDAO.findByID(driverID).getDriverID()).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
-                .setRouteDuration(routeDuration).setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
-        boolean wasAdded = routeDAO.addRecord(theRoute);
-        ArrayList<Route> routeList = routeDAO.findAll();
-        request.setAttribute("route", theRoute);
-        if (wasAdded) {
-            String message = "The new route has been successfully created";
-            request.setAttribute("message", message);
-            forwardListRoute(request, response, routeList);
+        System.out.println(routeID);
+        System.out.println(routeTitle);
+        System.out.println(driverID);
+        System.out.println(busID);
+        System.out.println(cityOfDeparture);
+        System.out.println(cityOfArrival);
+        System.out.println(routeDuration);
+        System.out.println(departureTime);
+        System.out.println(arrivalTime);
+        if (routeID != 0 && busID != null && driverID != null && routeTitle != null && cityOfArrival != null && cityOfDeparture != null
+                && routeDuration != 0 && departureTime != null && arrivalTime != null) {
+            System.out.println("1");
+            BusDAO busDAO = new BusDAO();
+            System.out.println("2");
+            DriverDAO driverDAO = new DriverDAO();
+            System.out.println("3");
+            Route theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle).setBus(busDAO.findByID(busID).getBusID())
+                    .setDriver(driverDAO.findByID(driverID).getDriverID()).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
+                    .setRouteDuration(routeDuration).setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
+            System.out.println("3");
+            boolean wasAdded = routeDAO.addRecord(theRoute);
+            System.out.println("4");
+            ArrayList<Route> routeList = routeDAO.findAll();
+            System.out.println("5");
+            if (wasAdded) {
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+                dispatcher.forward(request, response);
+            } else {
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+                dispatcher.forward(request, response);
+            }
+        } else {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+            dispatcher.forward(request, response);
         }
+
     }
 
 

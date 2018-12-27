@@ -114,9 +114,7 @@ public class DriverServlet extends HttpServlet {
             boolean wasAdded = driverDAO.addRecord(theDriver);
             System.out.println(driverID);
             System.out.println(driverName);
-            ArrayList<Driver> driverList = driverDAO.findAll();
             System.out.println(wasAdded);
-            request.setAttribute("driver", theDriver);
             if (wasAdded) {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
                 dispatcher.forward(request, response);
