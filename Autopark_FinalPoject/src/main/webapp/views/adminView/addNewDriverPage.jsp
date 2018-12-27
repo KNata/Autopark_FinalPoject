@@ -32,11 +32,7 @@
             <br>
             <button type="submit" class="btn btn-primary  btn-md">Accept</button>
         </div>
-        <div class="container-fluid">
-            <div class="alert alert-success" role="alert">
-                ${successMessage}
-            </div>
-        </div>
+
     </form><br>
         <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
             <input type="submit" value="Logout" />

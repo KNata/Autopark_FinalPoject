@@ -74,7 +74,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
-          <entry key="JAVA" value="182" />
+          <entry key="JAVA" value="183" />
           <entry key="JSP" value="102" />
           <entry key="Properties" value="3" />
           <entry key="XML" value="11" />
@@ -82,7 +82,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11753" />
+          <entry key="JAVA" value="11855" />
           <entry key="JSP" value="2933" />
           <entry key="Properties" value="16" />
           <entry key="XML" value="390" />
@@ -95,8 +95,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="109" column="15" lean-forward="true" selection-start-line="109" selection-start-column="15" selection-end-line="109" selection-end-column="15" />
+            <state relative-caret-position="234">
+              <caret line="115" column="43" lean-forward="true" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/test/RejexTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -113,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+            <state relative-caret-position="264">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -143,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Servlets/filter/DriverFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/ContextListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/HomeServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/AuthorizationServlet.java" />
@@ -192,8 +200,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllBuses.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/test/RejexTest.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp" />
       </list>
     </option>
   </component>
@@ -266,6 +275,14 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Autopark_FinalPoject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Autopark_FinalPoject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Autopark_FinalPoject" type="b2602c69:ProjectViewProjectNode" />
@@ -357,20 +374,23 @@
       <recent name="DBConnection" />
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/views/userView" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/tests" />
       <recent name="$PROJECT_DIR$/src/main/webapp/views/adminView" />
       <recent name="$PROJECT_DIR$/src/test" />
       <recent name="$PROJECT_DIR$/src/test/DAO" />
       <recent name="$PROJECT_DIR$/src/main/java/DAO" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-      <recent name="junit.framework.TestCase" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/views/userView" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -409,6 +429,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RejexTest.isMatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Autopark_FinalPoject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.RejexTest" />
+      <option name="METHOD_NAME" value="isMatch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VisitorDAOTest.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Autopark_FinalPoject" />
       <extension name="coverage">
@@ -436,22 +472,6 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.VisitorDAOTest" />
       <option name="METHOD_NAME" value="findByLoginAndPassword" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VisitorDAOTest.updateForAdmin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Autopark_FinalPoject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DAO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.VisitorDAOTest" />
-      <option name="METHOD_NAME" value="updateForAdmin" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -554,19 +574,19 @@
     <list>
       <item itemvalue="Maven.Unnamed" />
       <item itemvalue="Tomcat Server.Tomcat" />
-      <item itemvalue="JUnit.VisitorDAOTest.updateForAdmin" />
       <item itemvalue="JUnit.VisitorDAOTest.findAll" />
       <item itemvalue="JUnit.VisitorDAOTest.findByLoginAndPassword" />
       <item itemvalue="Application.App" />
       <item itemvalue="JUnit.ConnectionPoolTest.getConnection" />
+      <item itemvalue="JUnit.RejexTest.isMatch" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RejexTest.isMatch" />
         <item itemvalue="JUnit.ConnectionPoolTest.getConnection" />
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.VisitorDAOTest.findByLoginAndPassword" />
         <item itemvalue="JUnit.VisitorDAOTest.findAll" />
-        <item itemvalue="JUnit.VisitorDAOTest.updateForAdmin" />
       </list>
     </recent_temporary>
   </component>
@@ -605,29 +625,11 @@
       <workItem from="1545820691756" duration="600000" />
       <workItem from="1545851477892" duration="888000" />
       <workItem from="1545855191908" duration="6621000" />
-      <workItem from="1545919166790" duration="6108000" />
+      <workItem from="1545919166790" duration="7040000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="VisitorDAOTest - 2018.12.24 at 21h 38m 57s.xml">
-      <configuration name="VisitorDAOTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VisitorDAOTest_updateForAdmin - 2018.12.24 at 21h 39m 19s.xml">
-      <configuration name="VisitorDAOTest.updateForAdmin" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VisitorDAOTest_findAll - 2018.12.24 at 22h 33m 07s.xml">
-      <configuration name="VisitorDAOTest.findAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VisitorDAOTest_findAll - 2018.12.24 at 22h 33m 32s.xml">
-      <configuration name="VisitorDAOTest.findAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VisitorDAOTest_findByLoginAndPassword - 2018.12.25 at 01h 00m 05s.xml">
-      <configuration name="VisitorDAOTest.findByLoginAndPassword" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VisitorDAOTest_findByLoginAndPassword - 2018.12.26 at 23h 47m 34s.xml">
-      <configuration name="VisitorDAOTest.findByLoginAndPassword" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ConnectionPoolTest_getConnection - 2018.12.26 at 23h 55m 18s.xml">
       <configuration name="ConnectionPoolTest.getConnection" configurationId="JUnit" />
     </history-entry>
@@ -640,9 +642,27 @@
     <history-entry file="ConnectionPoolTest_getConnection - 2018.12.27 at 16h 03m 08s.xml">
       <configuration name="ConnectionPoolTest.getConnection" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RejexTest_isMatch - 2018.12.27 at 19h 09m 40s.xml">
+      <configuration name="RejexTest.isMatch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RejexTest_isMatch - 2018.12.27 at 19h 09m 50s.xml">
+      <configuration name="RejexTest.isMatch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RejexTest_isMatch - 2018.12.27 at 19h 09m 57s.xml">
+      <configuration name="RejexTest.isMatch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RejexTest_isMatch - 2018.12.27 at 19h 10m 56s.xml">
+      <configuration name="RejexTest.isMatch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RejexTest_isMatch - 2018.12.27 at 19h 12m 45s.xml">
+      <configuration name="RejexTest.isMatch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RejexTest_isMatch - 2018.12.27 at 19h 13m 08s.xml">
+      <configuration name="RejexTest.isMatch" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143049000" />
+    <option name="totallyTimeSpent" value="143981000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -693,7 +713,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/AuthorizationServlet.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/7.0.57/tomcat-embed-core-7.0.57.jar!/javax/servlet/http/HttpServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1003,8 +1022,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+        <state relative-caret-position="264">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
@@ -1015,10 +1034,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/RejexTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="109" column="15" lean-forward="true" selection-start-line="109" selection-start-column="15" selection-end-line="109" selection-end-column="15" />
+        <state relative-caret-position="234">
+          <caret line="115" column="43" lean-forward="true" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
         </state>
       </provider>
     </entry>

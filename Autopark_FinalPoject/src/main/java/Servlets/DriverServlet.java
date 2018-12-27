@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @WebServlet(name = "DriverServlet", urlPatterns = "/DriverServlet")
 public class DriverServlet extends HttpServlet {
@@ -104,16 +106,24 @@ public class DriverServlet extends HttpServlet {
     private void addNewDriver(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String driverID = request.getParameter("idDriver");
         String driverName = request.getParameter("driverName");
-        Driver theDriver = Driver.newBuilder().setDriverID(driverID).setDriverName(driverName).build();
-        boolean wasAdded = driverDAO.addRecord(theDriver);
-        System.out.println(driverID);
-        System.out.println(driverName);
-        ArrayList<Driver> driverList = driverDAO.findAll();
-        System.out.println(wasAdded);
-        request.setAttribute("driver", theDriver);
-        if (wasAdded) {
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
-            dispatcher.forward(request, response);
+        Pattern pattern = Pattern.compile("[A-Z]{2}\\d{5}");
+        Matcher matcher = pattern.matcher(driverID);
+        boolean isMatch = matcher.find();
+        if (isMatch) {
+            Driver theDriver = Driver.newBuilder().setDriverID(driverID).setDriverName(driverName).build();
+            boolean wasAdded = driverDAO.addRecord(theDriver);
+            System.out.println(driverID);
+            System.out.println(driverName);
+            ArrayList<Driver> driverList = driverDAO.findAll();
+            System.out.println(wasAdded);
+            request.setAttribute("driver", theDriver);
+            if (wasAdded) {
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+                dispatcher.forward(request, response);
+            } else {
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+                dispatcher.forward(request, response);
+            }
         } else {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
             dispatcher.forward(request, response);
