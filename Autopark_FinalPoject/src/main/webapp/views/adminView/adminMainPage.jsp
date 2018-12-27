@@ -36,9 +36,12 @@
 
         <a href="addNewRoute.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Route</a>
     </form>
-
         <a href="addNewBusPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Bus</a>
     </div>
+    <br>
+    <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
+        <input type="submit" value="Logout" />
+    </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

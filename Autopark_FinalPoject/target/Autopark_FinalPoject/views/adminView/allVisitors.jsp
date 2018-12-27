@@ -84,9 +84,13 @@
             </c:otherwise>
         </c:choose>
     </form>
+    <br>
     <form action ="jsp/addNewVisitor.jsp">
-
         <button type="submit" class="btn btn-primary  btn-md">New Visitor</button>
+    </form>
+<br>
+    <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
+        <input type="submit" value="Logout" />
     </form>
 </div>
 </body>

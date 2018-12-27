@@ -24,12 +24,9 @@
     <body>
     <h2> Welcome to Admin's page</h2>
 
-    <a href="myIndex.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Drivers in a System</a>
-
-
         <a href="#" class="btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Pending Requests <span class="badge badge-light">4</span></a>
 
-        <a href="seeAllBuses.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Drivers in a System</a>
+        <a href="seeAllBuses.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Drivers</a>
 
         <a href="seeAllRoutes.jsp" class="btn btn-info btn-lg btn-block" role="button" aria-pressed="true">See all Routes</a>
 
@@ -39,9 +36,12 @@
 
         <a href="addNewRoute.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Route</a>
     </form>
-
         <a href="addNewBusPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Bus</a>
     </div>
+    <br>
+    <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
+        <input type="submit" value="Logout" />
+    </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

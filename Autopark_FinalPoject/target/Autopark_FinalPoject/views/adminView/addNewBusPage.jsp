@@ -43,6 +43,10 @@ ${pageContext.request.characterEncoding}
             <button type="submit" class="btn btn-primary  btn-md">Accept</button>
         </div>
     </form>
+    <br>
+    <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
+        <input type="submit" value="Logout" />
+    </form>
 </div>
 </body>
 </html>>

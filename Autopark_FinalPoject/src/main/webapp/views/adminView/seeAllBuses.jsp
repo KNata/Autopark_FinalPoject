@@ -86,9 +86,14 @@ ${pageContext.request.characterEncoding}
             </c:otherwise>
         </c:choose>
     </form>
+    <br>
     <form action ="jsp/addNewBus.jsp">
-
         <button type="submit" class="btn btn-primary  btn-md">New Bus</button>
+    </form>
+
+    <br>
+    <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
+    <input type="submit" value="Logout" />
     </form>
 </div>
 </body>
