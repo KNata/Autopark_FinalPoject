@@ -28,6 +28,9 @@ public class DriverServlet extends HttpServlet {
                 case "searchByName":
                     searchDriverByName(request, response);
                     break;
+                case "seeAllDrivers":
+                    fullListOfDrivers(request, response);
+                    break;
             }
         }else{
             ArrayList<Driver> resultList = driverDAO.findAll();
@@ -40,7 +43,7 @@ public class DriverServlet extends HttpServlet {
 
         String action = request.getParameter("action");
         switch (action) {
-            case "add":
+            case "addNewDriver":
                 addNewDriver(request, response);
                 break;
             case "remove":
@@ -48,6 +51,19 @@ public class DriverServlet extends HttpServlet {
                 break;
         }
 
+    }
+
+    private void fullListOfDrivers(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        ArrayList<Driver> driverList = driverDAO.findAll();
+        if (driverList.size() == 0) {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            String nextJSP = "/views/adminView/seeAllDriversPage.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+            request.setAttribute("driverList", driverList);
+            dispatcher.forward(request, response);
+        }
     }
 
     private void forwardListDrivers(HttpServletRequest request, HttpServletResponse response, ArrayList<Driver> driverList) throws IOException, ServletException {

@@ -32,6 +32,9 @@ public class RouteServlet extends HttpServlet {
                 case "searchByName":
                     searchRouteByName(request, response);
                     break;
+                case "showAllRoutes":
+                    searchRouteByName(request, response);
+                    break;
             }
         }else{
             ArrayList<Route> resultList = routeDAO.findAll();
@@ -44,7 +47,7 @@ public class RouteServlet extends HttpServlet {
 
         String action = request.getParameter("action");
         switch (action) {
-            case "add":
+            case "addNewRoute":
                 addNewRoute(request, response);
                 break;
             case "remove":
@@ -55,6 +58,18 @@ public class RouteServlet extends HttpServlet {
                 break;
         }
 
+    }
+
+    private void showAllRoutes(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        ArrayList<Route> routeList = routeDAO.findAll();
+        if (routeList.size() == 0) {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+            dispatcher.forward(request, response);
+        }
+        String nextJSP = "/views/adminView/seeAllDriversPage.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+        request.setAttribute("routeList", routeList);
+        dispatcher.forward(request, response);
     }
 
     private void forwardListRoute(HttpServletRequest request, HttpServletResponse response, ArrayList<Route> routeList) throws IOException, ServletException {

@@ -26,17 +26,16 @@ public class LoginServlet extends HttpServlet {
         Visitor theVisitor = visitorDAO.findByLoginAndPassword(login, password);
         if(theVisitor != null) {
             HttpSession session = request.getSession();
-            session.setAttribute("user", login);
-
-         // response.sendRedirect("/views/adminView/adminMainPage.jsp");
             System.out.println(theVisitor.getVisitorRole());
             System.out.println(theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.ADMIN)));
             if (theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.ADMIN))) {
+                session.setAttribute("admin", login);
                 Cookie userName = new Cookie("admin", login);
                 userName.setMaxAge(30*60);
                 response.addCookie(userName);
                 response.sendRedirect("/views/adminView/adminMainPage.jsp");
             } else if (theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.DRIVER))) {
+                session.setAttribute("driver", login);
                 Cookie userName = new Cookie("driver", login);
                 userName.setMaxAge(30*60);
                 response.addCookie(userName);

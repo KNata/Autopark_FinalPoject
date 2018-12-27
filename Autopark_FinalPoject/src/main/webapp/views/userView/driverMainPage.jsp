@@ -21,8 +21,6 @@
         <title>Hello, world!</title>
     </head>
     <body>
-    ${pageContext.request.characterEncoding}
-
     <div class="container">
         Welcome to the Driver's page
 

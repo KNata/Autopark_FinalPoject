@@ -32,6 +32,9 @@ public class BusServlet extends HttpServlet {
                 case "searchByName":
                     searchBusByName(request, response);
                     break;
+                case "seeAllBuses":
+                    showAllBuses(request, response);
+                    break;
             }
         }else{
             ArrayList<Bus> resultList = busDAO.findAll();
@@ -44,7 +47,7 @@ public class BusServlet extends HttpServlet {
 
         String action = request.getParameter("action");
         switch (action) {
-            case "add":
+            case "addNewBus":
                 addNewBus(request, response);
                 break;
             case "remove":
@@ -55,6 +58,19 @@ public class BusServlet extends HttpServlet {
                 break;
         }
 
+    }
+
+    private void showAllBuses(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        ArrayList<Bus> busList = busDAO.findAll();
+        if (busList.size() == 0) {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            String nextJSP = "/views/adminView/seeAllBusesPage.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+            request.setAttribute("busList", busList);
+            dispatcher.forward(request, response);
+        }
     }
 
     private void forwardListBuses(HttpServletRequest request, HttpServletResponse response, ArrayList<Bus> busList) throws IOException, ServletException {
