@@ -20,7 +20,8 @@
             <c:set var="action" value="addNewRoute"/>
         </c:if>
         <input type="hidden" id="action" name="action" value="${action}">
-        <input type="hidden" id="idRoutee" name="idRoutee" value="${route.routeID}">
+        <input type="hidden" id="idVisitorr" name="idVisitorr" value="${visitor.visitorID}">
+
         <h2>Route</h2>
         <div class="form-group col-xs-4">
             <label for="idRoute" class="control-label col-xs-4">Route ID:</label>

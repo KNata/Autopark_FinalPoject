@@ -12,10 +12,9 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
@@ -104,4 +103,5 @@ public class VisitorDAOTest {
     public void updateForAdmin() {
         assertTrue(visitorDAO.updateForAdmin("bodia", "0987", "admin"));
     }
+
 }
