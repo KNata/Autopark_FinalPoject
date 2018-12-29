@@ -116,42 +116,30 @@ public class RouteServlet extends HttpServlet {
         String arrivalTime = request.getParameter("arrivalTime");
         java.sql.Date departureTimeInDateFormat = convertDate(departureTime);
         java.sql.Date arrivalTimeInDateFormat = convertDate(arrivalTime);
-        System.out.println("route id " + routeID);
-        System.out.println("routeTitle " + routeTitle);
-        System.out.println("busID " + driverID);
-        System.out.println("driverID " + busID);
-        System.out.println("cityOfDeparture " + cityOfDeparture);
-        System.out.println("cityOfArrival " + cityOfArrival);
-        System.out.println("routeDuration " + routeDuration);
-        System.out.println("departureTime " + departureTime);
-        System.out.println("arrivalTime " + arrivalTime);
+
         if (routeID != null && busID != null && driverID != null && routeTitle != null && cityOfArrival != null && cityOfDeparture != null
-                && routeDuration != null && departureTime != null && arrivalTime != null) {
-            System.out.println("1");
+                && routeDuration != null && departureTime != null && arrivalTime != null && (departureTime != arrivalTime)
+                && (departureTimeInDateFormat.getTime() < arrivalTimeInDateFormat.getTime())) {
             BusDAO busDAO = new BusDAO();
-            System.out.println("2");
             DriverDAO driverDAO = new DriverDAO();
-            System.out.println("3");
             if (busDAO.findByID(busID) != null && driverDAO.isDriverInSystem(driverID)) {
+                if(routeDAO.findByID(routeID) == null && (routeDAO.findByID(routeID).getRouteStartTime() != departureTimeInDateFormat) && (routeDAO.findByID(routeID).getDriverID() != driverID)) {
                 Driver theDriver = driverDAO.findByID(driverID);
                 Bus theBus = busDAO.findByID(busID);
                 Route theRoute = Route.newBuilder().setRouteID(Integer.valueOf(routeID)).setRouteTitle(routeTitle).setBus(theBus.getBusID())
                         .setDriver(theDriver.getDriverID()).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
                         .setRouteDuration(Integer.valueOf(routeDuration)).setRouteStartTime(departureTimeInDateFormat).setRouteEndTime(arrivalTimeInDateFormat).build();
-                System.out.println("3");
                 boolean wasAdded = routeDAO.addRecord(theRoute);
-                System.out.println("4");
                 if (wasAdded) {
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
                     dispatcher.forward(request, response);
                 } else {
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
                     dispatcher.forward(request, response);
-                }
+                } }
             } else {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
                 dispatcher.forward(request, response);
-                System.out.println("Fail");
             }
       }
 

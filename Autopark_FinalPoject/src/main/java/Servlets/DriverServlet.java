@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,20 +29,22 @@ public class DriverServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String action = request.getParameter("searchAction");
-        if (action != null) {
-            switch (action) {
-                case "searchById":
-                    searchDriverByID(request, response);
-                    break;
-                case "searchByName":
-                    searchDriverByName(request, response);
-                    break;
-            }
-        }else{
-            ArrayList<Driver> resultList = driverDAO.findAll();
-            forwardListDrivers(request, response, resultList);
-        }
+       // String action = request.getParameter("searchAction");
+       // if (action != null) {
+//            switch (action) {
+//                case "searchById":
+//                    searchDriverByID(request, response);
+//                    break;
+//                case "searchByName":
+//                    searchDriverByName(request, response);
+//                    break;
+//            }
+//
+        DriverDAO driverDAO = new DriverDAO();
+        ArrayList<Driver> allDriversList = driverDAO.findAll();
+        System.out.println(allDriversList.size());
+        request.setAttribute("driverList", allDriversList);
+        request.getRequestDispatcher("/adminView/seeAllDriversPage.jsp").forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -62,8 +65,8 @@ public class DriverServlet extends HttpServlet {
 
     }
 
-    private void fullListOfDrivers(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        ArrayList<Driver> driverList = driverDAO.findAll();
+    public void fullListOfDrivers(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        List<Driver> driverList = driverDAO.findAll();
         for(int i = 0; i < driverList.size(); i++) {
             System.out.println(driverList.get(i).toString());
         }
