@@ -8,27 +8,15 @@
   <component name="ChangeListManager">
     <list default="true" id="4c834de6-3abc-4259-adfb-2c0e2dd0744d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/filter/AutorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/filter/AutorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/languageEN-EN.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/languges/languageEN.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/languageEN-UK.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/languges/languageUK.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/languageUK-EN.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/languageUK-UK.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewBusPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewBusPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewRoute.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewRoute.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/adminMainPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/adminMainPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/allVisitors.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/allVisitors.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/registerPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/registerPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllBuses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllBuses.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/checkoutPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/DriverServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/DriverServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/RouteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/RouteServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/adminView/seeAllDrivers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/adminView/seeAllDrivers.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/DriverServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/DriverServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/RouteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/RouteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -96,7 +84,7 @@
         <counts>
           <entry key="CLASS" value="4" />
           <entry key="JAVA" value="231" />
-          <entry key="JSP" value="154" />
+          <entry key="JSP" value="165" />
           <entry key="Properties" value="3" />
           <entry key="XML" value="12" />
         </counts>
@@ -104,7 +92,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="14074" />
-          <entry key="JSP" value="4742" />
+          <entry key="JSP" value="4893" />
           <entry key="Properties" value="16" />
           <entry key="XML" value="390" />
         </counts>
@@ -113,20 +101,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewBusPage.jsp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="72" column="19" selection-start-line="72" selection-end-line="73" />
+            <state relative-caret-position="339">
+              <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/adminMainPage.jsp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="259">
+              <caret line="49" column="81" lean-forward="true" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -158,7 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/test/BusDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/test/RouteDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/LogOutServlet.java" />
@@ -167,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/Route.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/BusDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/userView/seeAllBuses.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/userView/seeAllDrivers.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/userView/seeAllRoutes.jsp" />
@@ -175,7 +161,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/databaseProperties.properties" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/myIndex.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/test/RejexTest.java" />
@@ -198,8 +183,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/AutoparkCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/filter/AutorizationFilter.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/footer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/allVisitors.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllBuses.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp" />
@@ -209,6 +192,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewRoute.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/registerPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/adminMainPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       </list>
     </option>
   </component>
@@ -315,6 +303,13 @@
               <item name="Autopark_FinalPoject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Autopark_FinalPoject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Autopark_FinalPoject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -387,23 +382,23 @@
       <recent name="DBConnection" />
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/languges" />
+      <recent name="$PROJECT_DIR$/src/main/tests" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/views/adminView" />
+      <recent name="$PROJECT_DIR$/src/test" />
+      <recent name="$PROJECT_DIR$/src/test/DAO" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/views/userView" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-      <recent name="junit.framework.TestCase" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/tests" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/views/adminView" />
-      <recent name="$PROJECT_DIR$/src/test" />
-      <recent name="$PROJECT_DIR$/src/test/DAO" />
-      <recent name="$PROJECT_DIR$/src/main/java/DAO" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -640,7 +635,7 @@
       <workItem from="1545855191908" duration="6621000" />
       <workItem from="1545919166790" duration="12512000" />
       <workItem from="1545940302684" duration="20974000" />
-      <workItem from="1546110517593" duration="6582000" />
+      <workItem from="1546110517593" duration="9204000" />
     </task>
     <servers />
   </component>
@@ -677,7 +672,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177009000" />
+    <option name="totallyTimeSpent" value="179631000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -692,7 +687,7 @@
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24773414" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24773414" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -700,7 +695,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.37106016" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28939828" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28939828" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39971346" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -742,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/seeAllRoutes.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -778,21 +766,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/myIndex.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/test/RejexTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1029,24 +1003,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/footer.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-end-line="46" />
         </state>
       </provider>
     </entry>
@@ -1067,13 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="116" column="105" selection-start-line="116" selection-start-column="105" selection-end-line="116" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllBuses.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1085,20 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1">
           <caret line="55" column="16" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="61" column="78" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewRoute.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
     </entry>
@@ -1116,10 +1055,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="73" column="54" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="73" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/adminMainPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="269">
+          <caret line="54" column="16" selection-start-line="54" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewRoute.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="49" column="81" lean-forward="true" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
         </state>
       </provider>
     </entry>

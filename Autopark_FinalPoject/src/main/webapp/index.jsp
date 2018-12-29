@@ -33,11 +33,13 @@
     <div class="alert alert-info" role="alert" align="centre">
         <form action="LoginServlet" method="post">
 
-            Login: <input type="text" name="login">
+            <label for="login" class="col-sm-2 col-form-label">Login:</label>
+            <input type="text" name="login" id="login" class="form-control" required="true">
             <br>
-            Password: <input type="password" name="password">
+            <label for="password" class="col-sm-2 col-form-label">Passwod:</label>
+            <input type="password" name="password" id="password" class="form-control" required="true">
             <br>
-            <input type="submit" value="Login">
+            <button type="submit" class="btn btn-success btn-md">Login</button>
         </form>
 
     </div>

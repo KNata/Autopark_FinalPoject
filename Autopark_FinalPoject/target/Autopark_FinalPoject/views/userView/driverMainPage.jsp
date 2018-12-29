@@ -5,85 +5,73 @@
   Time: 2:10 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html5>
-    <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<%@include file="/views/commonView/header.jsp"%>
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="DriverPage.css">
-
-
-        <title>Hello, world!</title>
-    </head>
-    <body>
     <div class="container">
-        Welcome to the Driver's page
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">About Autopark</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div align="center">Welcome to the Driver's page</div>
 
 
-        <div class="row">
-            <div class="col">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-
-            </div>
-            <div class="col-8">
-                <p>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        Pending notifications <span class="badge badge-light">4</span>
-                    </button>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    <div align="right">
+                        <jsp:useBean id="now" class="java.util.Date" />
+                        <fmt:setLocale value="us-US"/>
+                        <fmt:formatDate value="${now}"/>
                     </div>
                 </div>
-                <div class="alert alert-success" role="alert">
-                    List of my route
-                </div>
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    </tbody>
-                </table>
-
-            </div>
+            </nav>
         </div>
 
+        <a href="#" class="btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Pending Requests <span class="badge badge-light">4</span></a>
+
+        <br>
+        <br>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td>Route ID: </td>
+                <td>Route name: </td>
+                <td>Driver Name:</td>
+                <td>Bus ID: </td>
+                <td>Route ID: </td>
+                <td>Route city of department: </td>
+                <td>Route city of arrival: </td>
+                <td>Route duration: </td>
+                <td>Route time of department</td>
+                <td>Route time of arrival</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Route ID: </td>
+                <td>Route name: </td>
+                <td>Driver Name:</td>
+                <td>Bus ID: </td>
+                <td>Route ID: </td>
+                <td>Route city of department: </td>
+                <td>Route city of arrival: </td>
+                <td>Route duration: </td>
+                <td>Route time of department</td>
+                <td>Route time of arrival</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <br><br>
+        <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
+            <button type="submit" class="btn btn-success btn-md">Logout</button>
+        </form>
 
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    </body>
-    </html>
-</html5>>
+
+    </div>
+<%@include file="/views/commonView/footer.jsp"%>

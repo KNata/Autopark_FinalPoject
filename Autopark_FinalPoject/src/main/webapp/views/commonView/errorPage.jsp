@@ -5,26 +5,12 @@
   Time: 7:50 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <title>Error</title>
-</head>
-<body>
-${pageContext.request.characterEncoding}
+<%@include file="header.jsp"%>
 
 <div class="container-fluid">
     <div class="alert alert-danger" role="alert">
         Something wrong with entered paametres. Please try again.
     </div>
 </div>
-</body>
 
-</html>
+<%@include file="footer.jsp"%>
