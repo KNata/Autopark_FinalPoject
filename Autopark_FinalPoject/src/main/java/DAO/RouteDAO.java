@@ -1,6 +1,8 @@
 package DAO;
 
 import DBConnection.ConnectionPool;
+import Model.Bus;
+import Model.Driver;
 import Model.Route;
 import org.apache.log4j.Logger;
 
@@ -34,8 +36,8 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                 preparedStatement = conn.prepareStatement(insertSQL);
                 preparedStatement.setInt(1, anEntity.getRouteID());
                 preparedStatement.setString(2, anEntity.getRouteTitle());
-                preparedStatement.setString(3, anEntity.getDriverID());
-                preparedStatement.setString(4, anEntity.getBusID());
+                preparedStatement.setString(3, anEntity.getDriver().getDriverID());
+                preparedStatement.setString(4, anEntity.getBus().getBusID());
                 preparedStatement.setString(5, anEntity.getRouteBegin());
                 preparedStatement.setString(6, anEntity.getRouteEnd());
                 preparedStatement.setInt(7, anEntity.getRouteDuration());
@@ -129,20 +131,36 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int routeID = resultSet.getInt("routeID");
+                System.out.println("1");
                 String routeTitle = resultSet.getString("routeName");
+               System.out.println("2");
                 String driverID = resultSet.getString("driverID");
+                System.out.println("3");
                 String busID = resultSet.getString("busID");
+              System.out.println("4");
                 String cityOfDeparture = resultSet.getString("cityOfDeparture");
+                System.out.println("5");
                 String cityOfArrival = resultSet.getString("cityOfArrival");
+                System.out.println("6");
                 int routeDuration = resultSet.getInt("routeDuration");
+               System.out.println("7");
                 Date departureTime = resultSet.getDate("departureTime");
+             System.out.println("8");
                 Date arrivalTime = resultSet.getDate("arrivalTime");
 
+                Driver theDriver =  driverDAO.findByID(driverID);
+               System.out.println(theDriver.toString());
+
+                Bus theBus = busDAO.findByID(busID);
+                System.out.println(theBus.toString());
+
                 Route theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle)
-                        .setDriver(driverDAO.findByID(driverID).getDriverID()).setBus(busDAO.findByID(busID).getBusID()).setRouteBegin(cityOfDeparture)
+                        .setDriver(theDriver).setBus(theBus).setRouteBegin(cityOfDeparture)
                         .setRouteEnd(cityOfArrival).setRouteDuration(routeDuration)
                         .setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
                 routeList.add(theRoute);
+              System.out.println("+");
+
                 savePoint = conn.setSavepoint();
             }
             conn.commit();
@@ -197,7 +215,7 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                     Date departureTime = resultSet.getDate("departureTime");
                     Date arrivalTime = resultSet.getDate("arrivalTime");
                     theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle)
-                            .setDriver(driverDAO.findByID(driverID).getDriverID()).setBus(busDAO.findByID(busID).getBusID()).setRouteBegin(cityOfDeparture)
+                            .setDriver(driverDAO.findByID(driverID)).setBus(busDAO.findByID(busID)).setRouteBegin(cityOfDeparture)
                             .setRouteEnd(cityOfArrival).setRouteDuration(routeDuration)
                             .setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
                 }
@@ -254,7 +272,7 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                     Date departureTime = resultSet.getDate("departureTime");
                     Date arrivalTime = resultSet.getDate("arrivalTime");
                     theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle)
-                            .setDriver(driverDAO.findByID(driverID).getDriverID()).setBus(busDAO.findByID(busID).getBusID()).setRouteBegin(cityOfDeparture)
+                            .setDriver(driverDAO.findByID(driverID)).setBus(busDAO.findByID(busID)).setRouteBegin(cityOfDeparture)
                             .setRouteEnd(cityOfArrival).setRouteDuration(routeDuration)
                             .setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
                 }

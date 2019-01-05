@@ -15,7 +15,6 @@
 </head>
 
 <body>
-${pageContext.request.characterEncoding}
 
 <div class="container">
     <h2>Buses</h2>

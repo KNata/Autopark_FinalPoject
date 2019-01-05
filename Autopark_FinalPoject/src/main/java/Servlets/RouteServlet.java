@@ -26,23 +26,7 @@ public class RouteServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String action = request.getParameter("searchAction");
-        if (action != null) {
-            switch (action) {
-                case "searchById":
-                    searchDriverByID(request, response);
-                    break;
-                case "searchByName":
-                    searchRouteByName(request, response);
-                    break;
-                case "showAllRoutes":
-                    searchRouteByName(request, response);
-                    break;
-            }
-        }else{
-            ArrayList<Route> resultList = routeDAO.findAll();
-            forwardListRoute(request, response, resultList);
-        }
+        showAllRoutes(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -70,7 +54,7 @@ public class RouteServlet extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
             dispatcher.forward(request, response);
         }
-        String nextJSP = "/views/adminView/seeAllDriversPage.jsp";
+        String nextJSP = "/views/adminView/seeAllRoutes.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
         request.setAttribute("routeList", routeList);
         dispatcher.forward(request, response);
@@ -123,11 +107,11 @@ public class RouteServlet extends HttpServlet {
             BusDAO busDAO = new BusDAO();
             DriverDAO driverDAO = new DriverDAO();
             if (busDAO.findByID(busID) != null && driverDAO.isDriverInSystem(driverID)) {
-                if(routeDAO.findByID(routeID) == null && (routeDAO.findByID(routeID).getRouteStartTime() != departureTimeInDateFormat) && (routeDAO.findByID(routeID).getDriverID() != driverID)) {
+                if(routeDAO.findByID(routeID) == null && (routeDAO.findByID(routeID).getRouteStartTime() != departureTimeInDateFormat) && (routeDAO.findByID(routeID).getDriver().getDriverID() != driverID)) {
                 Driver theDriver = driverDAO.findByID(driverID);
                 Bus theBus = busDAO.findByID(busID);
-                Route theRoute = Route.newBuilder().setRouteID(Integer.valueOf(routeID)).setRouteTitle(routeTitle).setBus(theBus.getBusID())
-                        .setDriver(theDriver.getDriverID()).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
+                Route theRoute = Route.newBuilder().setRouteID(Integer.valueOf(routeID)).setRouteTitle(routeTitle).setBus(theBus)
+                        .setDriver(theDriver).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
                         .setRouteDuration(Integer.valueOf(routeDuration)).setRouteStartTime(departureTimeInDateFormat).setRouteEndTime(arrivalTimeInDateFormat).build();
                 boolean wasAdded = routeDAO.addRecord(theRoute);
                 if (wasAdded) {

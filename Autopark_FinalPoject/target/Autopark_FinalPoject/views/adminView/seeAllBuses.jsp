@@ -9,41 +9,6 @@
 
 <div class="container">
 
-    <div class="container">
-        <div class="container">
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="index.jsp">About Autopark</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="#">Routes</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Buses</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Drivers</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Visitors</a>
-                            </li>
-                        </ul>
-                        <div align="right">
-                            <jsp:useBean id="now" class="java.util.Date" />
-                            <fmt:setLocale value="us-US"/>
-                            <fmt:formatDate value="${now}"/>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
 
     <h2>Buses</h2>
     <!--Search Form -->
@@ -57,7 +22,7 @@
         </button>
     </form>
 
-    <form action="/BusServlet" method="post" id="busForm" role="form" >
+    <form action="/BusServlet" method="get" id="busForm" role="form" >
         <input type="hidden" id="idBus" name="idBus">
         <input type="hidden" id="action" name="action">
         <c:choose>
@@ -65,11 +30,11 @@
                 <table  class="table table-striped">
                     <thead>
                     <tr>
-                        <td>Bus ID: </td>
-                        <td>Bus Model: </td>
-                        <td>Max Count Of Passangers: </td>
-                        <td>Miles: </td>
-                        <td>Passed Servise? </td>
+                        <td><strong>Bus ID: </strong> </td>
+                        <td><strong>Bus Model: </strong></td>
+                        <td><strong>Max Count Of Passangers: </strong></td>
+                        <td><strong></strong>Miles: <strong></strong></td>
+                        <td><strong>Passed Servise? </strong></td>
                     </tr>
                     </thead>
                     <c:forEach var="bus" items="${busList}">
@@ -78,12 +43,10 @@
                             <c:set var="classSucess" value="info"/>
                         </c:if>
                         <tr class="${classSucess}">
-                            <td>
-                                <a href="/BusServlet?idBus=${bus.busID}&searchAction=searchById">${bus.busID}</a>
-                            </td>
+
                             <td>${bus.busID}</td>
                             <td>${bus.busModel}</td>
-                            <td>${bus.maxCountOfPassangers}</td>
+                            <td>${bus.maxCountOfPassagers}</td>
                             <td>${bus.miles}</td>
                             <td>${bus.passedService}</td>
 
@@ -108,8 +71,8 @@
         </c:choose>
     </form>
     <br>
-        <a href="addNewBusPage.jsp"><button type="submit" class="btn btn-secondary btn-md">New Bus</button></a>
-        <a href="adminMainPage.jsp"><button type="submit" class="btn btn-primary  btn-md">Back to main page</button></a>
+        <a href="/views/adminView/addNewBusPage.jsp"><button type="submit" class="btn btn-secondary btn-md">New Bus</button></a>
+        <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-primary  btn-md">Back to main page</button></a>
 
         <br>
         <br>

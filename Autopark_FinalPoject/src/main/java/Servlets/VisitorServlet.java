@@ -3,6 +3,7 @@ package Servlets;
 import DAO.DriverDAO;
 import DAO.VisitorDAO;
 import Model.Driver;
+import Model.Route;
 import Model.Visitor;
 
 import javax.servlet.RequestDispatcher;
@@ -23,17 +24,7 @@ import java.util.regex.Pattern;
 
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
-            String action = request.getParameter("searchAction");
-            if (action != null) {
-                switch (action) {
-                    case "searchById":
-                        searchVisitorByLogin(request, response);
-                        break;
-                }
-            }else{
-                ArrayList<Visitor> resultList = visitorDAO.findAll();
-                forwardListVisitors(request, response, resultList);
-            }
+            showAllVisitors(request, response);
         }
 
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -58,6 +49,22 @@ import java.util.regex.Pattern;
 
         }
 
+        private void showAllVisitors(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+            ArrayList<Visitor> visitorList = visitorDAO.findAll();
+            System.out.println(visitorList.size());
+            if (visitorList.size() == 0) {
+                System.out.println("1");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+                dispatcher.forward(request, response);
+                System.out.println("2");
+            } else {
+                System.out.println("3");
+                request.setAttribute("visitorList", visitorList);
+                System.out.println("4");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/adminView/allVisitors.jsp");
+                dispatcher.forward(request, response);
+            }
+        }
         private void forwardListVisitors(HttpServletRequest request, HttpServletResponse response, ArrayList<Visitor> visitorList) throws IOException, ServletException {
             String nextJSP = "/views/adminView/seeAllVisitorsPage.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);

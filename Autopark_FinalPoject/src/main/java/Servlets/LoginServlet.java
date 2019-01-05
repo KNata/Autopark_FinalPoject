@@ -14,6 +14,10 @@ import java.io.PrintWriter;
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    public void doGet(HttpServletRequest request,
+                      HttpServletResponse response) throws ServletException, IOException {
+    }
+
 
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
@@ -30,15 +34,10 @@ public class LoginServlet extends HttpServlet {
             System.out.println(theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.ADMIN)));
             if (theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.ADMIN))) {
                 session.setAttribute("admin", login);
-                Cookie userName = new Cookie("admin", login);
-                userName.setMaxAge(30*60);
-                response.addCookie(userName);
+                System.out.println(session.getAttribute("admin"));
                 response.sendRedirect("/views/adminView/adminMainPage.jsp");
             } else if (theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.DRIVER))) {
                 session.setAttribute("driver", login);
-                Cookie userName = new Cookie("driver", login);
-                userName.setMaxAge(30*60);
-                response.addCookie(userName);
                 response.sendRedirect("/views/userView/driverMainPage.jsp");
 
             }

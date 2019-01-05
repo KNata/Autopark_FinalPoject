@@ -25,23 +25,7 @@ public class BusServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String action = request.getParameter("searchAction");
-        if (action != null) {
-            switch (action) {
-                case "searchById":
-                    searchBuseByID(request, response);
-                    break;
-                case "searchByName":
-                    searchBusByName(request, response);
-                    break;
-                case "seeAllBuses":
-                    showAllBuses(request, response);
-                    break;
-            }
-        }else{
-            ArrayList<Bus> resultList = busDAO.findAll();
-            forwardListBuses(request, response, resultList);
-        }
+        showAllBuses(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -68,7 +52,7 @@ public class BusServlet extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
             dispatcher.forward(request, response);
         } else {
-            String nextJSP = "/views/adminView/seeAllBusesPage.jsp";
+            String nextJSP = "/views/adminView/seeAllBuses.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
             request.setAttribute("busList", busList);
             dispatcher.forward(request, response);

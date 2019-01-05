@@ -21,7 +21,7 @@ public class RouteDAOTest {
 
     @Test
     public void deleteRecord() throws SQLException {
-        assertTrue(routeDAO.deleteRecord("3"));
+        assertTrue(routeDAO.deleteRecord("4"));
     }
 
     @Test

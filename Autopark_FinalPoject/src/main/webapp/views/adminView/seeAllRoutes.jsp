@@ -9,38 +9,6 @@
 
 <div class="container">
 
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.jsp">About Autopark</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Routes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Buses</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Drivers</a>
-                    </li>
-
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">Visitors</a>
-                    </li>
-                </ul>
-                <div align="right">
-                    <jsp:useBean id="now" class="java.util.Date" />
-                    <fmt:setLocale value="us-US"/>
-                    <fmt:formatDate value="${now}"/>
-                </div>
-            </div>
-        </nav>
-    </div>
     <h2>Routes</h2>
     <!--Search Form -->
     <form action="/RouteServlet" method="get" id="seachRouteForm" role="form">
@@ -65,7 +33,9 @@
                         <td>Route ID: </td>
                         <td>Route name: </td>
                         <td>Driver ID: </td>
+                        <td>Driver Name: </td>
                         <td>Bus ID: </td>
+                        <td>Bus Model: </td>
                         <td>Route ID: </td>
                         <td>Route city of department: </td>
                         <td>Route city of arrival: </td>
@@ -80,13 +50,12 @@
                             <c:set var="classSucess" value="info"/>
                         </c:if>
                         <tr class="${classSucess}">
-                            <td>
-                                <a href="/RouteServlet?idDriver=${driver.id}&searchAction=searchById">${route.routeID}</a>
-                            </td>
                             <td>${route.routeID}</td>
                             <td>${route.routeName}</td>
-                            <td>${route.driverID}</td>
-                            <td>${route.busID}</td>
+                            <td>${route.theDriver.driverID}</td>
+                            <td>${route.theDriver.driverName}</td>
+                            <td>${route.theBus.busID}</td>
+                            <td>${route.theBus.busModel}</td>
                             <td>${route.cityOfDeparture}</td>
                             <td>${route.cityOfArrival}</td>
                             <td>${route.routeDuration}</td>
