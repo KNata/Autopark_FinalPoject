@@ -326,55 +326,86 @@ public class VisitorDAO  {
     public boolean updateForAdmin(String visitorLogin, String passwordToChange, String roleToChange) {
         String updateSQL = "update `mydb`.`Visitor` set  password = ?, visitorRole = ? where login = ?";
         boolean wasUpdated = false;
-        if (passwordToChange.equals(this.findByLogin(visitorLogin))) {
-            return wasUpdated = false;
-        }
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        Savepoint savePoint = null;
-        try {
-            connection = ConnectionPool.getConnection();
-            connection.setAutoCommit(false);
-            preparedStatement = connection.prepareStatement(updateSQL);
-            preparedStatement.setString(1, passwordToChange);
-            preparedStatement.setString(2, roleToChange);
-            preparedStatement.setString(3, visitorLogin);
-            preparedStatement.executeUpdate();
-            wasUpdated = true;
-            savePoint = connection.setSavepoint();
-            connection.commit();
-        } catch (SQLException e) {
-            if (savePoint == null) {
-                try {
-                    connection.rollback();
-                }catch (SQLException ee) {
-                    theLogger.error(e.getMessage());
+        System.out.println("0");
+        String updatePasswordOnly = "update `mydb`.`Visitor` set  password = ? where login = ?";
+        String updateRoleOnly = "update `mydb`.`Visitor` set visitorRole = ? where login = ?";
+
+            System.out.println("1");
+            Connection connection = null;
+            PreparedStatement preparedStatement = null;
+            Savepoint savePoint = null;
+            try {
+                System.out.println("2");
+                connection = ConnectionPool.getConnection();
+                System.out.println("3");
+                connection.setAutoCommit(false);
+                if (!passwordToChange.isEmpty() && !roleToChange.isEmpty()) {
+                    preparedStatement = connection.prepareStatement(updateSQL);
+                    System.out.println("4");
+                    preparedStatement.setString(1, passwordToChange);
+                    System.out.println("5");
+                    preparedStatement.setString(2, roleToChange);
+                    System.out.println("6");
+                    preparedStatement.setString(3, visitorLogin);
+                    System.out.println("7");
+                    preparedStatement.executeUpdate();
+                } else if (roleToChange.isEmpty()) {
+                    preparedStatement = connection.prepareStatement(updatePasswordOnly);
+                    System.out.println("44");
+                    preparedStatement.setString(1, passwordToChange);
+                    System.out.println("55");
+                    System.out.println("66");
+                    preparedStatement.setString(2, visitorLogin);
+                    System.out.println("77");
+                    preparedStatement.executeUpdate();
+                } else if (passwordToChange.isEmpty()) {
+                    preparedStatement = connection.prepareStatement(updateRoleOnly);
+                    System.out.println("444");
+                    System.out.println("555");
+                    preparedStatement.setString(1, roleToChange);
+                    System.out.println("666");
+                    preparedStatement.setString(2, visitorLogin);
+                    System.out.println("777");
+                    preparedStatement.executeUpdate();
                 }
-            } else {
-                try {
-                    connection.rollback(savePoint);
-                }catch (SQLException ee) {
-                    theLogger.error(e.getMessage());
+                System.out.println("8");
+                wasUpdated = true;
+                savePoint = connection.setSavepoint();
+                System.out.println("9");
+                connection.commit();
+            } catch (SQLException e) {
+                if (savePoint == null) {
+                    try {
+                        connection.rollback();
+                    } catch (SQLException ee) {
+                        theLogger.error(e.getMessage());
+                    }
+                } else {
+                    try {
+                        connection.rollback(savePoint);
+                    } catch (SQLException ee) {
+                        theLogger.error(e.getMessage());
+                    }
                 }
-            }
-            theLogger.error(e.getMessage());
-        } finally {
-            if (preparedStatement != null) {
-                try {
-                    preparedStatement.close();
-                } catch (SQLException e) {
-                    theLogger.error(e.getMessage());
+                theLogger.error(e.getMessage());
+            } finally {
+                if (preparedStatement != null) {
+                    try {
+                        preparedStatement.close();
+                    } catch (SQLException e) {
+                        theLogger.error(e.getMessage());
+                    }
                 }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    theLogger.error(e.getMessage());
+                if (connection != null) {
+                    try {
+                        connection.close();
+                    } catch (SQLException e) {
+                        theLogger.error(e.getMessage());
+                    }
                 }
+
             }
 
-        }
         return wasUpdated;
     }
 

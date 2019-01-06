@@ -30,8 +30,9 @@ public class BusServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        showAllBuses(request, response);
         String action = request.getParameter("action");
+        System.out.println(action);
         switch (action) {
             case "addNewBus":
                 addNewBus(request, response);
@@ -135,16 +136,11 @@ public class BusServlet extends HttpServlet {
             throws ServletException, IOException {
         String busID = request.getParameter("idBus");
         int miles = Integer.parseInt(request.getParameter("miles"));
-        boolean passedService = Boolean.parseBoolean(request.getParameter("maintance"));
+        boolean passedService = Boolean.parseBoolean(request.getParameter("passedService"));
 
         boolean wasUpdated = busDAO.update(busID, miles, passedService);
-        String message = null;
         if (wasUpdated) {
-            message = "The route has been  updated successfully";
+            System.out.println("The route has been  updated successfully");
         }
-        ArrayList<Bus> busList = busDAO.findAll();
-        request.setAttribute("idBus", busID);
-        request.setAttribute("message", message);
-        forwardListBuses(request, response, busList);
     }
 }

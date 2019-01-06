@@ -23,6 +23,9 @@
         <form action="${pageContext.request.contextPath}/VisitorServlet" method="get">
             <button type="submit" class="btn btn-info">See all Visitors</button>
         </form>
+
+        <a href="allVisitors.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">All Visitors</a>
+
         <a href="addNewDriverPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Driver</a>
         <a href="addNewRoute.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Route</a>
         <a href="addNewBusPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add a new Bus</a>

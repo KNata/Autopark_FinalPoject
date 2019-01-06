@@ -42,6 +42,7 @@
 
     <br>
     <br>
+
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
         <button type="submit" class="btn btn-success btn-md">Logout</button>
     </form>

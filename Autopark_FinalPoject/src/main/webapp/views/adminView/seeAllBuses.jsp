@@ -28,12 +28,12 @@
         <c:choose>
             <c:when test="${not empty busList}">
                 <table  class="table table-striped">
-                    <thead>
+                    <thead>${action}
                     <tr>
                         <td><strong>Bus ID: </strong> </td>
                         <td><strong>Bus Model: </strong></td>
                         <td><strong>Max Count Of Passangers: </strong></td>
-                        <td><strong></strong>Miles: <strong></strong></td>
+                        <td><strong>Miles: </strong></td>
                         <td><strong>Passed Servise? </strong></td>
                     </tr>
                     </thead>
@@ -50,14 +50,6 @@
                             <td>${bus.miles}</td>
                             <td>${bus.passedService}</td>
 
-                            <td><a href="#" id="remove"
-                                   onclick="document.getElementById('action').value = 'remove';document.getElementById('idBus').value = '${bus.busID}';
-
-                                           document.getElementById('busForm').submit();">
-                                <span class="glyphicon glyphicon-trash"/>
-                            </a>
-
-                            </td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -76,6 +68,12 @@
 
         <br>
         <br>
+
+    <form action="/BusServlet" method="post" action ="edit" id="editForm" role="form" >
+        <a href="/views/adminView/editBus.jsp"><button type="submit" class="btn btn-primary btn-md">Edit Bus</button></a>
+    </form>
+    <br>
+    <br>
         <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
              <button type="submit" class="btn btn-success btn-md">Logout</button>
         </form>

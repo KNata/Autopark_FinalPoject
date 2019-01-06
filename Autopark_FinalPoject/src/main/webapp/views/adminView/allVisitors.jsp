@@ -24,7 +24,7 @@
 
     <h2>Visitor List</h2>
 
-    <form action="/VisitorServlet" method="get" id="visitorForm" role="form" >
+    <form action="/VisitorServlet" method="post" id="visitorForm" role="form" >
         <input type="hidden" id="idVisitor" name="idVisitor">
         <input type="hidden" id="action" name="action">
         <c:choose>
@@ -35,6 +35,7 @@
                         <td>Visitor login: </td>
                         <td>Visitor role: </td>
                         <td>Visitor name: </td>
+                        <th colspan=2>Action</th>
                     </tr>
                     <c:forEach var="visitor" items="${visitorList}">
                         <c:set var="classSucess" value=""/>
@@ -46,12 +47,12 @@
                             <td>${visitor.visitorLogin}</td>
                             <td>${visitor.visitorRole}</td>
                             <td>${visitor.visitorName}</td>
-                            <td><a href="#" id="remove"
-                                   onclick="document.getElementById('action').value = 'remove';document.getElementById('idVisitor').value = '${visitor.visitorID}';
+                            <td>
 
-                                           document.getElementById('visitorForm').submit();">
-                                <span class="glyphicon glyphicon-trash"/>
-                            </a>
+                                <form action="/VisitorServlet" method="post" action ="edit" id="deleteForm" role="form" >
+                                    <a href="/views/adminView/deleteVisitor.jsp">Delete</a>
+                                </form>
+                            </td>
 
                             </td>
                         </tr>
@@ -68,12 +69,19 @@
     </form>
     <br>
         <a href="/views/adminView/registerPage.jsp"><button type="submit" class="btn btn-primary btn-md">New Visitor</button>
-        <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md">Back to main page</button></a>
+            <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md">Back to main page</button></a>
             <br>
             <br>
-        <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
-            <button type="submit" class="btn btn-success btn-md">Logout</button>
-        </form> <a href="adminMainPage.jsp"></a>
+
+            <form action="/VisitorServlet" method="post" action ="editAdmin" id="editForm" role="form" >
+                <a href="/views/adminView/editVisitor.jsp"><button type="submit" class="btn btn-primary btn-md">Edit Visitor</button></a>
+            </form>
+            <br>
+            <br>
+            <form action="${pageContext.request.contextPath}/VisitorServlet" method="post">
+                <button type="submit" class="btn btn-info">LogOut</button>
+            </form>
+            <a href="adminMainPage.jsp"></a>
 
 
     <%@include file="/views/commonView/footer.jsp"%>

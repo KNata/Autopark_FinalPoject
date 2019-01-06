@@ -87,6 +87,13 @@
     <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md">Back to main page</button></a>
     <br>
     <br>
+
+    <form action="/RouteServlet" method="post" action ="edit" id="editForm" role="form" >
+        <a href="/views/adminView/editRoute.jsp"><button type="submit" class="btn btn-primary btn-md">Edit Route</button></a>
+    </form>
+
+    <br>
+    <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
         <button type="submit" class="btn btn-success btn-md">Logout</button>
     </form>

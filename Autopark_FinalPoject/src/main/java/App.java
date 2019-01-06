@@ -32,24 +32,38 @@ public class App {
 //         System.out.println(theVisitor.toString());
 
 
-        RouteDAO diverDAO = new RouteDAO();
-        ArrayList<Route> routeList= diverDAO.findAll();
-        System.out.println(routeList.size());
-        for (int i = 0; i < routeList.size(); i++) {
-            System.out.println(routeList.get(i).getRouteID());
-            System.out.println(routeList.get(i).getRouteTitle());
-            System.out.println(routeList.get(i).getDriver().getDriverID());
-            System.out.println(routeList.get(i).getBus().getBusID());
-            System.out.println(routeList.get(i).getRouteBegin());
-            System.out.println(routeList.get(i).getRouteEnd());
-            System.out.println(routeList.get(i).getRouteStartTime());
-            System.out.println(routeList.get(i).getRouteEndTime());
-            System.out.println(routeList.get(i).getRouteDuration());
-            System.out.println();
+//        RouteDAO diverDAO = new RouteDAO();
+//        ArrayList<Route> routeList= diverDAO.findAll();
+//        System.out.println(routeList.size());
+//        for (int i = 0; i < routeList.size(); i++) {
+//            System.out.println(routeList.get(i).getRouteID());
+//            System.out.println(routeList.get(i).getRouteTitle());
+//            System.out.println(routeList.get(i).getDriver().getDriverID());
+//            System.out.println(routeList.get(i).getBus().getBusID());
+//            System.out.println(routeList.get(i).getRouteBegin());
+//            System.out.println(routeList.get(i).getRouteEnd());
+//            System.out.println(routeList.get(i).getRouteStartTime());
+//            System.out.println(routeList.get(i).getRouteEndTime());
+//            System.out.println(routeList.get(i).getRouteDuration());
+//            System.out.println();
+//
+//
+//        }
 
-
+        VisitorDAO visitorDAO = new VisitorDAO();
+        boolean editVisitor = visitorDAO.updateForAdmin("oleksii", "4567", "DRIVER");
+        if (editVisitor) {
+            System.out.println("ok");
+        } else {
+            System.out.println("false");
         }
 
+//        ArrayList<Visitor> resList = visitorDAO.findAll();
+//        for (int i = 0; i < resList.size(); i++) {
+//            System.out.println(resList.get(i).toString());
+//        }
+//        Visitor theVisitor = visitorDAO.findByLogin("oleksii");
+//        System.out.println(theVisitor.toString());
 //        String strDate = "2018-11-11 22:00:00";
 //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
 //        java.util.Date date = null;
@@ -61,6 +75,7 @@ public class App {
 //        java.sql.Date sqlDate = new Date(date.getTime());
 //        System.out.println("String converted to java.sql.Date :" + date);
 //
+       // System.out.println("..".isEmpty());
 
 
        // System.out.println("String converted to java.sql.Date :" + sqlDate.toString());
