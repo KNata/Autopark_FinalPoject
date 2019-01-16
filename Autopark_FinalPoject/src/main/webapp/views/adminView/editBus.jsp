@@ -14,29 +14,29 @@
             <c:set var="action" value="edit"/>
         </c:if>
 
-        <h3>Update information about bus</h3>
+        <h3><fmt:message key="edit.bus.title"/></h3>
 
         <div class="form-group col-xs-4">
 
-            <label for="idBus" class="control-label col-xs-4">Bus ID:</label>
+            <label for="idBus" class="control-label col-xs-4"><fmt:message key="admin.add.bus.busID"/>:</label>
             <input type="text" name="idBus" id="idBus" class="form-control" value="${bus.busID}" required="true"/>
             <br>
-            <label for="miles" class="control-label col-xs-4">How much miles went a bus:</label>
+            <label for="miles" class="control-label col-xs-4"><fmt:message key="admin.add.bus.miles"/>:</label>
             <input type="text" name="visitorPassword" id="miles" class="form-control" value="${bus.miles}"/>
 
-            <label for="passedService" class="control-label col-xs-4">Passed service?</label>
+            <label for="passedService" class="control-label col-xs-4"><fmt:message key="admin.add.bus.service"/>?</label>
             <input type="text" name="passedService" id="passedService" class="form-control" value="${bus.passedService}" required="true"/>
 
-            <button type="submit" class="btn btn-primary btn-md">Accept</button>
+            <button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.accept.button"/></button>
         </div>
 
     </form>
     <br>
-    <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md">Back to main page</button></a>
+    <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page"/></button></a>
     <br>
     <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
-        <button type="submit" class="btn btn-success btn-md">Logout</button>
+        <button type="submit" class="btn btn-success btn-md"><fmt:message key="logout.button"/></button>
     </form>
 
 </div>

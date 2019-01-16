@@ -18,7 +18,7 @@
                    placeholder="Type the Name of the Visitor"/>
         </div>
         <button type="submit" class="btn btn-info">
-             Search
+            <fmt:message key="search.button" bundle="${rb}"/>
         </button>
     </form>
 
@@ -31,11 +31,10 @@
             <c:when test="${not empty visitorList}">
                 <table  class="table table-striped">
                     <tr>
-                        <td>Visitor ID: </td>
-                        <td>Visitor login: </td>
-                        <td>Visitor role: </td>
-                        <td>Visitor name: </td>
-                        <th colspan=2>Action</th>
+                        <td><fmt:message key="admin.add.user.visitorID" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.user.visitor.login" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.user.visitor.password" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.user.visitor.name" bundle="${rb}"/>: </td>
                     </tr>
                     <c:forEach var="visitor" items="${visitorList}">
                         <c:set var="classSucess" value=""/>
@@ -50,7 +49,7 @@
                             <td>
 
                                 <form action="/VisitorServlet" method="post" action ="edit" id="deleteForm" role="form" >
-                                    <a href="/views/adminView/deleteVisitor.jsp">Delete</a>
+                                    <a href="/views/adminView/deleteVisitor.jsp"><fmt:message key="admin.delete.visitor" bundle="${rb}"/></a>
                                 </form>
                             </td>
 
@@ -62,24 +61,27 @@
             <c:otherwise>
                 <br>
                 <div class="alert alert-info">
-                    No visitor found matching your search criteria
+                    <fmt:message key="no.visitor.found.criteria" bundle="${rb}"/>
                 </div>
             </c:otherwise>
         </c:choose>
     </form>
     <br>
-        <a href="/views/adminView/registerPage.jsp"><button type="submit" class="btn btn-primary btn-md">New Visitor</button>
-            <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md">Back to main page</button></a>
+        <a href="/views/adminView/registerPage.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.new.visitor" bundle="${rb}"/></button>
+            <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
             <br>
             <br>
 
             <form action="/VisitorServlet" method="post" action ="editAdmin" id="editForm" role="form" >
-                <a href="/views/adminView/editVisitor.jsp"><button type="submit" class="btn btn-primary btn-md">Edit Visitor</button></a>
+                <a href="/views/adminView/editVisitor.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.rdit.visitor" bundle="${rb}"/></button></a>
             </form>
+
+            <br>
+            <a href="/views/adminView/deleteVisitor.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.delete.visitor" bundle="${rb}"/></button></a>
             <br>
             <br>
             <form action="${pageContext.request.contextPath}/VisitorServlet" method="post">
-                <button type="submit" class="btn btn-info">LogOut</button>
+                <button type="submit" class="btn btn-info"><fmt:message key="logout.button" bundle="${rb}"/></button>
             </form>
             <a href="adminMainPage.jsp"></a>
 

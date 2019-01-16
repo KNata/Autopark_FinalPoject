@@ -9,6 +9,7 @@ import org.junit.Test;
 import java.sql.SQLException;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 public class RouteDAOTest {
 
@@ -39,4 +40,9 @@ public class RouteDAOTest {
         assertNotNull(routeDAO.findByName("Kyiv-Lviv"));
     }
 
+    @Test
+    public void showDriverInfo() {
+      //  routeDAO.setDriverName("Олексій Сукач");
+      //  assertNotNull(routeDAO.showDriverInfo());
+    }
 }

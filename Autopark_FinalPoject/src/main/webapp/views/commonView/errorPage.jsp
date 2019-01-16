@@ -9,7 +9,7 @@
 
 <div class="container-fluid">
     <div class="alert alert-danger" role="alert">
-        Something wrong with entered paametres. Please try again.
+        <fmt:message key="error.message"/>
     </div>
 </div>
 

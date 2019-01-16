@@ -26,6 +26,7 @@ public class BusServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         showAllBuses(request, response);
+
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -37,12 +38,12 @@ public class BusServlet extends HttpServlet {
             case "addNewBus":
                 addNewBus(request, response);
                 break;
-            case "remove":
-                deleteBus(request, response);
-                break;
             case "edit":
                 editBus(request, response);
                 break;
+            case "removeBus":
+                deleteBus(request, response);
+                System.out.println("removeBus");
         }
 
     }
@@ -109,12 +110,10 @@ public class BusServlet extends HttpServlet {
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
                     dispatcher.forward(request, response);
                 } else {
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
-                    dispatcher.forward(request, response);
+                    response.sendRedirect("/views/commonView/successPage.jsp");
                 }
             } else {
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
-                dispatcher.forward(request, response);
+                response.sendRedirect("/views/commonView/errorPage.jsp");
             }
         }
 
@@ -123,13 +122,8 @@ public class BusServlet extends HttpServlet {
 
     private void deleteBus(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String busID = request.getParameter("idBus");
+        System.out.println(busID);
         boolean wasDeleted = busDAO.deleteRecord(busID);
-        if (wasDeleted) {
-            String message = "The bus was successfully removed";
-            request.setAttribute("message", message);
-            ArrayList<Bus> driverList = busDAO.findAll();
-            forwardListBuses(request, response, driverList);
-        }
     }
 
     private void editBus(HttpServletRequest request, HttpServletResponse response)

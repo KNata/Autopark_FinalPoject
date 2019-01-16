@@ -21,7 +21,6 @@ import java.util.regex.Pattern;
 
     private static final long serialVersionUID = 1L;
 
-
     private VisitorDAO visitorDAO = new VisitorDAO();
 
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,7 +39,7 @@ import java.util.regex.Pattern;
                 case "addNewVisitor":
                     addNewVisitor(request, response);
                     break;
-                case "remove":
+                case "removeVisitor":
                     deleteVisitor(request, response);
                     break;
                 case "edit":
@@ -116,10 +115,8 @@ import java.util.regex.Pattern;
 
         private void deleteVisitor(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
             String visitorID = request.getParameter("visitorID");
-            boolean wasDeleted = visitorDAO.deleteRecord(visitorID);
-            if (wasDeleted) {
-                String message = "The visitor was successfully removed";
-                request.setAttribute("message", message);
+            if (visitorID != null) {
+                boolean wasDeleted = visitorDAO.deleteRecord(visitorID);
             }
         }
 

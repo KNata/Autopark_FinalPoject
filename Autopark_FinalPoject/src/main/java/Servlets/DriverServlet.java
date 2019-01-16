@@ -139,4 +139,8 @@ public class DriverServlet extends HttpServlet {
             forwardListDrivers(request, response, driverList);
         }
     }
+
+    private void showDriverProfile() {
+
+    }
 }

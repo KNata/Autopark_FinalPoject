@@ -1,6 +1,9 @@
 package Servlets;
 
+import DAO.DriverDAO;
+import DAO.RouteDAO;
 import DAO.VisitorDAO;
+import Model.Driver;
 import Model.Visitor;
 
 import javax.servlet.RequestDispatcher;
@@ -25,7 +28,6 @@ public class LoginServlet extends HttpServlet {
         // get request parameters for userID and password
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-
         VisitorDAO visitorDAO = new VisitorDAO();
         Visitor theVisitor = visitorDAO.findByLoginAndPassword(login, password);
         if(theVisitor != null) {
@@ -37,6 +39,11 @@ public class LoginServlet extends HttpServlet {
                 System.out.println(session.getAttribute("admin"));
                 response.sendRedirect("/views/adminView/adminMainPage.jsp");
             } else if (theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.DRIVER))) {
+//                RouteDAO routeDAO = new RouteDAO();
+//                DriverDAO driverDAO = new DriverDAO();
+//                Driver theDriver = Driver.newBuilder().setDriverName(theVisitor.getVisitorName()).build();
+//                routeDAO.setDriverName(theDriver.getDriverName());
+//               // routeDAO.setDriverName(driverDAO.findByName(theVisitor.getVisitorName()).getDriver);
                 session.setAttribute("driver", login);
                 response.sendRedirect("/views/userView/driverMainPage.jsp");
 

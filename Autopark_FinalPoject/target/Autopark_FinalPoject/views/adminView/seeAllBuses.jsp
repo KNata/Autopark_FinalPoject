@@ -18,23 +18,21 @@
             <input type="text" name="busName" id="busName" class="form-control" required="true" placeholder="Type the Name of the bus"/>
         </div>
         <button type="submit" class="btn btn-info">
-            <span class="glyphicon glyphicon-search"></span> Search
+            <span class="glyphicon glyphicon-search"></span> <fmt:message key="search.button"/>
         </button>
     </form>
 
     <form action="/BusServlet" method="get" id="busForm" role="form" >
-        <input type="hidden" id="idBus" name="idBus">
-        <input type="hidden" id="action" name="action">
         <c:choose>
             <c:when test="${not empty busList}">
                 <table  class="table table-striped">
                     <thead>${action}
                     <tr>
-                        <td><strong>Bus ID: </strong> </td>
-                        <td><strong>Bus Model: </strong></td>
-                        <td><strong>Max Count Of Passangers: </strong></td>
-                        <td><strong>Miles: </strong></td>
-                        <td><strong>Passed Servise? </strong></td>
+                        <td><strong><fmt:message key="admin.add.bus.busID" bundle="${rb}"/>: </strong> </td>
+                        <td><strong><fmt:message key="admin.add.bus.model" bundle="${rb}"/>: </strong></td>
+                        <td><strong><fmt:message key="admin.add.bus.maxPass" bundle="${rb}"/>: </strong></td>
+                        <td><strong><fmt:message key="admin.add.bus.miles" bundle="${rb}"/>: </strong></td>
+                        <td><strong><fmt:message key="admin.add.bus.service" bundle="${rb}"/>? </strong></td>
                     </tr>
                     </thead>
                     <c:forEach var="bus" items="${busList}">
@@ -50,32 +48,32 @@
                             <td>${bus.miles}</td>
                             <td>${bus.passedService}</td>
 
+                            </td>
                         </tr>
                     </c:forEach>
                 </table>
             </c:when>
-            <c:otherwise>
-                <br>
-                <div class="alert alert-info">
-                    No bus found matching your search criteria
-                </div>
-            </c:otherwise>
         </c:choose>
     </form>
     <br>
-        <a href="/views/adminView/addNewBusPage.jsp"><button type="submit" class="btn btn-secondary btn-md">New Bus</button></a>
-        <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-primary  btn-md">Back to main page</button></a>
+    <a href="/views/adminView/addNewBusPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.new.bus" bundle="${rb}"/></button></a>
+    <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-primary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
 
-        <br>
-        <br>
+    <br>
+    <br>
 
     <form action="/BusServlet" method="post" action ="edit" id="editForm" role="form" >
-        <a href="/views/adminView/editBus.jsp"><button type="submit" class="btn btn-primary btn-md">Edit Bus</button></a>
+        <a href="/views/adminView/editBus.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.edit.bus" bundle="${rb}"/></button></a>
     </form>
+
+    <a href="/views/adminView/deleteBus.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.delete.bus" bundle="${rb}"/></button></a>
+
+
+
     <br>
     <br>
-        <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
-             <button type="submit" class="btn btn-success btn-md">Logout</button>
-        </form>
+    <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
+        <button type="submit" class="btn btn-success btn-md"><fmt:message key="logout.button" bundle="${rb}"/></button>
+    </form>
 </div>
 <%@include file="/views/commonView/footer.jsp"%>

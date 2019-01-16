@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class RouteDAO implements AbstractDAO<String, Route> {
 
     private static Logger theLogger;
+    private String driverName;
 
     static {
         theLogger = Logger.getLogger(DriverDAO.class);
@@ -363,5 +364,46 @@ public class RouteDAO implements AbstractDAO<String, Route> {
         }
 
         return wasUpdated;
+    }
+
+    public Route showDriverInfo() {
+        String sql = "select `routeName`, `busID`, `cityOfDeparture`, `cityOfArrival`, `departureTime`, `arrivalTime` from `mydb`.`Route` where `driverID` = ?";
+        Route theDriverStory = null;
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        BusDAO busDAO = new BusDAO();
+        try {
+            conn = ConnectionPool.getConnection();
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(1, driverName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String routeName = resultSet.getString("routeName");
+                String busID = resultSet.getString("busID");
+                String cityOfDeparture = resultSet.getString("cityOfDeparture");
+                String cityOfArrival = resultSet.getString("cityOfArrival");
+                Date departureTime = resultSet.getDate("departureTime");
+                Date arrivalTime = resultSet.getDate("arrivalTime");
+                theDriverStory = Route.newBuilder().setRouteTitle(routeName).setBus(busDAO.findByID(busID))
+                        .setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival).setRouteStartTime(departureTime)
+                        .setRouteEndTime(arrivalTime).build();
+            }
+        } catch (SQLException e) {
+            theLogger.error(e.getMessage());
+        } finally {
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
+        }
+        return theDriverStory;
+    }
+
+    public void setDriverName(String aDriverName) {
+        driverName = aDriverName;
     }
 }

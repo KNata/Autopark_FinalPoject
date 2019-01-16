@@ -9,15 +9,15 @@
 
 <div class="container">
 
-    <h2>Routes</h2>
+    <h2><fmt:message key="admin.routes" bundle="${rb}"/></h2>
     <!--Search Form -->
     <form action="/RouteServlet" method="get" id="seachRouteForm" role="form">
         <input type="hidden" id="searchAction" name="searchAction" value="searchByName">
         <div class="form-group col-xs-5">
-            <input type="text" name="routeName" id="routeName" class="form-control" required="true" placeholder="Type the Name of the route"/>
+            <input type="text" name="routeName" id="routeName" class="form-control" required="true" placeholder=<fmt:message key="type.name.of.route" bundle="${rb}"/>/>
         </div>
         <button type="submit" class="btn btn-info">
-            <span class="glyphicon glyphicon-search"></span> Search
+            <span class="glyphicon glyphicon-search"></span> <fmt:message key="search.button" bundle="${rb}"/>
         </button>
 
     </form>
@@ -30,18 +30,17 @@
                 <table  class="table table-striped">
                     <thead>
                     <tr>
-                        <td>Route ID: </td>
-                        <td>Route name: </td>
-                        <td>Driver ID: </td>
-                        <td>Driver Name: </td>
-                        <td>Bus ID: </td>
-                        <td>Bus Model: </td>
-                        <td>Route ID: </td>
-                        <td>Route city of department: </td>
-                        <td>Route city of arrival: </td>
-                        <td>Route duration: </td>
-                        <td>Route time of department</td>
-                        <td>Route time of arrival</td>
+                        <td><fmt:message key="admin.add.route.routeID" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.route.name" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.driver.driverID" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.driver.driverName" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.bus.busID" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.bus.model" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.route.depatureCity" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.route.arrivalTime" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.route.duration" bundle="${rb}"/>: </td>
+                        <td><fmt:message key="admin.add.route.depatureTime" bundle="${rb}"/></td>
+                        <td><fmt:message key="admin.add.route.arrivalTime" bundle="${rb}"/></td>
                     </tr>
                     </thead>
                     <c:forEach var="route" items="${routeList}">
@@ -62,14 +61,6 @@
                             <td>${route.departureTime}</td>
                             <td>${route.arrivalTime}</td>
 
-                            <td><a href="#" id="remove"
-                                   onclick="document.getElementById('action').value = 'remove';document.getElementById('idRoute').value = '${route.routeID}';
-
-                                           document.getElementById('routeForm').submit();">
-                                <span class="glyphicon glyphicon-trash"/>
-                            </a>
-
-                            </td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -77,25 +68,23 @@
             <c:otherwise>
                 <br>
                 <div class="alert alert-info">
-                    No route found matching your search criteria
+                    <fmt:message key="no.route.found" bundle="${rb}"/>
                 </div>
             </c:otherwise>
         </c:choose>
     </form>
     <br>
-    <a href="addNewRoute.jsp"><button type="submit" class="btn btn-primary btn-md">New route</button></a>
-    <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md">Back to main page</button></a>
+    <a href="addNewRoute.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.add.route" bundle="${rb}"/></button></a>
+    <a href="editRoute.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.edit.route" bundle="${rb}"/></button></a>
+    <a href="deleteRoute.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.delete.route" bundle="${rb}"/></button></a>
     <br>
     <br>
-
-    <form action="/RouteServlet" method="post" action ="edit" id="editForm" role="form" >
-        <a href="/views/adminView/editRoute.jsp"><button type="submit" class="btn btn-primary btn-md">Edit Route</button></a>
-    </form>
+    <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
 
     <br>
     <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
-        <button type="submit" class="btn btn-success btn-md">Logout</button>
+        <button type="submit" class="btn btn-success btn-md"><fmt:message key="logout.button" bundle="${rb}"/></button>
     </form>
 
 </div>

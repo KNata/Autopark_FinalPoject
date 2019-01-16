@@ -16,7 +16,7 @@
             <input type="text" name="driverName" id="driverName" class="form-control" required="true" placeholder="Type the Name of a driver"/>
         </div>
         <button type="submit" class="btn btn-info">
-            <span class="glyphicon glyphicon-search"></span> Search
+            <span class="glyphicon glyphicon-search"></span> <fmt:message key="search.button"/>
         </button>
     </form>
 
@@ -24,8 +24,8 @@
     <div class="row-fluid top-margin" align="center">
         <table class="table table-bordered">
             <tr>
-                <th>Driver ID</th>
-                <th>Driver Name</th>
+                <th><fmt:message key="admin.add.driver.driverID" bundle="${rb}"/></th>
+                <th><fmt:message key="admin.add.driver.driverName" bundle="${rb}"/></th>
             </tr>
             <c:forEach var="driver" items="${driverList}">
                 <tr>
@@ -37,14 +37,14 @@
     </div>
     </form>
 
-        <a href="/views/adminView/addNewBusPage.jsp"><button type="submit" class="btn btn-primary btn-md">New Bus</button></a>
-        <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md">Back to main page</button></a>
+        <a href="/views/adminView/addNewDriverPage.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.add.new.driver" bundle="${rb}"/></button></a>
+        <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
 
     <br>
     <br>
 
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
-        <button type="submit" class="btn btn-success btn-md">Logout</button>
+        <button type="submit" class="btn btn-success btn-md"><fmt:message key="logout.button" bundle="${rb}"/></button>
     </form>
 </div>
 <%@include file="/views/commonView/footer.jsp"%>

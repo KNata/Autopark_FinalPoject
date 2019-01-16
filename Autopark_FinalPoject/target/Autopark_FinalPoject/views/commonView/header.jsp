@@ -12,11 +12,11 @@
 <%@ page session="true"%>
 ${sessionScope}
 
-<c:set var="lang" value="${not empty param.lang ? param.lang : not empty lang ? lang : pageContext.request.locale}" scope="session" />
-<fmt:setLocale value="${lang}" />
-<c:if test="${lang==null}">
-    <fmt:setBundle basename="/src/main/resources/i18n/language" var="lang" scope="session"/>
-</c:if>
+<c:set var="lang" scope="session"
+       value="${empty sessionScope.locale ? 'uk_UK' : sessionScope.locale}" />
+
+<fmt:setLocale value="${lang}" scope="session" />
+<fmt:setBundle basename="i18n.language" var="rb" />
 
 
 <html lang=${lang}>
@@ -32,7 +32,7 @@ ${sessionScope}
 
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">About Autopark</a>
+        <a class="navbar-brand" href="#"> <fmt:message key="header.title.message"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

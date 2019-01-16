@@ -60,13 +60,6 @@ public class RouteServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    private void forwardListRoute(HttpServletRequest request, HttpServletResponse response, ArrayList<Route> routeList) throws IOException, ServletException {
-        String nextJSP = "/views/adminView/seeAllDriversPage.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        request.setAttribute("routeList", routeList);
-        dispatcher.forward(request, response);
-    }
-
     private void searchDriverByID (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String routeID = request.getParameter("idRoute");
         Route theRoute = routeDAO.findByID(routeID);
@@ -131,13 +124,9 @@ public class RouteServlet extends HttpServlet {
 
 
     private void deleteDriver(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String routeID = request.getParameter("routeID");
-        boolean wasDeleted = routeDAO.deleteRecord(routeID);
-        if (wasDeleted) {
-            String message = "The route was successfully removed";
-            request.setAttribute("message", message);
-            ArrayList<Route> routeList = routeDAO.findAll();
-            forwardListRoute(request, response, routeList);
+        String routeID = request.getParameter("idRoute");
+        if (routeID != null) {
+            boolean wasDeleted = routeDAO.deleteRecord(routeID);
         }
     }
 
@@ -161,7 +150,6 @@ public class RouteServlet extends HttpServlet {
         ArrayList<Route> employeeList = routeDAO.findAll();
         request.setAttribute("idRoute", routeID);
         request.setAttribute("message", message);
-        forwardListRoute(request, response, employeeList);
     }
 
     private java.sql.Date convertDate (String stringToConvert) {
