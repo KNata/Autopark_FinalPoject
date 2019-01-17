@@ -1,9 +1,7 @@
 package Servlets;
 
-import DAO.DriverDAO;
 import DAO.RouteDAO;
 import DAO.VisitorDAO;
-import Model.Driver;
 import Model.Visitor;
 
 import javax.servlet.RequestDispatcher;
@@ -20,7 +18,6 @@ public class LoginServlet extends HttpServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response) throws ServletException, IOException {
     }
-
 
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
@@ -39,11 +36,6 @@ public class LoginServlet extends HttpServlet {
                 System.out.println(session.getAttribute("admin"));
                 response.sendRedirect("/views/adminView/adminMainPage.jsp");
             } else if (theVisitor.getVisitorRole().equals(String.valueOf(Visitor.ROLE.DRIVER))) {
-//                RouteDAO routeDAO = new RouteDAO();
-//                DriverDAO driverDAO = new DriverDAO();
-//                Driver theDriver = Driver.newBuilder().setDriverName(theVisitor.getVisitorName()).build();
-//                routeDAO.setDriverName(theDriver.getDriverName());
-//               // routeDAO.setDriverName(driverDAO.findByName(theVisitor.getVisitorName()).getDriver);
                 session.setAttribute("driver", login);
                 response.sendRedirect("/views/userView/driverMainPage.jsp");
 
@@ -54,6 +46,7 @@ public class LoginServlet extends HttpServlet {
             out.println("<font color=red>Either user name or password is wrong.</font>");
             rd.include(request, response);
         }
+
 
     }
 

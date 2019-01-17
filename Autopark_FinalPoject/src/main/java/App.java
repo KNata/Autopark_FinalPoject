@@ -23,7 +23,7 @@ public class App {
 //        BusDAO theBusDAO = new BusDAO();
 //        ArrayList<Bus> buses = theBusDAO.findAll();
 //        System.out.println(buses.size());
-//        Driver theDriver = Driver.newBuilder().setDriverID("HFJ3i6554").setDriverName("Stepan Ivanenko").build();
+//        Driver theDriver = Driver.newBuilder().setDriverID("HFJ3i6554").setDriverID("Stepan Ivanenko").build();
 //        Visitor theVisitor = Visitor.newBuilder().setVisitorID(5).setVisitorName("Stepan Ivanenko")
 //                .setVisitorLogin("Stepan").setVisitorPassword("1234").setVisitorRole("Driver").setDriver(theDriver)
 //                .build();
@@ -50,13 +50,21 @@ public class App {
 //
 //        }
 
-        VisitorDAO visitorDAO = new VisitorDAO();
-        boolean editVisitor = visitorDAO.updateForAdmin("oleksii", "4567", "DRIVER");
-        if (editVisitor) {
-            System.out.println("ok");
-        } else {
-            System.out.println("false");
-        }
+            VisitorDAO visitorDAO = new VisitorDAO();
+//        boolean editVisitor = visitorDAO.updateForAdmin("oleksii", "4567", "DRIVER");
+//        if (editVisitor) {
+//            System.out.println("ok");
+//        } else {
+//            System.out.println("false");
+//        }
+            RouteDAO routeDAO  = new RouteDAO();
+            routeDAO.setDriverID("ЛЕ2478");
+            ArrayList<Route> routeList = routeDAO.showDriverInfo();
+            for (int i = 0; i < routeList.size(); i++) {
+                System.out.println(routeList.get(i).toString());
+            }
+
+
 
 //        ArrayList<Visitor> resList = visitorDAO.findAll();
 //        for (int i = 0; i < resList.size(); i++) {
@@ -82,6 +90,7 @@ public class App {
        // DateFormat df = new SimpleDateFormat("dd/MM/YYYY - hh:mm:ss");
 
       //  System.out.println("Using a dateFormat date is : " + df.format(sqlDate));
+
 
     }
 }

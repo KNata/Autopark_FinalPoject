@@ -89,8 +89,6 @@ public class Route {
                 ", routeDuration = " + routeDuration +
                 ", departureTime = " + departureTime +
                 ", arrivalTime = " + arrivalTime +
-                ", driverID = " + theDriver.toString() +
-                ", busID = " + theBus.toString() +
                 ')';
     }
 

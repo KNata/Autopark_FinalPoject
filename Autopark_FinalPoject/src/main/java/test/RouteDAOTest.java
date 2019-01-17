@@ -42,7 +42,7 @@ public class RouteDAOTest {
 
     @Test
     public void showDriverInfo() {
-      //  routeDAO.setDriverName("Олексій Сукач");
+      //  routeDAO.setDriverID("Олексій Сукач");
       //  assertNotNull(routeDAO.showDriverInfo());
     }
 }

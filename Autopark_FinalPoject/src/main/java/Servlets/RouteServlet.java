@@ -152,6 +152,14 @@ public class RouteServlet extends HttpServlet {
         request.setAttribute("message", message);
     }
 
+    private void showDriverStory(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ArrayList<Route> driverStoryList = routeDAO.showDriverInfo();
+        System.out.println(driverStoryList.size());
+        request.setAttribute("routeStoryList", driverStoryList);
+    }
+
+
     private java.sql.Date convertDate (String stringToConvert) {
         java.sql.Date resultDate = null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
