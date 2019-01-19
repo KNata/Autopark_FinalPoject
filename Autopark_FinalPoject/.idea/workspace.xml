@@ -7,20 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c834de6-3abc-4259-adfb-2c0e2dd0744d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/VisitorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/VisitorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logs/log4j-application.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/log4j-application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/DAO/VisitorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/DAO/VisitorDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/VisitorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/VisitorDAO.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -105,7 +92,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="17863" />
-          <entry key="JSP" value="7537" />
+          <entry key="JSP" value="7546" />
           <entry key="Properties" value="3895" />
           <entry key="XML" value="510" />
         </counts>
@@ -126,20 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="26" column="79" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+            <state relative-caret-position="264">
+              <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -293,11 +271,11 @@
         <option value="$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/VisitorDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" />
       </list>
     </option>
   </component>
@@ -752,7 +730,7 @@
       <workItem from="1547713967616" duration="64000" />
       <workItem from="1547757101944" duration="8992000" />
       <workItem from="1547849858575" duration="1147000" />
-      <workItem from="1547890468597" duration="616000" />
+      <workItem from="1547890468597" duration="808000" />
     </task>
     <servers />
   </component>
@@ -789,7 +767,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271069000" />
+    <option name="totallyTimeSpent" value="271261000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1175,13 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="26" column="79" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -1217,6 +1188,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -1226,8 +1204,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+        <state relative-caret-position="264">
+          <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
         </state>
       </provider>
     </entry>

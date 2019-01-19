@@ -39,7 +39,7 @@
         </div>
     </form>
 <br><br>
-    <a href="view/userView/driverMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+    <a href="/views/userView/driverMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
     <br>
     <br>
 
