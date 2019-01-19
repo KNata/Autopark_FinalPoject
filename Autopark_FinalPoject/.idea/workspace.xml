@@ -7,12 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c834de6-3abc-4259-adfb-2c0e2dd0744d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/allVisitors.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/allVisitors.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -90,7 +84,7 @@
         <counts>
           <entry key="CLASS" value="18" />
           <entry key="JAVA" value="345" />
-          <entry key="JSP" value="331" />
+          <entry key="JSP" value="332" />
           <entry key="Properties" value="22" />
           <entry key="XML" value="14" />
         </counts>
@@ -98,7 +92,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="18299" />
-          <entry key="JSP" value="7721" />
+          <entry key="JSP" value="7726" />
           <entry key="Properties" value="3895" />
           <entry key="XML" value="510" />
         </counts>
@@ -127,8 +121,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="318">
+              <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -707,7 +701,7 @@
       <workItem from="1547713967616" duration="64000" />
       <workItem from="1547757101944" duration="8992000" />
       <workItem from="1547849858575" duration="1147000" />
-      <workItem from="1547890468597" duration="10009000" />
+      <workItem from="1547890468597" duration="10752000" />
     </task>
     <servers />
   </component>
@@ -744,7 +738,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280462000" />
+    <option name="totallyTimeSpent" value="281205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1077,13 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllBuses.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="30" column="89" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties">
       <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1181,10 +1168,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllBuses.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="318">
+          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
         </state>
       </provider>
     </entry>

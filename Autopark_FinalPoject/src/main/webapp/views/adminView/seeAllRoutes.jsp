@@ -48,12 +48,12 @@
         </c:choose>
     </form>
     <br>
-    <a href="addNewRoute.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.add.route" bundle="${rb}"/></button></a>
-    <a href="editRoute.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.edit.route" bundle="${rb}"/></button></a>
-    <a href="deleteRoute.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.delete.route" bundle="${rb}"/></button></a>
+    <a href="/views/adminView/addNewRoute.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.add.route" bundle="${rb}"/></button></a>
+    <a href="/views/adminView/editRoute.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.edit.route" bundle="${rb}"/></button></a>
+    <a href="/views/adminView/deleteRoute.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.delete.route" bundle="${rb}"/></button></a>
     <br>
     <br>
-    <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+    <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
 
     <br>
     <br>
