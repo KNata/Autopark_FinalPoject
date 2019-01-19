@@ -32,9 +32,12 @@ public class App {
 //         System.out.println(theVisitor.toString());
 
 
-//        RouteDAO diverDAO = new RouteDAO();
-//        ArrayList<Route> routeList= diverDAO.findAll();
-//        System.out.println(routeList.size());
+        RouteDAO diverDAO = new RouteDAO();
+        ArrayList<Route> routeList= diverDAO.findAll();
+        System.out.println(routeList.size());
+        for (int i = 0; i < routeList.size(); i++) {
+            System.out.println(routeList.get(i).toString());
+        }
 //        for (int i = 0; i < routeList.size(); i++) {
 //            System.out.println(routeList.get(i).getRouteID());
 //            System.out.println(routeList.get(i).getRouteTitle());
@@ -50,9 +53,9 @@ public class App {
 //
 //        }
 
-            VisitorDAO visitorDAO = new VisitorDAO();
-            boolean status = visitorDAO.update("ЛЕ2478", "12345678");
-            System.out.println(status);
+//            VisitorDAO visitorDAO = new VisitorDAO();
+//            boolean status = visitorDAO.update("ЛЕ2478", "12345678");
+//            System.out.println(status);
 //        boolean editVisitor = visitorDAO.updateForAdmin("oleksii", "4567", "DRIVER");
 //        if (editVisitor) {
 //            System.out.println("ok");

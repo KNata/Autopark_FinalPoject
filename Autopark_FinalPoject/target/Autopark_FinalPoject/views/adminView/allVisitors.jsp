@@ -72,9 +72,8 @@
             <br>
             <br>
 
-            <form action="/VisitorServlet" method="post" action ="editAdmin" id="editForm" role="form" >
-                <a href="/views/adminView/editVisitor.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.rdit.visitor" bundle="${rb}"/></button></a>
-            </form>
+
+            <a href="editVisitor.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.rdit.visitor" bundle="${rb}"/></button></a>
 
             <br>
             <a href="/views/adminView/deleteVisitor.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.delete.visitor" bundle="${rb}"/></button></a>

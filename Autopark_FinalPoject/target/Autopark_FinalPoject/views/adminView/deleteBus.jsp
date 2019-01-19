@@ -18,7 +18,7 @@
         <input type="hidden" id="idBuss" name="idBuss" value="${bus.busID}">
         <h2><fmt:message key="admin.delete.bus" bundle="${rb}"/></h2>
         <div class="form-group col-xs-4">
-            <label for="idBus" class="control-label col-xs-4"><fmt:message key="admin.add.bus.busID"/>:</label>
+            <label for="idBus" class="control-label col-xs-4"><fmt:message key="admin.add.bus.busID" bundle="${rb}"/>:</label>
             <input type="text" name="idBus" id="idBus" class="form-control" value="${bus.busID}" required="true"/>
             <br>
             <button type="submit" class="btn btn-primary  btn-md"><fmt:message key="index.page.submit" bundle="${rb}"/></button>
@@ -36,7 +36,7 @@
         <button type="submit" class="btn btn-success btn-md"><fmt:message key="logout.button" bundle="${rb}"/></button>
     </form>
     <form action="${pageContext.request.contextPath}/ShowAllVisitorsServlet" method="post">
-        <button type="submit" class="btn btn-success btn-md"><fmt:message key="admin.see.buses"/></button>
+        <button type="submit" class="btn btn-success btn-md"><fmt:message key="admin.see.buses" bundle="${rb}"/></button>
     </form>
     <br>
     <br>

@@ -10,8 +10,8 @@ public class Route {
     private String cityOfDeparture;
     private String cityOfArrival;
     private int routeDuration;
-    private Driver theDriver;
-    private Bus theBus;
+    private String driverID;
+    private String busID;
     private Date departureTime;
     private Date arrivalTime;
 
@@ -44,12 +44,12 @@ public class Route {
         return arrivalTime;
     }
 
-    public Bus getBus() {
-        return theBus;
+    public String getBusID() {
+        return busID;
     }
 
-    public Driver getDriver() {
-        return theDriver;
+    public String getDriverID() {
+        return driverID;
     }
 
 
@@ -69,27 +69,43 @@ public class Route {
                 Objects.equals(cityOfArrival, route.cityOfArrival) &&
                 Objects.equals(departureTime, route.departureTime) &&
                 Objects.equals(arrivalTime, route.arrivalTime) &&
-                Objects.equals(theDriver, route.theDriver) &&
-                Objects.equals(theBus, route.theBus);
+                Objects.equals(driverID, route.driverID) &&
+                Objects.equals(busID, route.busID);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(routeID, routeTitle, cityOfDeparture, cityOfArrival, routeDuration, departureTime,
-                arrivalTime, theDriver, theBus);
+                arrivalTime, driverID, busID);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Route (" +
+//                "routeID = " + routeID +
+//                ", routeTitle = '" + routeTitle + '\'' +
+//                ", cityOfDeparture = '" + cityOfDeparture + '\'' +
+//                ", cityOfArrival = '" + cityOfArrival + '\'' +
+//                ", routeDuration = " + routeDuration +
+//                ", departureTime = " + departureTime +
+//                ", arrivalTime = " + arrivalTime +
+//                ')';
+//    }
+
 
     @Override
     public String toString() {
-        return "Route (" +
+        return "Route{" +
                 "routeID = " + routeID +
                 ", routeTitle = '" + routeTitle + '\'' +
                 ", cityOfDeparture = '" + cityOfDeparture + '\'' +
                 ", cityOfArrival = '" + cityOfArrival + '\'' +
                 ", routeDuration = " + routeDuration +
+                ", theDriver = " + driverID +
+                ", busID = " + busID +
                 ", departureTime = " + departureTime +
                 ", arrivalTime = " + arrivalTime +
-                ')';
+                '}';
     }
 
     public class Builder {
@@ -132,13 +148,13 @@ public class Route {
             return this;
         }
 
-        public Builder setDriver(Driver aDriver) {
-            theDriver = aDriver;
+        public Builder setDriver(String aDriverID) {
+            driverID = aDriverID;
             return this;
         }
 
-        public Builder setBus(Bus aBus) {
-            theBus = aBus;
+        public Builder setBusID(String aBusID) {
+            busID = aBusID;
             return this;
         }
 

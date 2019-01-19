@@ -45,11 +45,11 @@ public class AddNewRouteRommand implements Command {
             BusDAO busDAO = new BusDAO();
             DriverDAO driverDAO = new DriverDAO();
             if (busDAO.findByID(busID) != null && driverDAO.isDriverInSystem(driverID)) {
-                if(routeDAO.findByID(routeID) == null && (routeDAO.findByID(routeID).getRouteStartTime() != departureTimeInDateFormat) && (routeDAO.findByID(routeID).getDriver().getDriverID() != driverID)) {
+                if(routeDAO.findByID(routeID) == null && (routeDAO.findByID(routeID).getRouteStartTime() != departureTimeInDateFormat) && (routeDAO.findByID(routeID).getDriverID() != driverID)) {
                     Driver theDriver = driverDAO.findByID(driverID);
                     Bus theBus = busDAO.findByID(busID);
-                    Route theRoute = Route.newBuilder().setRouteID(Integer.valueOf(routeID)).setRouteTitle(routeTitle).setBus(theBus)
-                            .setDriver(theDriver).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
+                    Route theRoute = Route.newBuilder().setRouteID(Integer.valueOf(routeID)).setRouteTitle(routeTitle).setBusID(busID)
+                            .setDriver(driverID).setRouteBegin(cityOfDeparture).setRouteEnd(cityOfArrival)
                             .setRouteDuration(Integer.valueOf(routeDuration)).setRouteStartTime(departureTimeInDateFormat).setRouteEndTime(arrivalTimeInDateFormat).build();
                     boolean wasAdded = routeDAO.addRecord(theRoute);
                     if (wasAdded) {

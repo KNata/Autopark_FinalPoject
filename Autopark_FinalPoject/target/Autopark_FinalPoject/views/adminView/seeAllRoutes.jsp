@@ -10,17 +10,6 @@
 <div class="container">
 
     <h2><fmt:message key="admin.routes" bundle="${rb}"/></h2>
-    <!--Search Form -->
-    <form action="/RouteServlet" method="get" id="seachRouteForm" role="form">
-        <input type="hidden" id="searchAction" name="searchAction" value="searchByName">
-        <div class="form-group col-xs-5">
-            <input type="text" name="routeName" id="routeName" class="form-control" required="true" placeholder=<fmt:message key="type.name.of.route" bundle="${rb}"/>/>
-        </div>
-        <button type="submit" class="btn btn-info">
-            <span class="glyphicon glyphicon-search"></span> <fmt:message key="search.button" bundle="${rb}"/>
-        </button>
-
-    </form>
 
     <form action="/RouteServlet" method="post" id="routeForm" role="form" >
         <input type="hidden" id="idRoute" name="idRoute">
@@ -33,10 +22,8 @@
                         <td><fmt:message key="admin.add.route.routeID" bundle="${rb}"/>: </td>
                         <td><fmt:message key="admin.add.route.name" bundle="${rb}"/>: </td>
                         <td><fmt:message key="admin.add.driver.driverID" bundle="${rb}"/>: </td>
-                        <td><fmt:message key="admin.add.driver.driverName" bundle="${rb}"/>: </td>
                         <td><fmt:message key="admin.add.bus.busID" bundle="${rb}"/>: </td>
-                        <td><fmt:message key="admin.add.bus.model" bundle="${rb}"/>: </td>
-                        <td><fmt:message key="admin.add.route.depatureCity" bundle="${rb}"/>: </td>
+                         <td><fmt:message key="admin.add.route.depatureCity" bundle="${rb}"/>: </td>
                         <td><fmt:message key="admin.add.route.arrivalTime" bundle="${rb}"/>: </td>
                         <td><fmt:message key="admin.add.route.duration" bundle="${rb}"/>: </td>
                         <td><fmt:message key="admin.add.route.depatureTime" bundle="${rb}"/></td>
@@ -44,33 +31,20 @@
                     </tr>
                     </thead>
                     <c:forEach var="route" items="${routeList}">
-                        <c:set var="classSucess" value=""/>
-                        <c:if test ="${idRoute == route.routeID}">
-                            <c:set var="classSucess" value="info"/>
-                        </c:if>
                         <tr class="${classSucess}">
-                            <td>${route.routeID}</td>
-                            <td>${route.routeName}</td>
-                            <td>${route.theDriver.driverID}</td>
-                            <td>${route.theDriver.driverName}</td>
-                            <td>${route.theBus.busID}</td>
-                            <td>${route.theBus.busModel}</td>
-                            <td>${route.cityOfDeparture}</td>
-                            <td>${route.cityOfArrival}</td>
-                            <td>${route.routeDuration}</td>
-                            <td>${route.departureTime}</td>
-                            <td>${route.arrivalTime}</td>
-
+                            <td>${route.getRouteID()}</td>
+                            <td>${route.getRouteTitle()}</td>
+                            <td>${route.getDriverID()}</td>
+                            <td>${route.getBusID()}</td>
+                            <td>${route.getRouteBegin()}</td>
+                            <td>${route.getRouteEnd()}</td>
+                            <td>${route.getRouteDuration()}</td>
+                            <td>${route.getRouteStartTime()}</td>
+                            <td>${route.getRouteEndTime()}</td>
                         </tr>
                     </c:forEach>
                 </table>
             </c:when>
-            <c:otherwise>
-                <br>
-                <div class="alert alert-info">
-                    <fmt:message key="no.route.found" bundle="${rb}"/>
-                </div>
-            </c:otherwise>
         </c:choose>
     </form>
     <br>
