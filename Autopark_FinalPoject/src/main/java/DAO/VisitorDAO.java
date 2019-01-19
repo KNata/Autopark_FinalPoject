@@ -169,7 +169,6 @@ public class VisitorDAO  {
         Visitor theVisitor = null;
         Connection conn = null;
         PreparedStatement preparedStatement = null;
-        Savepoint savePoint = null;
         try {
             conn = ConnectionPool.getConnection();
             conn.setAutoCommit(false);
@@ -191,13 +190,7 @@ public class VisitorDAO  {
                 }
             }
         } catch (SQLException e) {
-            try {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
-            } catch (SQLException ee) {}
+
             System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
@@ -272,9 +265,9 @@ public class VisitorDAO  {
     public boolean update(String visitorLogin, String passwordToChange) {
         String updateSQL = "update `mydb`.`Visitor` set  password = ? where login = ?";
         boolean wasUpdated = false;
-        if (passwordToChange.equals(this.findByLogin(visitorLogin))) {
-            return wasUpdated = false;
-        }
+//        if (passwordToChange.equals(findByLogin(visitorLogin).getVisitorPassword())) {
+//            return false;
+//        }
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         Savepoint savePoint = null;

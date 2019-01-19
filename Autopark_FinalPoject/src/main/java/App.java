@@ -51,18 +51,20 @@ public class App {
 //        }
 
             VisitorDAO visitorDAO = new VisitorDAO();
+            boolean status = visitorDAO.update("ЛЕ2478", "12345678");
+            System.out.println(status);
 //        boolean editVisitor = visitorDAO.updateForAdmin("oleksii", "4567", "DRIVER");
 //        if (editVisitor) {
 //            System.out.println("ok");
 //        } else {
 //            System.out.println("false");
 //        }
-            RouteDAO routeDAO  = new RouteDAO();
-            routeDAO.setDriverID("ЛЕ2478");
-            ArrayList<Route> routeList = routeDAO.showDriverInfo();
-            for (int i = 0; i < routeList.size(); i++) {
-                System.out.println(routeList.get(i).toString());
-            }
+//            RouteDAO routeDAO  = new RouteDAO();
+//            routeDAO.setDriverID("ЛЕ2478");
+//            ArrayList<Route> routeList = routeDAO.showDriverInfo();
+//            for (int i = 0; i < routeList.size(); i++) {
+//                System.out.println(routeList.get(i).toString());
+//            }
 
 
 

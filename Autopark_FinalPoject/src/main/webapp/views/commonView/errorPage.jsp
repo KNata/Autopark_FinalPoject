@@ -9,7 +9,7 @@
 
 <div class="container-fluid">
     <div class="alert alert-danger" role="alert">
-        <fmt:message key="error.message"/>
+        <fmt:message key="error.message" bundle="${rb}"/>
     </div>
 </div>
 

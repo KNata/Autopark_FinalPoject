@@ -1,0 +1,1 @@
+2019-01-19 00:23:00 ERROR DriverDAO:195 - Cannot create PoolableConnectionFactory (Unknown database 'mydb')
