@@ -27,9 +27,6 @@ public class RouteDriverServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         showDriverStory(request, response);
-        System.out.println("Inside doGet method in RouteDriverServlet");
-        PrintWriter out = response.getWriter();
-        out.println("Hello in Get Method");
 
     }
 
@@ -42,9 +39,6 @@ public class RouteDriverServlet extends HttpServlet {
                 editDiver(request, response);
                 break;
         }
-        PrintWriter out = response.getWriter();
-        out.println("Hello in Get Method");
-        System.out.println("Hello in Post Method");
     }
 
     private void showDriverStory(HttpServletRequest request, HttpServletResponse response)
@@ -54,7 +48,6 @@ public class RouteDriverServlet extends HttpServlet {
         VisitorDAO visitorDAO = new VisitorDAO();
         Visitor theVisitor = visitorDAO.findByLogin((String)session.getAttribute("driver"));
         routeDAO.setDriverID(theVisitor.getTheDriver().getDriverID());
-        System.out.println("=====");
         System.out.println(theVisitor.getTheDriver().getDriverID());
         ArrayList<Route> driverStoryList = routeDAO.showDriverInfo();
         System.out.println(driverStoryList.size());
@@ -86,9 +79,11 @@ public class RouteDriverServlet extends HttpServlet {
         System.out.println(newDriverPassword);
         boolean wasUpdated = visitorDAO.update(theVisitor.getVisitorLogin(), newDriverPassword);
         if (wasUpdated) {
-            System.out.println("Done");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+            dispatcher.forward(request, response);
         } else {
-            System.out.println("Nope");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+            dispatcher.forward(request, response);
         }
 
 

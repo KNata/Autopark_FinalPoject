@@ -62,9 +62,7 @@
     <br>
     <br>
 
-    <form action="/BusServlet" method="post" action ="edit" id="editForm" role="form" >
-        <a href="/views/adminView/editBus.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.edit.bus" bundle="${rb}"/></button></a>
-    </form>
+   <a href="/views/adminView/editBus.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.edit.bus" bundle="${rb}"/></button></a>
 
     <a href="/views/adminView/deleteBus.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.delete.bus" bundle="${rb}"/></button></a>
 

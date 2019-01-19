@@ -11,7 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,7 +28,6 @@ import java.util.regex.Pattern;
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
             showAllVisitors(request, response);
-            String action = request.getParameter("action");
 
         }
 
@@ -41,9 +42,6 @@ import java.util.regex.Pattern;
                     break;
                 case "removeVisitor":
                     deleteVisitor(request, response);
-                    break;
-                case "edit":
-                    editVisitor(request, response);
                     break;
                 case "editAdmin":
                     editVisitorAdmin(request, response);
@@ -120,16 +118,7 @@ import java.util.regex.Pattern;
             }
         }
 
-        private void editVisitor(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-            String visitorLogin = request.getParameter("login");
-            String passwodToChange = request.getParameter("password");
 
-            boolean wasEdited = visitorDAO.update(visitorLogin, passwodToChange);
-            if (wasEdited) {
-                String message = "The visitor was successfully edited";
-                request.setAttribute("message", message);
-            }
-        }
 
         private void editVisitorAdmin(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
             String visitorLogin = request.getParameter("visitorLogin");

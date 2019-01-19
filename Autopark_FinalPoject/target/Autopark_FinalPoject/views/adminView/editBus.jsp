@@ -11,32 +11,32 @@
 
     <form action="/BusServlet" method="post" role="form" data-toggle="validator" >
         <c:if test ="${empty action}">
-            <c:set var="action" value="edit"/>
+            <c:set var="action" value="editBus"/>
         </c:if>
 
-        <h3><fmt:message key="edit.bus.title"/></h3>
+        <h3><fmt:message key="edit.bus.title" bundle="${rb}"/></h3>
 
         <div class="form-group col-xs-4">
 
-            <label for="idBus" class="control-label col-xs-4"><fmt:message key="admin.add.bus.busID"/>:</label>
+            <label for="idBus" class="control-label col-xs-4"><fmt:message key="admin.add.bus.busID" bundle="${rb}"/>:</label>
             <input type="text" name="idBus" id="idBus" class="form-control" value="${bus.busID}" required="true"/>
             <br>
-            <label for="miles" class="control-label col-xs-4"><fmt:message key="admin.add.bus.miles"/>:</label>
+            <label for="miles" class="control-label col-xs-4"><fmt:message key="admin.add.bus.miles" bundle="${rb}"/>:</label>
             <input type="text" name="visitorPassword" id="miles" class="form-control" value="${bus.miles}"/>
 
-            <label for="passedService" class="control-label col-xs-4"><fmt:message key="admin.add.bus.service"/>?</label>
-            <input type="text" name="passedService" id="passedService" class="form-control" value="${bus.passedService}" required="true"/>
+            <label for="passedService" class="control-label col-xs-4"><fmt:message key="admin.add.bus.service" bundle="${rb}"/>?</label>
+            <input type="text" name="passedService" id="passedService" class="form-control" value="${bus.passedService}" required="true" placeholder="true / false"/>
 
-            <button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.accept.button"/></button>
+            <button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.accept.button" bundle="${rb}"/></button>
         </div>
 
     </form>
     <br>
-    <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page"/></button></a>
+    <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
     <br>
     <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
-        <button type="submit" class="btn btn-success btn-md"><fmt:message key="logout.button"/></button>
+        <button type="submit" class="btn btn-success btn-md"><fmt:message key="logout.button" bundle="${rb}"/></button>
     </form>
 
 </div>

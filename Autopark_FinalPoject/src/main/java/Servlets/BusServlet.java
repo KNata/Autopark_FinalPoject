@@ -37,7 +37,7 @@ public class BusServlet extends HttpServlet {
             case "addNewBus":
                 addNewBus(request, response);
                 break;
-            case "edit":
+            case "editBus":
                 editBus(request, response);
                 break;
             case "removeBus":
@@ -58,13 +58,6 @@ public class BusServlet extends HttpServlet {
             request.setAttribute("busList", busList);
             dispatcher.forward(request, response);
         }
-    }
-
-    private void forwardListBuses(HttpServletRequest request, HttpServletResponse response, ArrayList<Bus> busList) throws IOException, ServletException {
-        String nextJSP = "/views/adminView/seeAllBusesPage.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        request.setAttribute("busList", busList);
-        dispatcher.forward(request, response);
     }
 
     private void searchBuseByID (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -130,10 +123,14 @@ public class BusServlet extends HttpServlet {
         String busID = request.getParameter("idBus");
         int miles = Integer.parseInt(request.getParameter("miles"));
         boolean passedService = Boolean.parseBoolean(request.getParameter("passedService"));
-
         boolean wasUpdated = busDAO.update(busID, miles, passedService);
         if (wasUpdated) {
             System.out.println("The route has been  updated successfully");
+            showAllBuses(request, response);
+
+        } else {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+            dispatcher.forward(request, response);
         }
     }
 }
