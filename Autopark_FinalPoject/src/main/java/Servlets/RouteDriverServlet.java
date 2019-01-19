@@ -35,8 +35,15 @@ public class RouteDriverServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //String action = request.getParameter("action");
-        editDiver(request, response);
+        String action = request.getParameter("action");
+        System.out.println(action);
+        switch (action) {
+            case "editDriver":
+                editDiver(request, response);
+                break;
+        }
+        PrintWriter out = response.getWriter();
+        out.println("Hello in Get Method");
         System.out.println("Hello in Post Method");
     }
 

@@ -31,7 +31,6 @@ public class BusServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        showAllBuses(request, response);
         String action = request.getParameter("action");
         System.out.println(action);
         switch (action) {
