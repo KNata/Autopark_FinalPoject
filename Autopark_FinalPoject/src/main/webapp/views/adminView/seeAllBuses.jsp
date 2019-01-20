@@ -10,17 +10,7 @@
 <div class="container">
 
 
-    <h2>Buses</h2>
-    <!--Search Form -->
-    <form action="/BusServlet" method="get" id="seachBusForm" role="form">
-        <input type="hidden" id="searchAction" name="searchAction" value="searchByName">
-        <div class="form-group col-xs-5">
-            <input type="text" name="busName" id="busName" class="form-control" required="true" placeholder="Type the Name of the bus"/>
-        </div>
-        <button type="submit" class="btn btn-info">
-            <span class="glyphicon glyphicon-search"></span> <fmt:message key="search.button" bundle="${rb}"/>
-        </button>
-    </form>
+    <h2><fmt:message key="admin.see.buses" bundle="${rb}"/></h2>
 
     <form action="/BusServlet" method="get" id="busForm" role="form" >
         <c:choose>
@@ -56,16 +46,15 @@
         </c:choose>
     </form>
     <br>
+    <br>
     <a href="/views/adminView/addNewBusPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.new.bus" bundle="${rb}"/></button></a>
-    <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-primary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
-
-    <br>
-    <br>
-
-   <a href="/views/adminView/editBus.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.edit.bus" bundle="${rb}"/></button></a>
-
+    <a href="/views/adminView/editBus.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.edit.bus" bundle="${rb}"/></button></a>
     <a href="/views/adminView/deleteBus.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.delete.bus" bundle="${rb}"/></button></a>
 
+    <br>
+    <br>
+
+    <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-primary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
 
 
     <br>

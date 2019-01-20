@@ -22,17 +22,18 @@
             <input type="text" name="idBus" id="idBus" class="form-control" value="${bus.busID}" required="true"/>
             <br>
             <label for="miles" class="control-label col-xs-4"><fmt:message key="admin.add.bus.miles" bundle="${rb}"/>:</label>
-            <input type="text" name="visitorPassword" id="miles" class="form-control" value="${bus.miles}"/>
+            <input type="text" name="miles" id="miles" class="form-control" value="${bus.miles}"/>
 
             <label for="passedService" class="control-label col-xs-4"><fmt:message key="admin.add.bus.service" bundle="${rb}"/>?</label>
             <input type="text" name="passedService" id="passedService" class="form-control" value="${bus.passedService}" required="true" placeholder="true / false"/>
-
-            <button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.accept.button" bundle="${rb}"/></button>
         </div>
-
+        <br>
+        <button type="submit" class="btn btn-primary btn-md"><fmt:message key="edit.button" bundle="${rb}"/></button>
     </form>
     <br>
-    <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+    <br>
+    <br>
+    <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
     <br>
     <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">

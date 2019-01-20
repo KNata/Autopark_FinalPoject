@@ -31,7 +31,7 @@
 
     </form>
     <br>
-    <a href="driverMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+    <a href="/driverMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
     <br>
     <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">

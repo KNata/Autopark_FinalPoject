@@ -35,11 +35,7 @@
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
         <button type="submit" class="btn btn-success btn-md"><fmt:message key="logout.button" bundle="${rb}"/></button>
     </form>
-    <form action="${pageContext.request.contextPath}/ShowAllVisitorsServlet" method="post">
-        <button type="submit" class="btn btn-success btn-md"><fmt:message key="admin.see.buses" bundle="${rb}"/></button>
-    </form>
-    <br>
-    <br>
+
 </div>
 
 <%@include file="/views/commonView/footer.jsp"%>

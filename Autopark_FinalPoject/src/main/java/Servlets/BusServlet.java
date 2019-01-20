@@ -42,7 +42,6 @@ public class BusServlet extends HttpServlet {
                 break;
             case "removeBus":
                 deleteBus(request, response);
-                System.out.println("removeBus");
         }
 
     }
@@ -116,6 +115,14 @@ public class BusServlet extends HttpServlet {
         String busID = request.getParameter("idBus");
         System.out.println(busID);
         boolean wasDeleted = busDAO.deleteRecord(busID);
+        System.out.println("wasDeleted " + wasDeleted);
+        if (wasDeleted) {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     private void editBus(HttpServletRequest request, HttpServletResponse response)
@@ -123,11 +130,14 @@ public class BusServlet extends HttpServlet {
         String busID = request.getParameter("idBus");
         int miles = Integer.parseInt(request.getParameter("miles"));
         boolean passedService = Boolean.parseBoolean(request.getParameter("passedService"));
+        System.out.println("idBus " + busID);
+        System.out.println("miles " + miles);
+        System.out.println("passedService " + passedService);
         boolean wasUpdated = busDAO.update(busID, miles, passedService);
+        System.out.println("wasUpdated " + wasUpdated);
         if (wasUpdated) {
-            System.out.println("The route has been  updated successfully");
-            showAllBuses(request, response);
-
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+            dispatcher.forward(request, response);
         } else {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
             dispatcher.forward(request, response);
