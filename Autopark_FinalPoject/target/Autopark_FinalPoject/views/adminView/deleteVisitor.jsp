@@ -15,13 +15,13 @@
             <c:set var="action" value="removeVisitor"/>
         </c:if>
         <input type="hidden" id="action" name="action" value="${action}">
-        <input type="hidden" id="idVisitorr" name="idVisitor" value="${bus.busID}">
+        <input type="hidden" id="idVisitorr" name="idVisitor" value="${visitor.visitorID}">
         <h2>Bus d</h2>
         <div class="form-group col-xs-4">
-            <label for="idVisitor" class="control-label col-xs-4"><fmt:message key="admin.add.user.visitorID" bundle="${rb}"/>:</label>
-            <input type="text" name="idVisitor" id="idVisitor" class="form-control" value="${visitor.visitorID}" required="true"/>
+            <label for="visitorID" class="control-label col-xs-4"><fmt:message key="admin.add.user.visitorID" bundle="${rb}"/>:</label>
+            <input type="text" name="visitorID" id="visitorID" class="form-control" value="${visitor.visitorID}" required="true"/>
             <br>
-            <button type="submit" class="btn btn-primary  btn-md"><fmt:message key="admin.accept.button" bundle="${rb}"/></button>
+            <button type="submit" class="btn btn-primary  btn-md"><fmt:message key="delete.button" bundle="${rb}"/></button>
         </div>
         <br>
     </form>

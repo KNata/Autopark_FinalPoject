@@ -206,6 +206,42 @@ public class VisitorDAO  {
         return theVisitor;
     }
 
+    public boolean findByID(String anID)  {
+        String selectAllSQL = "select * from `mydb`.`Visitor` where visitorID = ?";
+        boolean wasFound = false;
+        Visitor theVisitor = null;
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        Savepoint savePoint = null;
+        try {
+            conn = ConnectionPool.getConnection();
+            conn.setAutoCommit(false);
+            preparedStatement = conn.prepareStatement(selectAllSQL);
+            preparedStatement.setString(1, anID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String visitorID = resultSet.getString("visitorID");
+                if (visitorID.equals(anID)) {
+                    wasFound = true;
+                } else {
+                    wasFound = false;
+                }
+            }
+        } catch (SQLException e) {
+            theLogger.error(e.getMessage());
+        } finally {
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conn != null) {
+                    conn.commit();
+                }
+            } catch (SQLException e) {}
+        }
+        return wasFound;
+    }
+
     public Visitor findByLoginAndPassword(String aLogin, String aPasswod)  {
         String selectAllSQL = "select * from `mydb`.`Visitor` where login = ? and password = ?";
         Visitor theVisitor = null;

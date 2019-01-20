@@ -113,9 +113,23 @@ import java.util.regex.Pattern;
 
         private void deleteVisitor(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
             String visitorID = request.getParameter("visitorID");
-            if (visitorID != null) {
+            System.out.println("idVisitor " + visitorID);
+            boolean wasFound = visitorDAO.findByID(visitorID);
+            System.out.println("wasFound " + wasFound);
+           if (visitorID != null && wasFound) {
                 boolean wasDeleted = visitorDAO.deleteRecord(visitorID);
-            }
+                System.out.println("wasDeleted " + wasDeleted);
+                if (wasDeleted) {
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+                    dispatcher.forward(request, response);
+                } else {
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+                    dispatcher.forward(request, response);
+                }
+            } else {
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+                dispatcher.forward(request, response);
+           }
         }
 
 

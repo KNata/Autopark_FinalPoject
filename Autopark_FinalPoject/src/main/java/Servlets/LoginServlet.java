@@ -41,10 +41,10 @@ public class LoginServlet extends HttpServlet {
 
             }
         }else{
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
+            response.sendRedirect("/index.jsp");
             PrintWriter out= response.getWriter();
             out.println("<font color=red>Either user name or password is wrong.</font>");
-            rd.include(request, response);
+
         }
 
 

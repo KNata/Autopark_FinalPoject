@@ -32,8 +32,8 @@ public class App {
 //         System.out.println(theVisitor.toString());
 
 
-        RouteDAO diverDAO = new RouteDAO();
-        boolean wasUpdated = diverDAO.deleteRecord("1");
+            VisitorDAO visitorDAO = new VisitorDAO();
+        boolean wasUpdated = visitorDAO.findByID("3");
         if (wasUpdated) {
             System.out.println("OK");
         } else {

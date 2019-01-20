@@ -71,16 +71,6 @@ public class RouteServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    private void searchRouteByName(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String routeName = request.getParameter("driverName");
-        Route theRoute = routeDAO.findByName(routeName);
-        request.setAttribute("route", theRoute);
-        request.setAttribute("action", "edit");
-        String nextJSP = "/adminView/addNewRoutePage.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        dispatcher.forward(request, response);
-    }
 
     private void addNewRoute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String routeID = request.getParameter("idRoute");
