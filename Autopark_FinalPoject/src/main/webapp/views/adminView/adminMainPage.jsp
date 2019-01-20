@@ -27,7 +27,7 @@
         <a href="addNewDriverPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><fmt:message key="admin.add.driver" bundle="${rb}"/></a>
         <a href="addNewRoute.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><fmt:message key="admin.add.route" bundle="${rb}"/></a>
         <a href="addNewBusPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><fmt:message key="admin.add.bus" bundle="${rb}"/></a>
-<a href="registerPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><fmt:message key="admin.add.visitor" bundle="${rb}"/></a>
+        <a href="registerPage.jsp" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><fmt:message key="admin.add.visitor" bundle="${rb}"/></a>
 
     </div>
     <br>

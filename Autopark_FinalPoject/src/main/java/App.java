@@ -33,11 +33,19 @@ public class App {
 
 
         RouteDAO diverDAO = new RouteDAO();
-        ArrayList<Route> routeList= diverDAO.findAll();
-        System.out.println(routeList.size());
-        for (int i = 0; i < routeList.size(); i++) {
-            System.out.println(routeList.get(i).toString());
+        boolean wasUpdated = diverDAO.deleteRecord("1");
+        if (wasUpdated) {
+            System.out.println("OK");
+        } else {
+            System.out.println("-");
         }
+
+        //        ArrayList<Route> routeList= diverDAO.findAll();
+//        System.out.println(routeList.size());
+//        for (int i = 0; i < routeList.size(); i++) {
+//            System.out.println(routeList.get(i).toString());
+//        }
+
 //        for (int i = 0; i < routeList.size(); i++) {
 //            System.out.println(routeList.get(i).getRouteID());
 //            System.out.println(routeList.get(i).getRouteTitle());

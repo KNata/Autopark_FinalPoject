@@ -24,7 +24,7 @@
 
     <h2>Visitor List</h2>
 
-    <form action="/VisitorServlet" method="post" id="visitorForm" role="form" >
+    <form action="/VisitorServlet" method="get" id="visitorForm" role="form" >
         <input type="hidden" id="idVisitor" name="idVisitor">
         <input type="hidden" id="action" name="action">
         <c:choose>
@@ -48,9 +48,6 @@
                             <td>${visitor.visitorName}</td>
                             <td>
 
-                                <form action="/VisitorServlet" method="post" action ="edit" id="deleteForm" role="form" >
-                                    <a href="/views/adminView/deleteVisitor.jsp"><fmt:message key="admin.delete.visitor" bundle="${rb}"/></a>
-                                </form>
                             </td>
 
                             </td>
@@ -58,30 +55,24 @@
                     </c:forEach>
                 </table>
             </c:when>
-            <c:otherwise>
-                <br>
-                <div class="alert alert-info">
-                    <fmt:message key="no.visitor.found.criteria" bundle="${rb}"/>
-                </div>
-            </c:otherwise>
+
         </c:choose>
     </form>
     <br>
         <a href="/views/adminView/registerPage.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.new.visitor" bundle="${rb}"/></button>
-            <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
-            <br>
-            <br>
-
-
-            <a href="editVisitor.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.rdit.visitor" bundle="${rb}"/></button></a>
-
-            <br>
+            <a href="/views/adminView/editVisitor.jsp"><button type="submit" class="btn btn-primary btn-md"><fmt:message key="admin.rdit.visitor" bundle="${rb}"/></button></a>
             <a href="/views/adminView/deleteVisitor.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="admin.delete.visitor" bundle="${rb}"/></button></a>
             <br>
             <br>
+            <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+            <br><br>
+
+
             <form action="${pageContext.request.contextPath}/VisitorServlet" method="post">
                 <button type="submit" class="btn btn-info"><fmt:message key="logout.button" bundle="${rb}"/></button>
             </form>
+
+
             <a href="adminMainPage.jsp"></a>
 
 

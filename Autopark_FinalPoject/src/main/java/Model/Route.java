@@ -12,8 +12,8 @@ public class Route {
     private int routeDuration;
     private String driverID;
     private String busID;
-    private Date departureTime;
-    private Date arrivalTime;
+    private String departureTime;
+    private String arrivalTime;
 
 
     public int getRouteID() {
@@ -36,11 +36,11 @@ public class Route {
         return routeDuration;
     }
 
-    public Date getRouteStartTime() {
+    public String getRouteStartTime() {
         return departureTime;
     }
 
-    public Date getRouteEndTime() {
+    public String getRouteEndTime() {
         return arrivalTime;
     }
 
@@ -138,12 +138,12 @@ public class Route {
             return this;
         }
 
-        public Builder setRouteStartTime(Date aRouteStartTime) {
+        public Builder setRouteStartTime(String aRouteStartTime) {
             departureTime = aRouteStartTime;
             return this;
         }
 
-        public Builder setRouteEndTime(Date aRouteEndTime) {
+        public Builder setRouteEndTime(String aRouteEndTime) {
             arrivalTime = aRouteEndTime;
             return this;
         }

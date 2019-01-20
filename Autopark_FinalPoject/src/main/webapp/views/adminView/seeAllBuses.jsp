@@ -18,7 +18,7 @@
             <input type="text" name="busName" id="busName" class="form-control" required="true" placeholder="Type the Name of the bus"/>
         </div>
         <button type="submit" class="btn btn-info">
-            <span class="glyphicon glyphicon-search"></span> <fmt:message key="search.button"/>
+            <span class="glyphicon glyphicon-search"></span> <fmt:message key="search.button" bundle="${rb}"/>
         </button>
     </form>
 

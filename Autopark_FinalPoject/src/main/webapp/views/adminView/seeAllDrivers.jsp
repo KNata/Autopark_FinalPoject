@@ -6,17 +6,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="/views/commonView/header.jsp"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 
 <div class="container">
 
-    <h2>Drivers</h2>
+    <h2><fmt:message key="admin.see.drivers" bundle="${rb}"/></h2>
     <form action="/DriverServlet" method="get" id="seachBusForm" role="form">
         <input type="hidden" id="searchAction" name="searchAction" value="searchByName">
         <div class="form-group col-xs-5">
             <input type="text" name="driverName" id="driverName" class="form-control" required="true" placeholder="Type the Name of a driver"/>
         </div>
         <button type="submit" class="btn btn-info">
-            <span class="glyphicon glyphicon-search"></span> <fmt:message key="search.button"/>
+            <span class="glyphicon glyphicon-search"></span> <fmt:message key="search.button" bundle="${rb}"/>
         </button>
     </form>
 
