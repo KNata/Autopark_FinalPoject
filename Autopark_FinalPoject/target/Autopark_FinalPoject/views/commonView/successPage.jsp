@@ -11,10 +11,12 @@
     <div class="alert alert-success" role="alert">
         An item was added successfully.
     </div>
-
+    <br>
+    <br>
     <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
 
-
+    <br>
+    <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">
         <button type="submit" class="btn btn-success btn-md">Logout</button>
     </form>

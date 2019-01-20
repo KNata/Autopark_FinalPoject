@@ -25,10 +25,10 @@
             <input type="text" name="routeName" id="routeName" class="form-control" value="${route.driverName}" required="true"/>
             <br>
             <label for="driverID" class="control-label col-xs-4"><fmt:message key="admin.add.route.driverId" bundle="${rb}"/>:</label>
-            <input type="text" name="driverID" id="driverID" class="form-control" value="${route.driverID}" required="true"/>
+            <input type="text" name="driverID" id="driverID" class="form-control" value="${route.driverID}" />
             <br>
             <label for="busID" class="control-label col-xs-4"><fmt:message key="admin.add.route.busID" bundle="${rb}"/>:</label>
-            <input type="text" name="busID" id="busID" class="form-control" value="${route.busID}" required="true"/>
+            <input type="text" name="busID" id="busID" class="form-control" value="${route.busID}" />
             <br>
             <label for="cityOfDeparture" class="control-label col-xs-4"><fmt:message key="admin.add.route.depatureCity" bundle="${rb}"/>:</label>
             <input type="text" name="cityOfDeparture" id="cityOfDeparture" class="form-control" value="${route.cityOfDeparture}" required="true"/>

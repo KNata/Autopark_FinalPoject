@@ -29,7 +29,7 @@
             <label for="visitorRole" class="control-label col-xs-4"><fmt:message key="admin.add.user.visitor.visitor.role" bundle="${rb}"/>:</label>
             <input type="text" name="visitorRole" id="visitorRole" class="form-control" value="${visitor.visitorRole}" required="true"/>
 
-            <button type="submit" class="btn btn-primary  btn-md"><fmt:message key="admin.accept.button" bundle="${rb}"/></button>
+            <button type="submit" class="btn btn-primary  btn-md"><fmt:message key="index.page.submit" bundle="${rb}"/></button>
         </div>
 
     </form>

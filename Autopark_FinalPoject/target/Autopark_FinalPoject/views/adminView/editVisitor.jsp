@@ -29,12 +29,12 @@
             <label for="visitorRole" class="control-label col-xs-4"><fmt:message key="admin.add.user.visitor.visitor.role" bundle="${rb}"/>:</label>
             <input type="text" name="visitorRole" id="visitorRole" class="form-control" value="${visitor.visitorRole}" required="true"/>
 
-            <button type="submit" class="btn btn-primary  btn-md"><fmt:message key="admin.accept.button" bundle="${rb}"/></button>
+            <button type="submit" class="btn btn-primary  btn-md"><fmt:message key="index.page.submit" bundle="${rb}"/></button>
         </div>
 
     </form>
     <br>
-    <a href="adminMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+    <a href="/adminMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
     <br>
     <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">

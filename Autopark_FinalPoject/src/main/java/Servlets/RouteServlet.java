@@ -39,7 +39,7 @@ public class RouteServlet extends HttpServlet {
             case "addNewRoute":
                 addNewRoute(request, response);
                 break;
-            case "remove":
+            case "removeRoute":
                 deleteRoute(request, response);
                 break;
             case "edit":
@@ -126,7 +126,9 @@ public class RouteServlet extends HttpServlet {
 
     private void deleteRoute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String routeID = request.getParameter("idRoute");
+        System.out.println("idRoute " + routeID);
         if (routeID != null && routeDAO.findByID(routeID) != null) {
+            System.out.println("1");
             boolean wasDeleted = routeDAO.deleteRecord(routeID);
             System.out.println(wasDeleted + "was deleted");
             if (wasDeleted) {
@@ -172,6 +174,7 @@ public class RouteServlet extends HttpServlet {
         if (routeID != null && busID != null && driverID != null && departureTime != null && arrivalTime != null
                 && duration != 0 && busDAO.findByID(busID) != null && driverDAO.findByID(driverID) != null && routeDAO.findByID(routeID) != null) {
             boolean wasUpdated = routeDAO.update(Integer.valueOf(routeID), driverID, busID, departureTime, arrivalTime, duration);
+            System.out.println(wasUpdated);
             if (wasUpdated) {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
                 dispatcher.forward(request, response);
