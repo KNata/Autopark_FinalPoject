@@ -7,55 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c834de6-3abc-4259-adfb-2c0e2dd0744d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/BusServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/BusServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/AutoparkCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/AutoparkCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/AddNewBusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/AddNewBusCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/ICommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Driver/AddNewDriverCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/Driver/AddNewDriverCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/AddNewVisitorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/AddNewVisitorCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/databaseProperties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databaseProperties.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/language.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/language.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/BusServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/BusServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/AutoparkCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/AutoparkCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Bus/AddNewBusCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Bus/AddNewBusCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Driver/AddNewDriverCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Driver/AddNewDriverCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Route/AddNewRouteRommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Route/AddNewRouteRommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Visitor/AddNewVisitorCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Visitor/AddNewVisitorCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/DriverServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/DriverServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/RouteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/RouteServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/VisitorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/VisitorServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/databaseProperties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/databaseProperties.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/commonView/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/commonView/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/commonView/successPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/commonView/successPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/BusServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/BusServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/AutoparkCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/AutoparkCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Bus/AddNewBusCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/Bus/AddNewBusCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Driver/AddNewDriverCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/Driver/AddNewDriverCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Route/AddNewRouteRommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/Route/AddNewRouteRommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Visitor/AddNewVisitorCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/Visitor/AddNewVisitorCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/DriverServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/DriverServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/RouteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/RouteServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/VisitorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/VisitorServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/databaseProperties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/databaseProperties.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -133,16 +88,16 @@
         <counts>
           <entry key="CLASS" value="20" />
           <entry key="JAVA" value="408" />
-          <entry key="JSP" value="370" />
-          <entry key="Properties" value="37" />
+          <entry key="JSP" value="375" />
+          <entry key="Properties" value="40" />
           <entry key="XML" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="20868" />
-          <entry key="JSP" value="8091" />
-          <entry key="Properties" value="4079" />
+          <entry key="JSP" value="8173" />
+          <entry key="Properties" value="4158" />
           <entry key="XML" value="510" />
         </counts>
       </usages-collector>
@@ -153,29 +108,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/aboutProject.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="60" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="60" />
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -183,18 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-            </state>
-          </provider>
-          <provider editor-type-id="ResourceBundle" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="76" lean-forward="true" selection-start-line="73" selection-end-line="76" />
+            <state relative-caret-position="296">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
             </state>
           </provider>
           <provider editor-type-id="ResourceBundle" />
@@ -203,11 +133,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="66" column="101" selection-start-line="66" selection-start-column="101" selection-end-line="66" selection-end-column="101" />
+            <state relative-caret-position="262">
+              <caret line="67" column="1739" selection-start-line="67" selection-start-column="1739" selection-end-line="67" selection-end-column="1739" />
             </state>
           </provider>
           <provider editor-type-id="ResourceBundle" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="76" column="5" selection-start-line="76" selection-end-line="77" />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="57" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -218,8 +167,8 @@
         <option value="JUnit3 Test Class" />
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -246,7 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Route.java" />
@@ -267,7 +215,6 @@
         <option value="$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/resources/databaseProperties.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/ICommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Driver/AddNewDriverCommand.java" />
@@ -293,10 +240,12 @@
         <option value="$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/i18n/language.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/aboutProject.jsp" />
       </list>
     </option>
   </component>
@@ -432,7 +381,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="userView" type="462c0819:PsiDirectoryNode" />
+              <item name="commonView" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -746,7 +695,7 @@
       <workItem from="1548064700788" duration="241000" />
       <workItem from="1548156807941" duration="793000" />
       <workItem from="1548190434325" duration="2179000" />
-      <workItem from="1548277517860" duration="6473000" />
+      <workItem from="1548277517860" duration="7593000" />
     </task>
     <servers />
   </component>
@@ -783,7 +732,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307617000" />
+    <option name="totallyTimeSpent" value="308737000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -798,7 +747,7 @@
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988067" visible="true" weight="0.28851965" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988067" visible="true" weight="0.28851965" />
       <window_info id="Structure" order="1" sideWeight="0.50119334" side_tool="true" weight="0.27039275" />
       <window_info id="Web" order="2" sideWeight="0.50119334" side_tool="true" weight="0.27039275" />
       <window_info id="Designer" order="3" />
@@ -806,7 +755,7 @@
       <window_info id="Favorites" order="5" sideWeight="0.50119334" side_tool="true" weight="0.27039275" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.37106016" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924472" visible="true" weight="0.3739255" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924472" visible="true" weight="0.3739255" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2679083" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -834,20 +783,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/allVisitors.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="36" column="89" lean-forward="true" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewRoute.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -866,13 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="95" selection-start-line="23" selection-start-column="95" selection-end-line="23" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -949,13 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="9" lean-forward="true" selection-start-column="9" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -1237,30 +1158,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="76" lean-forward="true" selection-start-line="73" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="66" column="101" selection-start-line="66" selection-start-column="101" selection-end-line="66" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1270,8 +1167,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        <state relative-caret-position="285">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="34" column="130" selection-start-line="34" selection-start-column="130" selection-end-line="34" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="76" column="5" selection-start-line="76" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="67" column="1739" selection-start-line="67" selection-start-column="1739" selection-end-line="67" selection-end-column="1739" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/aboutProject.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
