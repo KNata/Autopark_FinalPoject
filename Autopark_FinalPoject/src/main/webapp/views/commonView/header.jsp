@@ -10,6 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <%@ page session="true"%>
+
 ${sessionScope}
 
 <c:set var="lang" scope="session"
@@ -17,7 +18,6 @@ ${sessionScope}
 
 <fmt:setLocale value="${lang}" scope="session" />
 <fmt:setBundle basename="i18n.language" var="rb" />
-
 
 <html lang=${lang}>
 <head>

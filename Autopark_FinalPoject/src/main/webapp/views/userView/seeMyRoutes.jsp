@@ -9,7 +9,7 @@
 
 <div class="container">
 
-    <h2>My Driver Info </h2>
+    <h2><fmt:message key="driver.main.text" bundle="${rb}"/></h2>
     <c:out value="${sessionScope.name}"/>
 
     <form action="/RouteDriverServlet" method="get" id="showAllMyRoutes" role="form">
@@ -28,7 +28,7 @@
                     <tr>
                         <td><c:out value=" ${routeStory.routeID}"/></td>
                         <td><c:out value="${routeStory.routeTitle}" /></td>
-                        <td><c:out value=" ${routeStory.getBus().getBusID()}"/></td>
+                        <td><c:out value=" ${routeStory.getBusID()}"/></td>
                         <td><c:out value="${routeStory.getRouteBegin()}" /></td>
                         <td><c:out value=" ${routeStory.getRouteEnd()}"/></td>
                         <td><c:out value="${routeStory.getRouteStartTime()}" /></td>
@@ -39,7 +39,7 @@
         </div>
     </form>
 <br><br>
-    <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+    <a href="/views/userView/driverMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
     <br>
     <br>
 

@@ -4,7 +4,7 @@ import DAO.DriverDAO;
 import DAO.VisitorDAO;
 import Model.Driver;
 import Model.Visitor;
-import Servlets.Command.Command;
+import Servlets.Command.ICommand;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AddNewVisitorCommand implements Command {
+public class AddNewVisitorCommand implements ICommand {
 
     private VisitorDAO visitorDAO;
 

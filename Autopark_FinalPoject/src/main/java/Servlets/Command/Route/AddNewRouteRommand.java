@@ -6,7 +6,7 @@ import DAO.RouteDAO;
 import Model.Bus;
 import Model.Driver;
 import Model.Route;
-import Servlets.Command.Command;
+import Servlets.Command.ICommand;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,7 +17,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class AddNewRouteRommand implements Command {
+public class AddNewRouteRommand implements ICommand {
 
     private RouteDAO routeDAO;
 
@@ -26,7 +26,7 @@ public class AddNewRouteRommand implements Command {
     }
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse responce) throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String routeID = request.getParameter("idRoute");
         String routeTitle = request.getParameter("routeName");
         String busID = request.getParameter("busID");
@@ -45,7 +45,7 @@ public class AddNewRouteRommand implements Command {
             BusDAO busDAO = new BusDAO();
             DriverDAO driverDAO = new DriverDAO();
             if (busDAO.findByID(busID) != null && driverDAO.isDriverInSystem(driverID)) {
-                if(routeDAO.findByID(routeID) == null && (!routeDAO.findByID(routeID).getRouteStartTime().equals(departureTime)) && (routeDAO.findByID(routeID).getDriverID() != driverID)) {
+                if(routeDAO.findByID(routeID) == null && (!routeDAO.findByID(routeID).getRouteStartTime().equals(departureTimeInDateFormat)) && (!routeDAO.findByID(routeID).getDriverID().equals(driverID))) {
                     Driver theDriver = driverDAO.findByID(driverID);
                     Bus theBus = busDAO.findByID(busID);
                     Route theRoute = Route.newBuilder().setRouteID(Integer.valueOf(routeID)).setRouteTitle(routeTitle).setBusID(busID)
@@ -53,12 +53,15 @@ public class AddNewRouteRommand implements Command {
                             .setRouteDuration(Integer.valueOf(routeDuration)).setRouteStartTime(departureTime).setRouteEndTime(arrivalTime).build();
                     boolean wasAdded = routeDAO.addRecord(theRoute);
                     if (wasAdded) {
-                        request.getRequestDispatcher("/views/commonView/successPage.jsp").forward(request, responce);
+                        RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+                        dispatcher.forward(request, response);
                     } else {
-                        request.getRequestDispatcher("/views/commonView/errorPage.jsp").forward(request, responce);
+                        RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+                        dispatcher.forward(request, response);
                     } }
             } else {
-                request.getRequestDispatcher("/views/commonView/errorPage.jsp").forward(request, responce);
+                RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
+                dispatcher.forward(request, response);
             }
         }
     }

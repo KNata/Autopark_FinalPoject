@@ -2,7 +2,7 @@ package Servlets.Command.Driver;
 
 import DAO.DriverDAO;
 import Model.Driver;
-import Servlets.Command.Command;
+import Servlets.Command.ICommand;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AddNewDriverCommand implements Command {
+public class AddNewDriverCommand implements ICommand {
 
     private DriverDAO driverDAO;
 

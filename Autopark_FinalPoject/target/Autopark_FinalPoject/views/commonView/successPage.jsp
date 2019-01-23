@@ -14,7 +14,13 @@
     </div>
     <br>
     <br>
-    <a href="/views/userView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+
+    <c:if test="">
+        <a href="/views/adminView/adminMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+    </c:if>
+    <c:if test="${driver}">
+        <a href="/views/userView/driverMainPage.jsp"><button type="submit" class="btn btn-secondary btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+    </c:if>
 
     <br>
     <br>

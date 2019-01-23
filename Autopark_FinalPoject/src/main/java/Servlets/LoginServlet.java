@@ -22,7 +22,6 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
 
-        // get request parameters for userID and password
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         VisitorDAO visitorDAO = new VisitorDAO();

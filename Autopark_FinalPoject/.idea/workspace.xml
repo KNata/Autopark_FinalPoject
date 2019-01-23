@@ -7,16 +7,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c834de6-3abc-4259-adfb-2c0e2dd0744d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/VisitorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/VisitorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/BusServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/BusServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/AutoparkCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/AutoparkCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/AddNewBusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/AddNewBusCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/ICommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Driver/AddNewDriverCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/Driver/AddNewDriverCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/AddNewVisitorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/AddNewVisitorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/databaseProperties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databaseProperties.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/language.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/language.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminView/deleteVisitor.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminView/deleteVisitor.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/BusServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/BusServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/AutoparkCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/AutoparkCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Bus/AddNewBusCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Bus/AddNewBusCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Driver/AddNewDriverCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Driver/AddNewDriverCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Route/AddNewRouteRommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Route/AddNewRouteRommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Visitor/AddNewVisitorCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/Command/Visitor/AddNewVisitorCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/DriverServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/DriverServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/RouteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/RouteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/VisitorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/Servlets/VisitorServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/databaseProperties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/WEB-INF/classes/databaseProperties.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/commonView/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/commonView/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/commonView/successPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark_FinalPoject/views/commonView/successPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/BusServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/BusServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/AutoparkCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/AutoparkCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Bus/AddNewBusCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/Bus/AddNewBusCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Driver/AddNewDriverCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/Driver/AddNewDriverCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Route/AddNewRouteRommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/Route/AddNewRouteRommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/Command/Visitor/AddNewVisitorCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/Command/Visitor/AddNewVisitorCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/DriverServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/DriverServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/RouteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/RouteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/VisitorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/VisitorServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/databaseProperties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/databaseProperties.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -67,15 +106,16 @@
     <session id="1418516701">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="34" />
+          <entry key="project.closed" value="39" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="4" />
-          <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.14" value="5" />
           <entry key="project.open.time.15" value="2" />
-          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.17" value="4" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="3" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.20" value="3" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="3" />
@@ -86,23 +126,23 @@
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="36" />
+          <entry key="project.opened" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="19" />
-          <entry key="JAVA" value="362" />
-          <entry key="JSP" value="363" />
-          <entry key="Properties" value="33" />
+          <entry key="CLASS" value="20" />
+          <entry key="JAVA" value="408" />
+          <entry key="JSP" value="370" />
+          <entry key="Properties" value="37" />
           <entry key="XML" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="19382" />
-          <entry key="JSP" value="7936" />
-          <entry key="Properties" value="3953" />
+          <entry key="JAVA" value="20868" />
+          <entry key="JSP" value="8091" />
+          <entry key="Properties" value="4079" />
           <entry key="XML" value="510" />
         </counts>
       </usages-collector>
@@ -114,36 +154,60 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-316">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="method#deleteRecord#0;class#RouteDAO#0" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+            <state relative-caret-position="153">
+              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
-              <folding>
-                <element signature="method#editRoute#0;class#RouteServlet#0" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" column="60" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="60" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="76" lean-forward="true" selection-start-line="73" selection-end-line="76" />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="66" column="101" selection-start-line="66" selection-start-column="101" selection-end-line="66" selection-end-column="101" />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle" />
         </entry>
       </file>
     </leaf>
@@ -154,19 +218,19 @@
         <option value="JUnit3 Test Class" />
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getServletContext</find>
       <find>addNewVisitor</find>
       <find>admin.add.driver.driverID</find>
       <find>admin.add.driver.driverName</find>
       <find>admin.accept.button</find>
       <find>submit</find>
+      <find>getServletContext</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -182,31 +246,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/i18n/languageUK.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/i18n/language-us-EN.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/i18n/language-uk-UK.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/Internationalization/I18NBundle_en.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/i18n/language_us_EN.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/Internationalization/I18NBundle_uk.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Servlets/ShowAllDriversServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/gg.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/BusDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/i18n/language" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/showAllBuses.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/DriverDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/RouteDAOTest.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewBusPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/registerPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/footer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Route.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/adminMainPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/allVisitors.jsp" />
@@ -214,25 +257,46 @@
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/addNewRoute.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/deleteRoute.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/editRoute.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/deleteBus.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllBuses.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/editBus.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/Servlets/BusServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/i18n/language.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/adminView/deleteVisitor.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/VisitorDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/databaseProperties.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/ICommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Driver/AddNewDriverCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/AutoparkCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/AddNewBusCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/AddNewVisitorCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/ShowAllRoutesCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/EditRouteCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/SeeListOfBuses.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/EditBusCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/DeleteBus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/BusServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Route/DeleteRouteCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/EditVisitorCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/DeleteVisitorCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/ShowAllVisitorsCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/ShowVisitorInfoCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/EditVisitorDriverCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/i18n/language.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp" />
       </list>
     </option>
   </component>
@@ -271,6 +335,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -366,36 +432,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="adminView" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Autopark_FinalPoject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Autopark_FinalPoject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="commonView" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Autopark_FinalPoject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Autopark_FinalPoject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="userView" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/nataliakiselyk/Documents/GitHub/Autopark_FinalPoject/Autopark_FinalPoject/src/main/java/Servlets/DriverServlet.java" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/nataliakiselyk/Documents/GitHub/Autopark_FinalPoject/Autopark_FinalPoject/src/main/webapp/views/commonView/successPage.jsp" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -695,7 +741,12 @@
       <workItem from="1547713967616" duration="64000" />
       <workItem from="1547757101944" duration="8992000" />
       <workItem from="1547849858575" duration="1147000" />
-      <workItem from="1547890468597" duration="26567000" />
+      <workItem from="1547890468597" duration="27227000" />
+      <workItem from="1547992299742" duration="251000" />
+      <workItem from="1548064700788" duration="241000" />
+      <workItem from="1548156807941" duration="793000" />
+      <workItem from="1548190434325" duration="2179000" />
+      <workItem from="1548277517860" duration="6473000" />
     </task>
     <servers />
   </component>
@@ -732,7 +783,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297020000" />
+    <option name="totallyTimeSpent" value="307617000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -747,7 +798,7 @@
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988067" visible="true" weight="0.35045317" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988067" visible="true" weight="0.28851965" />
       <window_info id="Structure" order="1" sideWeight="0.50119334" side_tool="true" weight="0.27039275" />
       <window_info id="Web" order="2" sideWeight="0.50119334" side_tool="true" weight="0.27039275" />
       <window_info id="Designer" order="3" />
@@ -755,7 +806,7 @@
       <window_info id="Favorites" order="5" sideWeight="0.50119334" side_tool="true" weight="0.27039275" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.37106016" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924472" visible="true" weight="0.26647565" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924472" visible="true" weight="0.3739255" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2679083" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -782,191 +833,7 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java</url>
-          <line>116</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/7.0.57/tomcat-embed-core-7.0.57.jar!/org/apache/coyote/AbstractProtocol.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="651" selection-start-line="651" selection-end-line="651" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/7.0.57/tomcat-embed-core-7.0.57.jar!/org/apache/coyote/http11/Http11Processor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="270" selection-start-line="270" selection-end-line="270" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/7.0.57/tomcat-embed-core-7.0.57.jar!/org/apache/catalina/connector/CoyoteAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="222" selection-start-line="222" selection-end-line="222" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Bus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/showAllBuses.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/RouteDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewBusPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="19" column="117" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/registerPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="50" column="92" selection-start-line="50" selection-start-column="92" selection-end-line="50" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Visitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-617">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/LogoutServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DBConnection/ConnectionPoolTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/footer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="73" column="50" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="73" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar!/org/apache/commons/dbcp/DelegatingResultSet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/BusDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="167" column="41" lean-forward="true" selection-start-line="167" selection-start-column="41" selection-end-line="167" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllRoutes.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="52" column="138" selection-start-line="52" selection-start-column="138" selection-end-line="52" selection-end-column="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/addNewDriverPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DriverDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="284" selection-start-line="284" selection-end-line="284" />
-          <folding>
-            <element signature="method#addRecord#0;class#DriverDAO#0" />
-            <element signature="method#deleteRecord#0;class#DriverDAO#0" />
-            <element signature="method#findAll#0;class#DriverDAO#0" />
-            <element signature="method#findByID#0;class#DriverDAO#0" />
-            <element signature="method#isDriverInSystem#0;class#DriverDAO#0" />
-            <element signature="method#findByName#0;class#DriverDAO#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Route.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="145" column="45" selection-start-line="145" selection-start-column="45" selection-end-line="145" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="100" selection-start-line="19" selection-start-column="100" selection-end-line="19" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/AutoparkCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/adminView/seeAllDrivers.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1002,45 +869,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/errorPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1079,43 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="49" column="62" lean-forward="true" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/BusServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="124" column="9" lean-forward="true" selection-start-line="118" selection-start-column="8" selection-end-line="124" selection-end-column="9" />
-          <folding>
-            <element signature="method#showAllBuses#0;class#BusServlet#0" />
-            <element signature="method#searchBuseByID#0;class#BusServlet#0" />
-            <element signature="method#searchBusByName#0;class#BusServlet#0" />
-            <element signature="method#addNewBus#0;class#BusServlet#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/7.0.57/tomcat-embed-core-7.0.57.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -1137,19 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="116" selection-start-line="116" selection-end-line="116" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#showAllVisitors#0;class#VisitorServlet#0" />
-            <element signature="method#searchVisitorByLogin#0;class#VisitorServlet#0" />
-            <element signature="method#editVisitorAdmin#0;class#VisitorServlet#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/VisitorDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -1163,30 +945,333 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/databaseProperties.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="method#editRoute#0;class#RouteServlet#0" />
-          </folding>
+        <state>
+          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-316">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/commonView/successPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/7.0.57/tomcat-embed-core-7.0.57.jar!/javax/servlet/GenericServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
           <folding>
-            <element signature="method#deleteRecord#0;class#RouteDAO#0" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+        <state relative-caret-position="321">
+          <caret line="37" column="44" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Driver/AddNewDriverCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/AddNewBusCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Route/EditRouteCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Route/AddNewRouteRommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="59" column="38" lean-forward="true" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Route/ShowAllRoutesCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#435#436#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/LogoutServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/DriverServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/ICommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/AutoparkCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/SeeListOfBuses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/EditBusCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Bus/DeleteBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Route/DeleteRouteCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/RouteServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141">
+          <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/AddNewVisitorCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/DeleteVisitorCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/EditVisitorCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="22" column="60" lean-forward="true" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/BusServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/EditVisitorDriverCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/RouteDriverServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/ShowAllVisitorsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/Command/Visitor/ShowVisitorInfoCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Servlets/VisitorServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Route.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/RouteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4448">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="method#deleteRecord#0;class#RouteDAO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/seeMyRoutes.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="76" lean-forward="true" selection-start-line="73" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_en_US.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/language_uk_UK.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="66" column="101" selection-start-line="66" selection-start-column="101" selection-end-line="66" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/editDriver.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/userView/driverMainPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
         </state>
       </provider>
     </entry>

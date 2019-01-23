@@ -5,13 +5,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class AutoparkCommand implements Command {
+public class AutoparkCommand implements ICommand {
 
-    private Command command;
+    private ICommand command;
 
     public AutoparkCommand() {}
 
-    public void setCommand (Command aCommand){
+    public void setCommand (ICommand aCommand){
         command = aCommand;
     }
 

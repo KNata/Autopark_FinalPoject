@@ -9,7 +9,7 @@
 
 <div class="container">
 
-    <h2>My Driver Info </h2>
+    <h2><fmt:message key="driver.edit.info" bundle="${rb}"/></h2>
     <c:out value="${sessionScope.name}"/>
 
     <form action="/RouteDriverServlet" method="post" role="form" data-toggle="validator" >
@@ -31,7 +31,7 @@
 
     </form>
     <br>
-    <a href="/driverMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
+    <a href="/views/userView/driverMainPage.jsp"><button type="submit" class="btn btn-secondary  btn-md"><fmt:message key="back.to.main.page" bundle="${rb}"/></button></a>
     <br>
     <br>
     <form action="${pageContext.request.contextPath}/LogoutServlet" method="post">

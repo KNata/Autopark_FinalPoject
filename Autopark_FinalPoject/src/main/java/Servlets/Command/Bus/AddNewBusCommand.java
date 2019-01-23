@@ -2,7 +2,7 @@ package Servlets.Command.Bus;
 
 import DAO.BusDAO;
 import Model.Bus;
-import Servlets.Command.Command;
+import Servlets.Command.ICommand;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AddNewBusCommand implements Command {
+public class AddNewBusCommand implements ICommand {
 
     private BusDAO busDAO;
 
@@ -22,7 +22,7 @@ public class AddNewBusCommand implements Command {
     }
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse responce) throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String busID = request.getParameter("idBus");
         String busModel = request.getParameter("busName");
         int maxCountOfPassangers = Integer.parseInt(request.getParameter("maxPassegers"));
@@ -40,14 +40,16 @@ public class AddNewBusCommand implements Command {
                 ArrayList<Bus> busList = busDAO.findAll();
                 request.setAttribute("bus", theBus);
                 if (wasAdded) {
-                    request.getRequestDispatcher("/views/commonView/successPage.jsp").forward(request, responce);
+                    RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
+                    dispatcher.forward(request, response);
                 } else {
-                    request.getRequestDispatcher("/views/commonView/errorPage.jsp").forward(request, responce);
+                    response.sendRedirect("/views/commonView/successPage.jsp");
                 }
             } else {
-                request.getRequestDispatcher("/views/commonView/errorPage.jsp").forward(request, responce);
+                response.sendRedirect("/views/commonView/errorPage.jsp");
             }
         }
+
 
     }
 }
