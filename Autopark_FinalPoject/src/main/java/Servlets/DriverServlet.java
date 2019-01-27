@@ -1,7 +1,12 @@
 package Servlets;
 
+import DAO.BusDAO;
 import DAO.DriverDAO;
 import Model.Driver;
+import Servlets.Command.AutoparkCommand;
+import Servlets.Command.Bus.SeeListOfBuses;
+import Servlets.Command.Driver.ShowAllDriversCommand;
+import Servlets.Command.ICommand;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -23,125 +28,26 @@ public class DriverServlet extends HttpServlet {
 
     private static Logger theLogger;
 
-    private DriverDAO driverDAO = new DriverDAO();
+    private DriverDAO driverDAO;
+    private ICommand currentCommand;
+    private AutoparkCommand autoparkCommand;
 
-    static {
-        theLogger = Logger.getLogger(DriverServlet.class);
+    public void init() throws ServletException {
+        autoparkCommand = new AutoparkCommand();
+        driverDAO = new DriverDAO();
     }
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        PrintWriter out = response.getWriter();
-        //out.println("Hello in Get Method");
-
-            fullListOfDrivers(request, response);
-
+        currentCommand = new ShowAllDriversCommand(driverDAO);
+        autoparkCommand.setCommand(currentCommand);
+        currentCommand.execute(request, response);
     }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String action = request.getParameter("action");
-        switch (action) {
-            case "addNewDriver":
-                addNewDriver(request, response);
-                break;
-            case "remove":
-                deleteDriver(request, response);
-                break;
-            case "seeAllDrivers":
-                fullListOfDrivers(request, response);
-                break;
-        }
-
-    }
-
-    public void fullListOfDrivers(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        ArrayList<Driver> driverList = driverDAO.findAll();
-        System.out.println(driverList.size());
-        if (driverList.size() == 0) {
-            System.out.println("1");
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
-            dispatcher.forward(request, response);
-            System.out.println("2");
-        } else {
-            System.out.println("3");
-            request.setAttribute("driverList", driverList);
-            System.out.println("4");
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/adminView/seeAllDrivers.jsp");
-            dispatcher.forward(request, response);
-        }
-    }
-
-    private void forwardListDrivers(HttpServletRequest request, HttpServletResponse response, ArrayList<Driver> driverList) throws IOException, ServletException {
-        String nextJSP = "/views/adminView/seeAllDriversPage.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        request.setAttribute("driverList", driverList);
-        dispatcher.forward(request, response);
-    }
-
-    private void searchDriverByID (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String driverID = request.getParameter("idDriver");
-        Driver theDriver = driverDAO.findByID(driverID);
-        request.setAttribute("driver", theDriver);
-        request.setAttribute("action", "edit");
-        String nextJSP = "/adminView/addNewDriverPage.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        dispatcher.forward(request, response);
-    }
-
-    private void searchDriverByName(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String driverName = request.getParameter("driverName");
-        Driver theDriver = driverDAO.findByName(driverName);
-        request.setAttribute("driver", theDriver);
-        request.setAttribute("action", "edit");
-        String nextJSP = "/adminView/addNewDriverPage.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        dispatcher.forward(request, response);
-    }
-
-    private void addNewDriver(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String driverID = request.getParameter("idDriver");
-        String driverName = request.getParameter("driverName");
-        Pattern pattern = Pattern.compile("[A-Z]{2}\\d{5}");
-        Matcher matcher = pattern.matcher(driverID);
-        boolean isMatch = matcher.find();
-        if (isMatch) {
-            Driver theDriver = Driver.newBuilder().setDriverID(driverID).setDriverName(driverName).build();
-            boolean wasAdded = driverDAO.addRecord(theDriver);
-            System.out.println(driverID);
-            System.out.println(driverName);
-            System.out.println(wasAdded);
-            if (wasAdded) {
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");
-                dispatcher.forward(request, response);
-            } else {
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
-                dispatcher.forward(request, response);
-            }
-        } else {
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/commonView/errorPage.jsp");
-            dispatcher.forward(request, response);
-        }
-    }
-
-    private void deleteDriver(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        DriverDAO driverDAO = new DriverDAO();
-        String driverID = request.getParameter("driverID");
-        boolean wasDeleted = driverDAO.deleteRecord(driverID);
-        if (wasDeleted) {
-            String message = "The driver was successfully removed";
-            request.setAttribute("message", message);
-            ArrayList<Driver> driverList = driverDAO.findAll();
-            forwardListDrivers(request, response, driverList);
-        }
-    }
-
-    private void showDriverProfile() {
 
     }
 }

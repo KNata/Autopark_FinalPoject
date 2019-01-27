@@ -11,8 +11,6 @@
 
 <%@ page session="true"%>
 
-${sessionScope}
-
 <c:set var="lang" scope="session"
        value="${empty sessionScope.locale ? 'uk_UK' : sessionScope.locale}" />
 

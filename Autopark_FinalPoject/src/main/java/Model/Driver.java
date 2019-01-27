@@ -30,7 +30,11 @@ public class Driver {
 
     @Override
     public int hashCode() {
-        return Objects.hash(driverID, driverName);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((driverID == null) ? 0 : driverID.hashCode());
+        result = prime * result + ((driverName == null) ? 0 :  driverName.hashCode());
+        return result;
     }
 
     @Override

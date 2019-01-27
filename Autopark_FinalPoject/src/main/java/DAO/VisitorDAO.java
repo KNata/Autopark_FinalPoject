@@ -142,14 +142,6 @@ public class VisitorDAO  {
             }
             conn.commit();
         } catch (SQLException e) {
-            try {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
-            } catch (SQLException ee) {}
-            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
             try {
@@ -190,8 +182,6 @@ public class VisitorDAO  {
                 }
             }
         } catch (SQLException e) {
-
-            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
             try {
@@ -270,14 +260,6 @@ public class VisitorDAO  {
                 }
             }
         } catch (SQLException e) {
-            try {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
-            } catch (SQLException ee) {}
-            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
             try {
@@ -301,9 +283,9 @@ public class VisitorDAO  {
     public boolean update(String visitorLogin, String passwordToChange) {
         String updateSQL = "update `mydb`.`Visitor` set  password = ? where login = ?";
         boolean wasUpdated = false;
-//        if (passwordToChange.equals(findByLogin(visitorLogin).getVisitorPassword())) {
-//            return false;
-//        }
+        if (passwordToChange.equals(findByLogin(visitorLogin).getVisitorPassword())) {
+            return false;
+        }
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         Savepoint savePoint = null;
@@ -318,19 +300,6 @@ public class VisitorDAO  {
             savePoint = connection.setSavepoint();
             connection.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                try {
-                    connection.rollback();
-                }catch (SQLException ee) {
-                    theLogger.error(e.getMessage());
-                }
-            } else {
-                try {
-                    connection.rollback(savePoint);
-                }catch (SQLException ee) {
-                    theLogger.error(e.getMessage());
-                }
-            }
             theLogger.error(e.getMessage());
         } finally {
             if (preparedStatement != null) {

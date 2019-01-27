@@ -23,11 +23,9 @@ public class EditVisitorDriverCommand implements ICommand {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        System.out.println("jjj");
         String driverName = (String) session.getAttribute("driver");
         Visitor theVisitor = visitorDAO.findByLogin(driverName);
         String newDriverPassword = request.getParameter("driverPassword");
-        System.out.println(newDriverPassword);
         boolean wasUpdated = visitorDAO.update(theVisitor.getVisitorLogin(), newDriverPassword);
         if (wasUpdated) {
             RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/views/commonView/successPage.jsp");

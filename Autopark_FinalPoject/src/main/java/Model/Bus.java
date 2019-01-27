@@ -48,7 +48,13 @@ public class Bus {
 
     @Override
     public int hashCode() {
-        return Objects.hash(busID, busModel, maxCountOfPassagers, miles, passedService);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((busID == null) ? 0 : busID.hashCode());
+        result = prime * result + ((busModel == null) ? 0 :  busModel.hashCode());
+        result = prime * result + maxCountOfPassagers;
+        result = prime * result + miles;
+        return result;
     }
 
     @Override

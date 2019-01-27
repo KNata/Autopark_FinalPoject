@@ -75,23 +75,19 @@ public class Route {
 
     @Override
     public int hashCode() {
-        return Objects.hash(routeID, routeTitle, cityOfDeparture, cityOfArrival, routeDuration, departureTime,
-                arrivalTime, driverID, busID);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((busID == null) ? 0 : busID.hashCode());
+        result = prime * result + ((driverID == null) ? 0 :  driverID.hashCode());
+        result = prime * result + ((routeTitle == null) ? 0 : routeTitle.hashCode());
+        result = prime * result + routeID;
+        result = prime * result + ((cityOfDeparture == null) ? 0 : cityOfDeparture.hashCode());
+        result = prime * result + ((cityOfArrival == null) ? 0 : cityOfArrival.hashCode());
+        result = prime * result + routeDuration;
+        result = prime * result + ((departureTime == null) ? 0 : departureTime.hashCode());
+        result = prime * result + ((arrivalTime == null) ? 0 : arrivalTime.hashCode());
+        return result;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Route (" +
-//                "routeID = " + routeID +
-//                ", routeTitle = '" + routeTitle + '\'' +
-//                ", cityOfDeparture = '" + cityOfDeparture + '\'' +
-//                ", cityOfArrival = '" + cityOfArrival + '\'' +
-//                ", routeDuration = " + routeDuration +
-//                ", departureTime = " + departureTime +
-//                ", arrivalTime = " + arrivalTime +
-//                ')';
-//    }
-
 
     @Override
     public String toString() {

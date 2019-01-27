@@ -51,14 +51,6 @@ public class RouteDAO implements AbstractDAO<String, Route> {
                 savePoint = conn.setSavepoint();
                 conn.commit();
             } catch (SQLException e) {
-                try {
-                    if (savePoint == null) {
-                        conn.rollback();
-                    } else {
-                        conn.rollback(savePoint);
-                    }
-                } catch (SQLException ee) {}
-                System.err.println(e.getMessage());
                 theLogger.error(e.getMessage());
             } finally {
                 try {
@@ -133,28 +125,14 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int routeID = resultSet.getInt("routeID");
-               // System.out.println("1");
                 String routeTitle = resultSet.getString("routeName");
-             //  System.out.println("2");
                 String driverID = resultSet.getString("driverID");
-             //   System.out.println("3");
                 String busID = resultSet.getString("busID");
-           //   System.out.println("4");
                 String cityOfDeparture = resultSet.getString("cityOfDeparture");
-            //    System.out.println("5");
                 String cityOfArrival = resultSet.getString("cityOfArrival");
-             //   System.out.println("6");
                 int routeDuration = resultSet.getInt("routeDuration");
-             //  System.out.println("7");
                 String departureTime = resultSet.getString("departureTime");
-          //   System.out.println("8");
                 String arrivalTime = resultSet.getString("arrivalTime");
-
-//                Driver theDriver =  driverDAO.findByID(driverID);
-         //      System.out.println(theDriver.toString());
-
-          //     Bus theBus = busDAO.findByID(busID);
-           //     System.out.println(theBus.toString());
 
                 Route theRoute = Route.newBuilder().setRouteID(routeID).setRouteTitle(routeTitle)
                         .setDriver(driverID).setBusID(busID).setRouteBegin(cityOfDeparture)
@@ -164,7 +142,6 @@ public class RouteDAO implements AbstractDAO<String, Route> {
            //   System.out.println("+");
             }
         } catch (SQLException e) {
-            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
             try {
@@ -215,14 +192,6 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            try {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
-            } catch (SQLException ee) {}
-            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
             try {
@@ -272,14 +241,6 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            try {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
-            } catch (SQLException ee) {}
-            System.err.println(e.getMessage());
             theLogger.error(e.getMessage());
         } finally {
             try {
@@ -316,28 +277,15 @@ public class RouteDAO implements AbstractDAO<String, Route> {
             savePoint = connection.setSavepoint();
             connection.commit();
         } catch (SQLException e) {
-            if (savePoint == null) {
-                try {
-                    connection.rollback();
-                }catch (SQLException ee) {
-                    theLogger.error(e.getMessage());
-                }
-            } else {
-                try {
-                    connection.rollback(savePoint);
-                }catch (SQLException ee) {
-                    theLogger.error(e.getMessage());
-                }
-            }
             theLogger.error(e.getMessage());
-            System.err.println(e.getMessage());
         } finally {
             if (preparedStatement != null) {
                 try {
                     preparedStatement.close();
-                } catch (SQLException e) {
-                    theLogger.error(e.getMessage());
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
                 }
+
             }
             if (connection != null) {
                 try {

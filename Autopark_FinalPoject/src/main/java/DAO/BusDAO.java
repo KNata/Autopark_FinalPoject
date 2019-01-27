@@ -184,13 +184,6 @@ public class BusDAO implements AbstractDAO<String, Bus> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            try {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
-            } catch (SQLException ee) {}
             theLogger.error(e.getMessage());
         } finally {
             try {
@@ -232,13 +225,6 @@ public class BusDAO implements AbstractDAO<String, Bus> {
             savePoint = conn.setSavepoint();
             conn.commit();
         } catch (SQLException e) {
-            try {
-                if (savePoint == null) {
-                    conn.rollback();
-                } else {
-                    conn.rollback(savePoint);
-                }
-            } catch (SQLException ee) {}
             theLogger.error(e.getMessage());
         } finally {
             try {

@@ -65,7 +65,14 @@ public class Visitor {
 
     @Override
     public int hashCode() {
-        return Objects.hash(visitorID, visitorName, visitorLogin, visitorPassword, visitorRole, isAdmin, theDriver);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((visitorName == null) ? 0 : visitorName.hashCode());
+        result = prime * result + ((visitorLogin == null) ? 0 :  visitorLogin.hashCode());
+        result = prime * result + ((visitorPassword == null) ? 0 : visitorPassword.hashCode());
+        result = prime * result + visitorID;
+        result = prime * result + ((visitorRole == null) ? 0 : visitorRole.hashCode());
+        return result;
     }
 
     @Override
@@ -132,6 +139,6 @@ public class Visitor {
     }
 
     public enum ROLE {
-      ADMIN, DRIVER, UNKNOWN;
+      ADMIN, DRIVER;
     }
 }
